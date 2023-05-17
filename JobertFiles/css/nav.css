@@ -1,0 +1,98 @@
+/*table of contents
+1. global styles
+*/
+
+
+/*
+==================
+1. global styles
+2. navigation bar
+3. search bar
+==================
+
+
+*/
+:root {
+    --fs-body: 1.125rem;
+    --color-main: rgb(30, 57, 50);
+    --color-accent: rgb(255, 198, 26);
+}
+
+html {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    padding-top: 1rem;
+}
+
+
+.navbar {
+    background-color: var(--color-main);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 9;
+    margin-bottom: 1px;
+}
+
+
+/*
+==========
+2. navigation bar
+==========
+*/
+.nav {
+    padding: 10px 10vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav-items {
+    display: flex;
+    align-items: center;
+}
+
+.nav-dropdowns::before {
+    margin: 0.5em;
+    content: '';
+    display: block;
+    height: 1px;
+    width: 100%;
+    background: var(--color-accent);
+}
+
+.nav-dropdowns {
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    text-align: center;
+}
+
+.nav-dropdowns button {
+    background-color: var(--color-accent);
+    border: none;
+    padding: 0.5rem;
+    border-radius: 2rem;
+}
+
+
+/*
+3. search bar
+*/
+
+
+.search-box,
+.search-btn {
+
+    right: 25%
+}
+
+.search-box::placeholder {
+    color: #a9a9a9;
+}

@@ -1,0 +1,37 @@
+/*
+table of contents
+
+1. global styles
+2. product 
+
+*/
+
+/*
+=======
+1. global styles
+=======
+
+*/
+
+@import 'nav.css';
+
+
+:root {
+    --line-color: grey;
+}
+
+body {
+    margin-top: 9rem;
+}
+
+.product-other-imgs {
+    display: flex;
+    gap: 1em;
+
+}
+
+.product-other-imgs img {
+    width: min(10%, 10rem);
+    border: 1px solid var(--line-color);
+
+}
