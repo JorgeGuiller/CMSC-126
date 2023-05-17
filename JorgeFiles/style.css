@@ -1,0 +1,197 @@
+:root {
+    --fs-body: 1.125rem;
+    --fs-header: 1.25rem;
+    --color-main: rgb(30, 57, 50);
+    --color-accent: rgb(255, 198, 26);
+    --transition: 250ms ease-in-out;
+    --color-navbar-text-main: white;
+    --color-form-container-bg: white;
+    --color-form-wrapper-bg: gray;
+}
+
+html,
+body {
+
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+html {
+    box-sizing: border-box;
+    font-size: 100%;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+body {
+    background-repeat: none;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: var(--fs-body);
+    line-height: 1.56;
+    scroll-padding-top: 10rem;
+}
+
+/*
+=================
+2. navigation bar
+=================
+*/
+
+.navbar {
+    background-color: var(--color-main);
+    position: fixed;
+    width: 100%;
+    z-index: 999;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.navbar h1 {
+    color: var(--color-navbar-text-main);
+    font-size: var(--fs-header);
+}
+
+/*
+=============
+3. form
+=============
+*/
+
+
+.bg-img {
+
+    --bg-image: url(../img/shttefan-mtu6m_nLFQI-unsplash.jpg);
+    /*placeholder image*/
+
+    display: flex;
+    place-content: center;
+    text-align: center;
+    align-items: center;
+    width: 100%;
+    min-height: 100vh;
+    min-height: 100svh;
+    position: relative;
+    isolation: isolate;
+
+}
+
+.bg-img::after {
+
+    content: "";
+    position: absolute;
+    z-index: -1;
+    inset: 0;
+
+    background-image: var(--bg-image);
+
+    filter: brightness(0.2);
+
+    background-size: cover;
+    background-position: center;
+}
+
+
+
+.form-wrapper {
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: var(--color-form-wrapper-bg);
+    padding: 1em;
+    align-items: center;
+}
+
+@media (min-width:600px) {
+    .form-wrapper {
+        width: 40%;
+        position: absolute;
+        right: 5%;
+        top: 25.5%
+    }
+}
+
+.form-container {
+    height: 100%;
+    width: 100%;
+    border: 3px solid var(--color-accent);
+    background-color: var(--color-form-container-bg);
+
+}
+
+.form-header-and-tagline {
+    line-height: 1rem;
+    padding-inline: 1em;
+}
+
+.form-inputs {
+    border: 1px solid gray;
+    margin: 1em 1em;
+}
+
+.form-login-buttons {
+    height: 4rem;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.form-login-buttons button {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    border: none;
+    height: 100%;
+    font-size: clamp(1rem, 2vw, 1.5rem);
+}
+
+form {
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+    gap: 0.5em;
+    padding: 1em;
+}
+
+input {
+    width: 100%;
+    height: 2rem;
+}
+
+.form-submit-button {
+    background-color: var(--color-main);
+    color: white;
+    width: 100%;
+    height: 2rem;
+    border: none;
+    border-radius: 5px;
+    transition: all var(--transition);
+}
+
+.form-submit-button:hover {
+    opacity: 0.5;
+    color: white;
+    cursor: pointer;
+}
+
+.stay-signed-in-container {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    float: left;
+}
+
+.stay-signed-in-container input {
+    width: fit-content;
+}
