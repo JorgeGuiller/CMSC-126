@@ -1,0 +1,99 @@
+@import url(nav.css);
+
+/* table of contents
+1. global styles
+2. header
+3. card container
+
+*/
+
+/* 1. global styles */
+/* :root {
+    --fs-body: 1.125rem;
+    --color-main: rgb(30, 57, 50);
+    --color-accent: rgb(255, 198, 26);
+}
+
+
+html {
+
+    font-family: Candara, sans-serif;
+}
+
+body,
+html {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+} */
+
+/* 2. header */
+#daily-feed {
+    /* how do i center a div? */
+    color: var(--color-main);
+    width: 100%;
+    text-align: center;
+}
+
+#daily-feed::after {
+    content: "";
+    display: block;
+    margin: 0 auto;
+    width: 90%;
+    background-color: var(--color-main);
+    height: 0.3rem;
+}
+
+/* 3. card container */
+
+.cards-container {
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 0.5rem;
+    width: 90%;
+
+}
+
+.card {
+    margin: 0;
+    padding: 0;
+    border: 2px solid var(--color-main);
+    border-radius: 5px;
+    text-align: center;
+    transition: 200ms ease-in-out;
+}
+
+.card-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: gray;
+}
+
+.product-image {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    outline: 2px solid var(--color-main);
+    border-radius: 4px;
+}
+
+.card:hover {
+    transform: scale(1.2);
+}
+
+
+
+.product-details {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+}
