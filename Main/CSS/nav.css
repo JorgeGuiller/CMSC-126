@@ -1,0 +1,345 @@
+/*
+table of contents
+1. global styles
+2. navigation 
+3. icons
+4. search
+5. icons dropdowns
+6. categories
+
+*/
+
+/* 1. global styles */
+
+:root {
+    --fs-body: 1.125rem;
+    --color-main: rgb(30, 57, 50);
+    --color-main-light: rgb(55, 126, 107);
+    --color-accent: rgb(246, 83, 1);
+    /* --color-accent: rgb(255, 198, 26); */
+    --transition: 200ms ease;
+    --transition-animation: cubic-bezier(.43, .8, .35, 1.28);
+}
+
+html {
+    font-family: Candara, sans-serif;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+button:hover {
+    cursor: pointer;
+    width: fit-content;
+}
+
+/* 2. navigation */
+.navbar {
+    align-items: center;
+    position: sticky;
+    left: 0;
+    width: 100%;
+    top: 0;
+}
+
+.website-logo {
+
+    text-align: center;
+    color: black;
+}
+
+.website-title {
+    text-align: center;
+    color: black;
+    transition: all var(--transition);
+}
+
+.website-title:hover {
+    color: var(--color-main-light);
+}
+
+/* 
+/* 3. icons */
+#items-container {
+    background-color: white;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, .15);
+    margin-inline: 1rem;
+    display: grid;
+    margin: 0 auto;
+    width: 100%;
+    grid-template-columns: 1fr 1fr auto 1fr;
+    z-index: 2;
+}
+
+.icons {
+    display: flex;
+    list-style: none;
+    grid-column: 4;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 0;
+}
+
+li {
+    text-align: center;
+}
+
+.topright {
+    position: relative;
+    transition: all var(--transition);
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+
+/* 4. search */
+.search-area {
+    --size: 60px;
+    text-align: left;
+    margin: auto;
+    display: flex;
+    border-radius: 100px;
+    overflow: hidden;
+    width: var(--size);
+    height: 2rem;
+    padding: 3px;
+    position: relative;
+    transition: all 450ms cubic-bezier(0.18, 0.89, 0.32, 1.28);
+}
+
+#search-input {
+    border: 0;
+    padding: 0.9em;
+    flex-grow: 1;
+    outline: 0;
+    z-index: 2;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: transparent;
+    opacity: 0%;
+    cursor: pointer;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+#searchbtn {
+    --size: 60px;
+    font-size: 1.5rem;
+    margin-left: auto;
+    background: 0;
+    z-index: 1;
+    border: 0;
+    cursor: pointer;
+    border-radius: 100vh;
+    transition: all var(--transition);
+    width: var(--size);
+    height: 2rem;
+    color: black;
+}
+
+
+.search-area:hover #searchbtn {
+    color: var(--color-main-light);
+}
+
+#searchbtn:active {
+    background-color: rgba(246, 83, 1, 0.5);
+}
+
+.navbar:has(.search-area:focus-within) .website-title {
+    display: none;
+}
+
+.search-area:focus-within {
+    width: 100%;
+    background-color: white;
+    border-color: var(--color-accent);
+    grid-column: 2/4;
+}
+
+.search-area:focus-within #search-input {
+    --size: 60px;
+    opacity: 1;
+    background-color: white;
+    color: black;
+    z-index: initial;
+    cursor: initial;
+    width: calc(100% - var(--size));
+}
+
+.search-area:focus-within #searchbtn {
+    background: var(--color-accent);
+    color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .15);
+}
+
+.search-area:focus-within .search-area:hover,
+.search-area:focus-within .search-area:focus {
+    outline: 0;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .65);
+}
+
+#search-input:has(button) {
+    display: inline-block;
+}
+
+.toprightbtn {
+    background: none;
+    cursor: pointer;
+    border: none;
+    color: white;
+}
+
+.material-icons {
+    transition: all var(--transition);
+    width: 100%;
+    margin: auto;
+    color: black;
+}
+
+.topright:hover .material-icons {
+    color: var(--color-main-light);
+}
+
+/* 5. icons dropdowns */
+.topright-content {
+    display: none;
+    position: absolute;
+    top: calc(100% + 1.2rem);
+    width: 100%;
+    text-align: center;
+}
+
+.topright-links {
+    text-decoration: none;
+    color: var(--color-accent);
+    background-color: var(--color-main);
+    padding: 0.3rem;
+    transition: all 100ms ease-in-out;
+}
+
+.topright-links:hover {
+    color: white;
+    background-color: var(--color-accent);
+}
+
+.topright:focus-within .topright-content,
+.topright-links {
+    display: block;
+}
+
+
+
+
+/* 6. categories */
+
+.navbar:hover .dropdown-container::before,
+.navbar:hover .dropdown-container,
+.dropdown-container:hover {
+    transform: scale(1, 1);
+}
+
+.navbar:has(.icons:hover) .dropdown-container {
+    transform: scale(1, 0);
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, .15);
+
+}
+
+.dropdown-container::before {
+    content: "";
+    display: none;
+    height: 2px;
+    margin: auto;
+    width: 100%;
+    background-color: var(--color-accent);
+    z-index: 1;
+    position: sticky;
+}
+
+.dropdown-container {
+    display: block;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    z-index: 9999;
+    background-color: rgb(222, 214, 214);
+    transform: scale(1, 0);
+    transform-origin: top;
+
+    transition: all var(--transition);
+
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+    width: calc(9rem - 0.4rem);
+    margin-inline: 0.2rem;
+}
+
+.dropdown:hover {
+    background-color: var(--color-accent);
+    color: var(--color-accent);
+    transition: all var(--transition);
+}
+
+.dropbtn {
+    background: none;
+    border: none;
+    color: black;
+    width: 100%;
+    margin: 0;
+    height: 2rem;
+    border-radius: 100vh;
+}
+
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: var(--color-accent);
+    transition: all var(--transition);
+    width: 100%;
+}
+
+.dropdown-content a {
+    padding: 0.2rem;
+    display: block;
+    text-decoration: none;
+    color: black;
+    transition: all var(--transition);
+}
+
+.dropdown-content a:hover {
+    background-color: var(--color-main);
+    color: white;
+    transition: all var(--transition);
+}
+
+@keyframes slide-in {
+    0% {
+        transform: translateY(-100%);
+        opacity: 0%;
+    }
+
+    100% {
+        transform: translateY(0%);
+        opacity: 100%;
+    }
+}
