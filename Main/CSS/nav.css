@@ -309,6 +309,7 @@ li {
 .dropbtn {
     background: none;
     border: none;
+    font-weight: bold;
     color: black;
     width: 100%;
     margin: 0;
