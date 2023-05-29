@@ -168,7 +168,7 @@ li {
 }
 
 #searchbtn:active {
-    background-color: rgba(246, 83, 1, 0.5);
+    background-color: rgba(100, 59, 177, 0.5);
 }
 
 .navbar:has(.search-area:focus-within) .website-title {
