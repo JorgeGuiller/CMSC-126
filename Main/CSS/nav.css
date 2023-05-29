@@ -14,7 +14,7 @@ table of contents
 
 :root {
     --fs-body: 1.125rem;
-    --color-main: rgb(30, 57, 50);
+    --color-main: #D4EDF2;
     --color-main-light: rgb(55, 126, 107);
     --color-accent: rgb(246, 83, 1);
     /* --color-accent: rgb(255, 198, 26); */
