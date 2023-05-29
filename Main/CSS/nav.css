@@ -82,6 +82,7 @@ button:hover {
         radial-gradient(ellipse at 10% 10%, #35244f 0%, transparent 55%);
     box-shadow: 10px 10px 10px rgba(0, 0, 0, .15);
     margin-inline: 1rem;
+    border-radius: 40px;
     display: grid;
     margin: 0 auto;
     width: 100%;
