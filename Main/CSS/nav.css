@@ -212,7 +212,7 @@ li {
     background: none;
     cursor: pointer;
     border: none;
-    color: rgb(145, 24, 24);
+    color: white;
 }
 
 .material-icons {
@@ -289,6 +289,7 @@ li {
     padding: 1rem;
     z-index: 9999;
     background-color: rgb(168, 181, 187);
+    transform: scale(1, 0);
     transform-origin: top;
 
     transition: all var(--transition);
