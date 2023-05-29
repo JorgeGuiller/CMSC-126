@@ -289,8 +289,6 @@ li {
     padding: 1rem;
     z-index: 9999;
     background-color: rgb(168, 181, 187);
-    transform-origin: top;
-
     transition: all var(--transition);
 
 }
