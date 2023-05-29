@@ -71,6 +71,7 @@ button:hover {
 /* 
 /* 3. icons */
 #items-container {
+    padding: 1.5rem;
     /* background-color: white; */
     background-color: #170d24; /* Set the background color */
     background-image:
@@ -286,7 +287,7 @@ li {
     justify-content: center;
     padding: 1rem;
     z-index: 9999;
-    background-color: rgb(149, 187, 204);
+    background-color: rgb(168, 181, 187);
     transform: scale(1, 0);
     transform-origin: top;
 
