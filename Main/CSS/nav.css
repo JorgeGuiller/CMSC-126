@@ -55,6 +55,8 @@ button:hover {
 }
 
 .website-title {
+    font-family: "Patua One", sans-serif;
+    text-transform:uppercase;
     text-align: center;
     color: black;
     margin: auto;
