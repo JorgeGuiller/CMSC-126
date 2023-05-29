@@ -1,0 +1,206 @@
+@import url("nav.css");
+
+
+body {
+  Font-family: candara, sans-serif;
+}
+
+#searchbtn,
+#search-input {
+  height: 35px;
+
+  vertical-align: middle;
+
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+
+
+
+img[src="search.png"] {
+  margin-left: -10px;
+  margin-top: -2px;
+  height: 40px;
+  padding: 0px;
+  z-index: 2;
+  border-radius: 0px 15px 15px 0px;
+
+}
+
+#searchbtn {
+  border-radius: 0px 15px 15px 0px;
+  padding: 0px;
+  border: none;
+  cursor: pointer;
+
+
+}
+
+#search {
+  float: right;
+  margin-top: -100px;
+}
+
+.topright {
+  margin-right: -10px;
+  display: inline-block;
+
+
+}
+
+.topright-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.topright-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.toprightbtn {
+
+
+  border: none;
+  cursor: pointer;
+  appearance: none;
+  background-color: inherit;
+}
+
+
+.topright-content a:hover {
+  background-color: #ddd;
+}
+
+
+.topright:hover .topright-content {
+  display: block;
+}
+
+
+.topright:hover .dropbtn {
+  background-color: #3e8e41;
+}
+
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropbtn {
+  background-color: #ED6444;
+  color: white;
+  font-size: 16px;
+  border: none;
+
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {
+  background-color: #3e8e41;
+}
+
+#header {
+  padding-left: 5%;
+
+  background-position: center;
+  padding-top: 10%;
+  background: url("header.png") no-repeat;
+  background-size: contain;
+  background-color: #1e3932;
+
+
+}
+
+#upload {
+
+  margin-left: 35%;
+  width: 150px;
+  height: 50px;
+  border-radius: 100px;
+  background-color: #3e8e41;
+  margin-top: 50px;
+}
+
+img[src="place.jpg"] {
+
+  border-radius: 157px;
+  height: 150px;
+  WIDTH: 150px;
+  margin-left: 35%;
+  margin-top: 130px;
+}
+
+#AccountDetails {
+  float: right;
+  margin-right: 20%;
+  border: 1px solid black;
+  width: 30%;
+  height: 20px;
+  border-collapse: separate;
+  margin-top: 100px;
+
+
+}
+
+#AccountDetails td {
+  padding: 0;
+  margin: 0;
+}
+
+#Transaction {
+  margin: auto;
+  margin-top: 70px;
+  margin-bottom: 20px;
+  width: 60%;
+  text-align: center;
+  border: 3px solid black;
+}
+
+#footer {
+
+  width: 94%;
+  padding: 3%;
+  background-color: #ED6444;
+}

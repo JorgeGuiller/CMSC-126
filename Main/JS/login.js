@@ -1,62 +1,56 @@
-document.addEventListener('DOMContentLoaded', function() {
-    // Login page
-    var loginSubmitButton = document.querySelector('.form-container-login .submit-btn');
-    if (loginSubmitButton) {
-      loginSubmitButton.addEventListener('click', function(event) {
-        event.preventDefault();
-        var usernameInput = document.querySelector('.form-container-login .input-field[type="text"]');
-        var passwordInput = document.querySelector('.form-container-login .input-field[type="password"]');
-        var username = usernameInput.value;
-        var password = passwordInput.value;
-        console.log('Login - Username:', username);
-        console.log('Login - Password:', password);
-        usernameInput.value = '';
-        passwordInput.value = '';
-      });
-    }
-  
-    // Register page
-    var registerSubmitButton = document.querySelector('.form-container-register .submit-btn');
-    if (registerSubmitButton) {
-      registerSubmitButton.addEventListener('click', function(event) {
-        event.preventDefault();
-        var usernameInput = document.getElementById('username');
-        var emailInput = document.getElementById('email');
-        var passwordInput = document.getElementById('password');
-        var confirmPasswordInput = document.getElementById('confirm-password');
-        var username = usernameInput.value;
-        var email = emailInput.value;
-        var password = passwordInput.value;
-        var confirmPassword = confirmPasswordInput.value;
-        console.log('Register - Username:', username);
-        console.log('Register - Email:', email);
-        console.log('Register - Password:', password);
-        console.log('Register - Confirm Password:', confirmPassword);
-        usernameInput.value = '';
-        emailInput.value = '';
-        passwordInput.value = '';
-        confirmPasswordInput.value = '';
-      });
-    }
-  
-    // Forgot Password page
-    var forgotPasswordSubmitButton = document.querySelector('.form-container-forgot .submit-btn');
-    if (forgotPasswordSubmitButton) {
-      forgotPasswordSubmitButton.addEventListener('click', function(event) {
-        event.preventDefault();
-        var emailInput = document.getElementById('email');
-        var passwordInput = document.getElementById('password');
-        var confirmPasswordInput = document.getElementById('confirm-password');
-        var email = emailInput.value;
-        var password = passwordInput.value;
-        var confirmPassword = confirmPasswordInput.value;
-        console.log('Forgot Password - Email:', email);
-        console.log('Forgot Password - New Password:', password);
-        console.log('Forgot Password - Confirm Password:', confirmPassword);
-        emailInput.value = '';
-        passwordInput.value = '';
-        confirmPasswordInput.value = '';
-      });
-    }
-  });
-  
+import { doc, setDoc } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";
+import { GoogleAuthProvider, auth, browserSessionPersistence, signInWithPopup } from "./connect.js";
+
+import { app, db } from "./connect.js";
+
+
+const provider = new GoogleAuthProvider();
+
+function signIn(app, auth, provider) {
+    signInWithPopup(auth, provider)
+        .then((result) => {
+            // This gives you a Google Access Token. You can use it to access the Google API.
+            const credential = GoogleAuthProvider.credentialFromResult(result);
+
+            const token = credential.accessToken;
+            // The signed-in user info.
+            const user = result.user;
+            // IdP data available using getAdditionalUserInfo(result)
+            // ...
+            if (user != null) {
+                try {
+                    auth.setPersistence(browserSessionPersistence);
+
+                } catch (e) {
+                    console.log(e);
+                }
+                createAccount(user);
+                window.location.assign("homepage.html");
+            }
+        }).catch((error) => {
+            // Handle Errors here.
+            const errorCode = error.code;
+            const errorMessage = error.message;
+            // The email of the user's account used.
+            // const email = error.customData.email;
+            // The AuthCredential type that was used.
+            const credential = GoogleAuthProvider.credentialFromError(error);
+            // console.log(errorCode, errorMessage, email, credential);
+            // ...
+            console.log(errorCode);
+        });
+
+}
+
+async function createAccount(user) {
+    const userData = {
+        name: user.displayName,
+        email: user.email,
+    };
+    await setDoc(doc(db, "Accounts", user.uid), userData);
+}
+
+
+document.getElementById("google-login").addEventListener("click", () => {
+    signIn(app, auth, provider);
+});

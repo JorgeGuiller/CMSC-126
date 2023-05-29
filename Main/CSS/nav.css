@@ -6,6 +6,7 @@ table of contents
 4. search
 5. icons dropdowns
 6. categories
+7. logo
 
 */
 
@@ -55,6 +56,8 @@ button:hover {
 .website-title {
     text-align: center;
     color: black;
+    margin: auto;
+    font-size: 2rem;
     transition: all var(--transition);
 }
 
@@ -342,4 +345,17 @@ li {
         transform: translateY(0%);
         opacity: 100%;
     }
+}
+
+
+/* 7. logo */
+
+.logo {
+    width: 20em;
+    transform: scaleX(70%);
+}
+
+.website-title-anchor {
+    text-decoration: none;
+    margin: auto;
 }
