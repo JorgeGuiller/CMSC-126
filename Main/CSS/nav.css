@@ -58,7 +58,7 @@ button:hover {
     font-family: "Patua One", sans-serif;
     text-transform:uppercase;
     text-align: center;
-    color: black;
+    color: ghostwhite;
     margin: auto;
     font-size: 2rem;
     transition: all var(--transition);
