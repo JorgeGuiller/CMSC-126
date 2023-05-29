@@ -296,7 +296,8 @@ li {
 
 .dropdown {
     position: relative;
-    display: inline-block;
+    /* display: inline-block; */
+    display:none;
     width: calc(9rem - 0.4rem);
     margin-inline: 0.2rem;
 }
