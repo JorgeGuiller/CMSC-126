@@ -1,3 +1,7 @@
+:root {
+  --transition: 250ms ease;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -13,7 +17,7 @@ body {
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
-  z-index:-1;
+  z-index: -1;
 }
 
 .navbar {
@@ -27,13 +31,14 @@ body {
   top: 0;
   left: 0;
   right: 0;
-  height:90px;
+  height: 90px;
 
   /* background-image: url('assets/banner.png'); */
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
 }
+
 .banner-container {
   display: flex;
   align-items: left;
@@ -43,16 +48,17 @@ body {
 
 .banner {
   max-height: 80px;
-  margin-left:-30px;
+  margin-left: -30px;
 }
 
 #question {
   font-size: 36px;
   margin: 0;
-  display:flex;
-  position:relative;
-  left:-490px;
+  display: flex;
+  position: relative;
+  left: -490px;
 }
+
 #statement {
   font-size: 36px;
   margin: 0;
@@ -66,7 +72,7 @@ body {
   margin: 200px auto 0;
   padding: 60px;
   background-color: #76b689;
-  opacity:89%;
+  opacity: 89%;
   /* background-color: rgba(76, 117, 76, 0.8); */
   border-radius: 10px;
   position: relative;
@@ -92,7 +98,7 @@ body {
 
 .form-header-and-tagline h5 {
   font-size: 16px;
-  font-weight:bold;
+  font-weight: bold;
   color: #141313;
   margin-top: 0;
   display: flex;
@@ -144,7 +150,7 @@ body {
 
 .stay-signed-in-container input[type="checkbox"] {
   margin-right: -5px;
-  margin-bottom:-11px;
+  margin-bottom: -11px;
 }
 
 .stay-signed-in-container label {
@@ -165,12 +171,27 @@ a {
 a:hover {
   text-decoration: underline;
 }
+
 footer {
   background-color: #CB8758;
   padding: 10px;
-  height:5px;
+  height: 5px;
   text-align: center;
   position: fixed;
   bottom: 0;
   width: 100%;
+}
+
+#google-login {
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.75);
+  border: none;
+  border-radius: 100vh;
+  width: 10rem;
+  height: 5rem;
+  background-color: white;
+  transition: all var(--transition);
+}
+
+#google-login:hover {
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.75);
 }
