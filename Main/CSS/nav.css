@@ -250,7 +250,6 @@ li {
 .navbar:hover .dropdown-container::before,
 .navbar:hover .dropdown-container,
 .dropdown-container:hover {
-    transform: scale(1, 1);
 }
 
 .navbar:has(.icons:hover) .dropdown-container {
@@ -278,7 +277,6 @@ li {
     padding: 1rem;
     z-index: 9999;
     background-color: rgb(222, 214, 214);
-    transform: scale(1, 0);
     transform-origin: top;
 
     transition: all var(--transition);
