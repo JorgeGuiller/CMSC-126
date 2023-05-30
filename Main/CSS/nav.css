@@ -261,7 +261,6 @@ li {
 .navbar:hover .dropdown-container::before,
 .navbar:hover .dropdown-container,
 .dropdown-container:hover {
-    transform: scale(1, 1);
 }
 
 .navbar:has(.icons:hover) .dropdown-container {
