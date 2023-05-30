@@ -36,7 +36,6 @@ body {
 
 button:hover {
     cursor: pointer;
-    width: fit-content;
 }
 
 /* 2. navigation */
