@@ -14,9 +14,9 @@ table of contents
 
 :root {
     --fs-body: 1.125rem;
-    --color-main: linear-gradient(45deg, rgb(30, 57, 50), rgb(55, 126, 107));
-    --color-main-light: linear-gradient(45deg, rgb(55, 126, 107), rgb(30, 57, 50));
-    --color-accent: rgba(167, 130, 235,0.7);
+    --color-main: color(#00DD00);
+    --color-main-light: color(#00DD00);
+    --color-accent: rgb(255, 255, 255);
     /* --color-accent: rgb(255, 198, 26); */
     --transition: 200ms ease;
     --transition-animation: cubic-bezier(.43, .8, .35, 1.28);
