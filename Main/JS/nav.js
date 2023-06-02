@@ -64,9 +64,9 @@
 //     <div class="dropdown">
 //         <button class="dropbtn">Foods</button>
 //         <div class="dropdown-content">
-//             <a href="#">Canned Goods</a>
-//             <a href="#">Snacks</a>
-//             <a href="#">Beverages</a>
+//             <a href="cannedGoods.html">Canned Goods</a>
+//             <a href="snacks.html">Snacks</a>
+//             <a href="beverages.html">Beverages</a>
 //         </div>
 //     </div>
 
@@ -82,8 +82,8 @@
 //     <div class="dropdown">
 //         <button class="dropbtn">Gadgets</button>
 //         <div class="dropdown-content">
-//             <a href="#">Writing Materials</a>
-//             <a href="#">Paper Materials</a>
+//             <a href="#">Gaming</a>
+//             <a href="#">School</a>
 //             <a href="#">Erasure Materials</a>
 //         </div>
 //     </div>
@@ -92,7 +92,7 @@
 //         <button class="dropbtn">Merchandise</button>
 //         <div class="dropdown-content">
 //             <a href="#">UP</a>
-//             <a href="#">K-pop</a>
+//             <a href="kpop.html">K-pop</a>
 //             <a href="#">Anime</a>
 //         </div>
 //     </div>
@@ -174,9 +174,9 @@ const createNav = () => {
     <div class="dropdown">
         <button class="dropbtn">Foods</button>
         <div class="dropdown-content">
-            <a href="#">Canned Goods</a>
-            <a href="#">Snacks</a>
-            <a href="#">Beverages</a>
+            <a href="cannedGoods.html">Canned Goods</a>
+            <a href="snacks.html">Snacks</a>
+            <a href="beverages.html">Beverages</a>
         </div>
     </div>
 
@@ -192,9 +192,9 @@ const createNav = () => {
     <div class="dropdown">
         <button class="dropbtn">Gadgets</button>
         <div class="dropdown-content">
-            <a href="#">Writing Materials</a>
-            <a href="#">Paper Materials</a>
-            <a href="#">Erasure Materials</a>
+            <a href="#">Gaming</a>
+            <a href="#">School</a>
+            <a href="#">Dorm</a>
         </div>
     </div>
 
@@ -202,7 +202,7 @@ const createNav = () => {
         <button class="dropbtn">Merchandise</button>
         <div class="dropdown-content">
             <a href="#">UP</a>
-            <a href="#">K-pop</a>
+            <a href="kpop.html">K-pop</a>
             <a href="#">Anime</a>
         </div>
     </div>
