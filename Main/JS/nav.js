@@ -158,6 +158,13 @@ const createNav = () => {
                 </button>
             </div>
         </li>
+        <li>
+            <div class="topright">
+                <button onclick="location.href='Homepage.html'" class="toprightbtn">
+                    <i class="material-icons">home</i>
+                </button>
+            </div>
+        </li>
     </ul>
 </div>
 
