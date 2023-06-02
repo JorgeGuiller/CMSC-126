@@ -172,8 +172,8 @@ const createNav = () => {
     <div class="dropdown">
         <button class="dropbtn">School Supplies</button>
         <div class="dropdown-content">
-            <a href="#">Writing Materials</a>
-            <a href="#">Paper Materials</a>
+            <a href="writingMaterials.html">Writing Materials</a>
+            <a href="paperMaterials.html">Paper Materials</a>
             <a href="#">Erasure Materials</a>
         </div>
     </div>
@@ -210,7 +210,7 @@ const createNav = () => {
         <div class="dropdown-content">
             <a href="#">UP</a>
             <a href="kpop.html">K-pop</a>
-            <a href="#">Anime</a>
+            <a href="anime.html">Anime</a>
         </div>
     </div>
 </div>
