@@ -73,7 +73,7 @@ button:hover {
 #items-container {
     padding: 1.5rem;
     /* background-color: white; */
-    background-color: #00DD00; /* Set the background color */
+    background-color: #365544; /* Set the background color */
     box-shadow: 10px 10px 10px rgba(0, 0, 0, .15);
     margin-inline: 1rem;
     display: grid;
@@ -281,7 +281,7 @@ li {
     justify-content: center;
     padding: 1rem;
     z-index: 9999;
-    background-color: rgb(255, 255, 255);
+    background-color: #AAB5AF;
     transform-origin: top;
 
 
