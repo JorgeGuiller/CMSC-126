@@ -136,7 +136,7 @@ li {
     top: 0;
     bottom: 0;
     left: 0;
-    width: 120%; /* Increase the width value as desired */
+    width: 200%; /* Increase the width value as desired */
     background: transparent;
     opacity: 0;
     cursor: pointer;
