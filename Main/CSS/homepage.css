@@ -33,7 +33,11 @@ html {
     width: 100%;
     text-align: center;
 }
-
+#searchbtn,
+#search-input {
+  height: 35px;
+  vertical-align: middle;
+}
 #daily-feed::after {
     content: "";
     display: block;
