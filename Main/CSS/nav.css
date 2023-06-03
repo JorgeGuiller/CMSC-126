@@ -138,14 +138,14 @@ li {
     left: 0;
     width: 100%;
     background: transparent;
-    opacity: 0%;
+    /* opacity: 0%; */ /* Remove or modify this line */
     cursor: pointer;
     text-align: center;
     display: flex;
     align-items: center;
     justify-content: center;
-
 }
+
 
 #searchbtn {
     --size: 60px;
