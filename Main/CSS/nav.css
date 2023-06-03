@@ -128,7 +128,7 @@ li {
 
 #search-input {
     border: 0;
-    padding: 1.5em; /* Increase the padding value as desired */
+    padding: 0.9em;
     flex-grow: 1;
     outline: 0;
     z-index: 2;
@@ -136,7 +136,7 @@ li {
     top: 0;
     bottom: 0;
     left: 0;
-    width: 100%;
+    width: 120%; /* Increase the width value as desired */
     background: transparent;
     opacity: 0;
     cursor: pointer;
@@ -145,6 +145,7 @@ li {
     align-items: center;
     justify-content: center;
 }
+
 
 
 
