@@ -61,7 +61,7 @@ button:hover {
     text-align: center;
     color: ghostwhite;
     margin: auto;
-    font-size: 2rem;
+    font-size: 2.5rem;
     transition: all var(--transition);
 }
 
@@ -72,7 +72,7 @@ button:hover {
 /* 
 /* 3. icons */
 #items-container {
-    padding: 1.5rem;
+    padding: 0.5rem;
     /* background-color: white; */
     background-color: #365544; /* Set the background color */
     box-shadow: 10px 10px 10px rgba(0, 0, 0, .15);
@@ -92,10 +92,15 @@ button:hover {
     justify-content: space-evenly;
     align-items: center;
     margin: 0;
+    /* height:100%; */
 }
 
 li {
     text-align: center;
+    /* color:#56856b; */
+}
+.icons .material-icons {
+    color: #011b0d !important;
 }
 
 .topright {
@@ -207,7 +212,7 @@ li {
     background: none;
     cursor: pointer;
     border: none;
-    color: white;
+    color: #011b0d;
 }
 
 .material-icons {
@@ -240,7 +245,7 @@ li {
 }
 
 .topright-links:hover {
-    color: white;
+    color: rgb(255, 255, 255);
     background-color: var(--color-accent);
 }
 
@@ -336,7 +341,7 @@ li {
 
 .dropdown-content a:hover {
     background-color: var(--color-main);
-    color: #000000;
+    color: #152e1c;
     text-emphasis: bold;
     transition: all var(--transition);
 }
@@ -357,7 +362,7 @@ li {
 /* 7. logo */
 
 .logo {
-    width: 20em;
+    width: 18em;
     transform: scaleX(70%);
 }
 
