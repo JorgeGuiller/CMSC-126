@@ -15,7 +15,7 @@ table of contents
 :root {
     --fs-body: 1.125rem;
     --color-main: color(#293241);
-    --color-main-light: color(#00DD00);
+    --color-main-light: color(#365544);
     --color-accent: rgb(255, 255, 255);
     /* --color-accent: rgb(255, 198, 26); */
     --transition: 200ms ease;
@@ -334,7 +334,7 @@ li {
 
 .dropdown-content a:hover {
     background-color: var(--color-main);
-    color: white;
+    color: #AAB5AF;
     transition: all var(--transition);
 }
 
