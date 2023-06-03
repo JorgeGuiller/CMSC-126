@@ -128,7 +128,7 @@ li {
 
 #search-input {
     border: 0;
-    padding: 0.9em;
+    padding: 1.5em; /* Increase the padding value as desired */
     flex-grow: 1;
     outline: 0;
     z-index: 2;
@@ -138,13 +138,14 @@ li {
     left: 0;
     width: 100%;
     background: transparent;
-    /* opacity: 0%; */ /* Remove or modify this line */
+    opacity: 0;
     cursor: pointer;
     text-align: center;
     display: flex;
     align-items: center;
     justify-content: center;
 }
+
 
 
 #searchbtn {
