@@ -160,7 +160,7 @@ const createNav = () => {
         </li>
         <li>
             <div class="topright">
-                <button onclick="window.location.href='/homepage.html'" class="toprightbtn">
+                <button onclick="window.location.href='homepage.html'" class="toprightbtn">
                     <i class="material-icons">home</i>
                 </button>
             </div>
