@@ -89,7 +89,7 @@ li {
     text-align: center;
     position: sticky;
     top: 60px;
-    background-color: #365544;
+    background-color: none;
     padding: 0.5rem;
     z-index: 1;
 }
