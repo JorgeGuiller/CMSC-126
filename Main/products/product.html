@@ -18,13 +18,14 @@
 		const urlParams = new URLSearchParams(window.location.search);
 		const id = urlParams.get('id');
         const productJson = sessionStorage.getItem(`${id}`);
+		let product;
 
 		if(productJson){
-			const product = JSON.parse(productJson);
+			product = JSON.parse(productJson);
 			
 		}else{
 			const model = new Model();
-			const product = await model.getProductById(id);
+			product = await model.getProductById(id);
 		}
 		renderer.renderPage(product);
 	</script>
