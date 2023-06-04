@@ -151,7 +151,7 @@ li {
     --size: 60px;
     font-size: 1.5rem;
     margin-left: auto;
-    background: #4CAF50; /* Set your desired background color */
+    background:none; /* Set your desired background color */
     z-index: 1;
     border: none;
     cursor: pointer;
