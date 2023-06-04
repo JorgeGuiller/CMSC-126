@@ -2,7 +2,7 @@
  * This file is the class responsible for communicating with the database
  */
 
-import { addDoc, collection, doc, getDoc, getDocs, limit, or, orderBy, query, where } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";
+import { addDoc, collection, deleteDoc, doc, getDoc, getDocs, limit, or, orderBy, query, where } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";
 
 import { db } from "./connect.js";
 
@@ -66,5 +66,26 @@ export class Model {
         const coll = doc(db, "Products", id);
         const snapshot = await getDoc(coll);
         return new Product(snapshot.id, snapshot.data()["name"], snapshot.data()["tag"], snapshot.data()["description"], snapshot.data()["image"]);
+    }
+
+    async getProductsByTag(tag){
+
+        const products = [];
+        const coll = collection(db, "Products");
+        const q = query(coll, where("tag", "==", `${tag}`));
+        const snap = await getDocs(q);
+
+
+        snap.forEach((doc) => {
+            products.push(new Product(doc.id, doc.data()["name"], doc.data()["tag"], doc.data()["description"], doc.data()["image"]));
+            console.log(doc.id);
+            
+        });
+        return products;
+    }
+
+    async deleteProduct(id){
+
+        await deleteDoc(doc(db, "Products", id));
     }
 }
