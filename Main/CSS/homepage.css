@@ -27,17 +27,44 @@ html {
     box-sizing: border-box;
 } */
 
+/* Dropdowns & icons */
+.icons {
+    display: flex;
+    list-style: none;
+    grid-column: 4;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 30px 0px 0px 0px;
+    /* height:100%; */
+}
+
+li {
+    text-align: center;
+    /* color:#56856b; */
+}
+.icons .material-icons {
+    color: #011b0d !important;
+    /* use this color */
+}
+/* .icons .material-icons.search-icon {
+    margin: 50px 0px 0px 0px;
+} */
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #ffffff;
+    min-width: 120px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+  }
 /* 2. header */
 #daily-feed {
     color: var(--color-main);
     width: 100%;
     text-align: center;
 }
-#searchbtn,
-#search-input {
-  height: 35px;
-  vertical-align: middle;
-}
+
 #daily-feed::after {
     content: "";
     display: block;
