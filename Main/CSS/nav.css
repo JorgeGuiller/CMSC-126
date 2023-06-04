@@ -394,3 +394,10 @@ li {
     text-decoration: none;
     margin: auto;
 }
+
+.nav-container {
+    width: 100%;
+    max-width: 1200px; /* Adjust the width to your desired value */
+    margin: 0 auto; /* Centers the navigation bar horizontally */
+    /* Add additional styles here*/
+  }
