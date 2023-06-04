@@ -120,14 +120,13 @@ li {
     display: flex;
     border-radius: 100px;
     overflow: hidden;
-    width: calc(var(--size) + 1rem); /* Increase the width by 1rem */
+    width: calc(var(--size) + 1rem);
     height: 2rem;
     padding: 3px;
     position: relative;
     transition: all 450ms cubic-bezier(0.18, 0.89, 0.32, 1.28);
 }
 
-/* search to be edited */
 #search-input {
     border: 0;
     padding: 0.9em;
@@ -138,7 +137,7 @@ li {
     top: 0;
     bottom: 0;
     left: 0;
-    width: 100%; /* Increase the width value as desired */
+    width: 100%;
     background: transparent;
     opacity: 0;
     cursor: pointer;
@@ -148,57 +147,43 @@ li {
     justify-content: center;
 }
 
-
-
-
 #searchbtn {
     --size: 60px;
     font-size: 1.5rem;
     margin-left: auto;
-    background: 0;
+    background: var(--color-accent); /* Changed background color to accent color */
     z-index: 1;
     border: 0;
     cursor: pointer;
     border-radius: 100vh;
     transition: all var(--transition);
-    width: calc(var(--size) + 1rem); /* Increase the width by 1rem */
-    height: 2rem;
-    color: black;
+    width: calc(var(--size) + 1rem);
+    height: 100%; /* Adjusted height to fill the container vertically */
+    color: #ffffff; /* Changed text color to white */
 }
-
 
 .search-area:hover #searchbtn {
-    color: var(--color-main-light);
-}
-
-#searchbtn:active {
-    background-color: rgba(255, 255, 255, 0.5);
-}
-
-.navbar:has(.search-area:focus-within) .website-title {
-    /* display: none; removed to keep title in place */
+    color: #ffffff;
 }
 
 .search-area:focus-within {
     width: 100%;
-    background-color: white;
+    background-color: #ffffff; /* Changed background color to white */
     border-color: var(--color-accent);
     grid-column: 2/5;
 }
 
 .search-area:focus-within #search-input {
-    --size: 60px;
     opacity: 1;
-    background-color: white;
-    color: black;
+    background-color: #ffffff; /* Changed background color to white */
+    color: #000000; /* Changed text color to black */
     z-index: initial;
     cursor: initial;
     width: calc(100% - var(--size));
 }
 
 .search-area:focus-within #searchbtn {
-    background: var(--color-accent);
-    color: rgb(255, 255, 255);
+    color: #ffffff;
     box-shadow: 0 0 10px rgba(0, 0, 0, .15);
 }
 
