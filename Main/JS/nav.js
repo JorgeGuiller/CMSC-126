@@ -111,11 +111,11 @@ const createNav = () => {
 
     header.innerHTML = `
 
-    <div id="items-container">
-    <img class="logo" src="Images/baner.png.png">
-    <a class="website-title-anchor" href="homepage.html">
+    <div id="items-container" class="navs-container">
+        <img class="logo" src="Images/baner.png.png">
+        <a class="website-title-anchor" href="homepage.html">
         <h1 class="website-title">Project Buy-lo</h1>
-    </a>
+        </a>
     <ul class="icons">
         <li>
             <div class="search-area">
@@ -168,7 +168,7 @@ const createNav = () => {
     </ul>
 </div>
 
-<div class="dropdown-container">
+<div class="dropdown-container nav-container">
     <div class="dropdown">
         <button class="dropbtn">School Supplies</button>
         <div class="dropdown-content">
