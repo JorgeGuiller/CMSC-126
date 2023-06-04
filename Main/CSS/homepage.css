@@ -34,7 +34,7 @@ html {
     grid-column: 4;
     justify-content: space-evenly;
     align-items: center;
-    margin: 30px 0px 0px 0px;
+    margin: auto;
     /* height:100%; */
 }
 
