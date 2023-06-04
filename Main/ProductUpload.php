@@ -1,16 +1,7 @@
 <?php
 // this runs when user clicks submit button
 //this creates a new php file with the name of the product
-if (isset($_POST["submit"])) {
-    $name = $_POST["submit"];
-    $slug = str_replace(' ', '-', strtolower($name));
-    $file = fopen("products/$slug.php", "w");
-    $command = "<?php
-    include 'product.php';
-    ?>";
-    fwrite($file, $command);
-    exit;
-}
+
 ?>
 
 <!DOCTYPE html>
