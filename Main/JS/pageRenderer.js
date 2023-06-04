@@ -27,6 +27,13 @@ export class PageRenderer {
         cardBody.appendChild(productTag);
 
         card.appendChild(cardBody);
+        card.addEventListener('click', () => {
+            const object = JSON.stringify(product);
+            sessionStorage.setItem(`${product.id}`, object);
+            window.document.location.assign(`/products/product.html/${product.name}+${product.tag}?id=${product.id}`);
+
+            // this.renderPage(product);
+        });
 
         return card;
 
@@ -39,5 +46,11 @@ export class PageRenderer {
             let card = this.createCard(product);
             div.appendChild(card);
         });
+    }
+
+    renderPage(product){
+        document.querySelector('.product-big-img').src = product.image;
+        document.getElementById('product-name').innerText = product.name;
+        document.getElementById('product-info').innerText = product.description;
     }
 }

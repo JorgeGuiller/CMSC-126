@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"
+        integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+        
+</head>
+<body>
+    <input id="search" type="text"></input>
+    <button id="button">Click</button>
+    <div class="container" id="cards-container"></div>
+    <script type="module">
+        import {Model} from './JS/model.js';
+        import {PageRenderer} from './JS/pageRenderer.js';
+
+        const model = new Model();
+        const renderer = new PageRenderer();
+        $(document).ready(function(){
+            $("#button").click(function(){
+                window.location =  window.location.pathname + "?query=" + $("#search").val();
+            });
+          
+        });
+
+        const url = new URL(window.location);
+        const urlParams = new URLSearchParams(url.search);
+        const myParam = urlParams.get('query');
+
+        const prods = await model.search(myParam);
+        const container = document.getElementsByClassName('container')[0];
+        renderer.renderCards(container, prods);
+
+    </script>
+</body>
+</html>
