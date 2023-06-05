@@ -27,7 +27,7 @@
 .cards-container {
     margin-top: 60px; 
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: repeat(6, 1fr);
     gap: 0.8rem;
     width: 90%;
     z-index: 0; /* Move the cards behind the navbar */
