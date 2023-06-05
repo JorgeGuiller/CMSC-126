@@ -14,9 +14,10 @@ table of contents
 
 :root {
     --fs-body: 1.125rem;
-    --color-main: color(#293241);
-    --color-main-light: color(#365544);
+    --color-main: #365544;
+    --color-action:#293241;
     --color-accent: rgb(255, 255, 255);
+    --navbar-text-color: black;
     /* --color-accent: rgb(255, 198, 26); */
     --transition: 200ms ease;
     --transition-animation: cubic-bezier(.43, .8, .35, 1.28);
@@ -38,22 +39,22 @@ button:hover {
     cursor: pointer;
 }
 
+span {
+    margin: 0;
+    padding: 0;
+}
 /* 2. navigation */
 .navbar {
     align-items: center;
     position: sticky;
     left: 0;
     width: 100%;
+    height: min-content;
     top: 0;
     z-index: 1;
     /* overflow:hidden; */
 }
 
-.website-logo {
-
-    text-align: center;
-    color: black;
-}
 
 .website-title {
     font-family: "Patua One", sans-serif;
@@ -72,44 +73,56 @@ button:hover {
 
 /* 
 /* 3. icons */
-#items-container {
-    padding: 0.5rem;
-    /* background-color: white; */
-    background-color: #365544; /* Set the background color */
+
+.items-container-bg{
+
+    background-color: white; /* Set the background color */
     box-shadow: 10px 10px 10px rgba(0, 0, 0, .15);
-    display: grid;
-    margin: 0 auto;
     width: 100%;
-    grid-template-columns: 1fr 1fr auto 1fr;
-    z-index: 2;
-    /* overflow:hidden; */
 }
-
-.icons {
+#items-container {
     display: grid;
-    list-style: none;
-    grid-template-columns: repeat(4, 1fr);
-    justify-content: space-evenly;
-    align-items: center;
-    margin: 0;
-    /* height:100%; */
+    grid-template-columns: auto minmax(20px, auto) repeat(4, auto);
+    margin: 0 auto;
+    width: 90%;
+    z-index: 2;
 }
 
-li {
-    text-align: center;
-    /* color:#56856b; */
-}
-.icons .material-icons {
-    color: #011b0d !important;
-    /* use this color */
-}
 
+.material-symbols-outlined {
+    color: var(--navbar-text-color);
+    font-size: clamp(1rem, 2vw, 2rem);
+    transition: all var(--transition);
+}
+.button-label{
+    font-size: clamp(1rem, 1vw + 0.1rem, 2rem);
+    padding-left: 0.3rem;
+    color: var(--navbar-text-color);
+    transition: all var(--transition);
+}
 .topright {
+    width: 100%;
     position: relative;
     transition: all var(--transition);
+    display: flex;
+    align-items: center;
+    justify-content: center;
     height: 100%;
+    text-align: center;
     margin: 0;
     padding: 0;
+}
+
+
+.topright:hover{
+    background-color: var(--color-main);
+}
+.topright:hover .button-label{
+    color: white;
+}
+.topright:hover .material-symbols-outlined{
+    color: white;
+
 }
 
 /* 4. search */
@@ -120,50 +133,46 @@ li {
     display: flex;
     border-radius: 100px;
     overflow: hidden;
-    width: calc(var(--size) + 1rem); /* Increase the width by 1rem */
+    width: 90%; /* Increase the width by 1rem */
     height: 2rem;
     padding: 3px;
     position: relative;
-    transition: all 450ms cubic-bezier(0.18, 0.89, 0.32, 1.28);
+    transition: all 450ms cubic-bezier(0.18, 0.89, 0.32, 1);
+    border: 1px solid black
 }
 
 /* search to be edited */
 #search-input {
-    border: 0;
-    padding: 0.9em;
-    flex-grow: 1;
-    outline: 0;
+    border: none;
+    outline: none;
+    font-size: 1rem;
+    width: 100%;
     z-index: 2;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    width: 100%; /* Increase the width value as desired */
-    background: transparent;
-    opacity: 0;
-    cursor: pointer;
-    text-align: center;
+    padding: 0.9em;
     display: flex;
+    flex-grow: 1;
+    opacity: 1;
+
+    cursor: pointer;
     align-items: center;
-    justify-content: center;
+    justify-content: center;  
 }
-
-
-
 
 #searchbtn {
     --size: 60px;
+    transition: all var(--transition);
+    border-radius: 100vh;
+    width: calc(var(--size) + 1rem);
+    /* 
     font-size: 1.5rem;
     margin-left: auto;
     background: 0;
     z-index: 1;
     border: 0;
     cursor: pointer;
-    border-radius: 100vh;
-    transition: all var(--transition);
-    width: calc(var(--size) + 1rem); /* Increase the width by 1rem */
     height: 2rem;
-    color: black;
+    color: black; 
+    */
 }
 
 
@@ -176,30 +185,16 @@ li {
 }
 
 .navbar:has(.search-area:focus-within) .website-title {
-    /* display: none; removed to keep title in place */
-}
-
-.search-area:focus-within {
-    width: 100%;
-    background-color: white;
-    border-color: var(--color-accent);
-    grid-column: 2/5;
-}
-
-.search-area:focus-within #search-input {
-    --size: 60px;
-    opacity: 1;
-    background-color: white;
-    color: black;
-    z-index: initial;
-    cursor: initial;
-    width: calc(100% - var(--size));
+    display: none;
 }
 
 .search-area:focus-within #searchbtn {
-    background: var(--color-accent);
-    color: rgb(255, 255, 255);
+    background: var(--color-main);
     box-shadow: 0 0 10px rgba(0, 0, 0, .15);
+}
+
+.search-area:focus-within .material-symbols-outlined{
+    color: white;
 }
 
 .search-area:focus-within .search-area:hover,
@@ -216,85 +211,30 @@ li {
 
 .toprightbtn {
     background: none;
-    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all var(--transition);
+    height: 100%;
     border: none;
+    padding: 0;
+    cursor: pointer;
+    margin: 0;
     color: #011b0d;
 }
-
-.material-icons {
-    transition: all var(--transition);
-    width: 100%;
-    margin: auto;
-    color: black;
-}
-
-.topright:hover .material-icons {
-    color: var(--color-main-light);
-}
-
 /* 5. icons dropdowns */
 .topright {
     /* margin-right: -10px; */
     /* display: inline-block;  */
   }
 
-.topright-content {
-  display: none;
-  position: absolute;
-  /* light green */
-  background-color: #fdfdfd;
-  min-width: 140px;
-  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-  z-index: 1;
-}
-.topright-content a {
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-  }
-  .toprightbtn {
-
-
-    border: none;
-    cursor: pointer;
-    appearance: none;
-    background-color: inherit;
-  }
-
-.topright-links {
-    text-decoration: none;
-    color: var(--color-accent);
-    background-color: var(--color-main);
-    padding: 0.3rem;
-    transition: all 100ms ease-in-out;
-}
-
-.topright-links:hover {
-    color:#011b0d;
-    background-color: var(--color-accent);
-}
-
-.topright:focus-within .topright-content,
-.topright-links {
-    display: block;
-}
 
 
 
 
 /* 6. categories */
 
-.navbar:hover .dropdown-container::before,
-.navbar:hover .dropdown-container,
-.dropdown-container:hover {
-}
 
-.navbar:has(.icons:hover) .dropdown-container {
-    transform: scale(1, 0);
-    box-shadow: 10px 10px 10px rgba(0, 0, 0, .15);
-
-}
 
 .dropdown-container::before {
     content: "";
@@ -312,23 +252,21 @@ li {
     text-align: center;
     align-items: center;
     justify-content: center;
-    padding: 0.5rem;
+    width: 100%;
     z-index: 9999;
-    background-color: #cbd1cb;
+    background-color: var(--color-main);
     transform-origin: top;
-
-
 }
 
 .dropdown {
     position: relative;
     display: inline-block;
-    width: calc(9rem - 0.4rem);
-    margin-inline: 0.2rem;
+    width: calc(9rem - 0.4rem); 
+    margin: 0;
+    padding: 0;
 }
 
 .dropdown:hover {
-    background-color: var(--color-accent);
     color: var(--color-accent);
     transition: all var(--transition);
 }
@@ -336,41 +274,21 @@ li {
 .dropbtn {
     background: none;
     border: none;
-    font-weight: bold;
-    color: black;
+    font-size: clamp(0.8rem, 1vw, 3rem);
+    transition: all var(--transition);
+    color: white;
     width: 100%;
     margin: 0;
+    padding: 0;
     height: 2rem;
-    border-radius: 100vh;
+}
+
+.dropbtn:hover{
+    background-color: var(--color-action);
 }
 
 
-.dropdown:hover .dropdown-content {
-    display: block;
-}
 
-.dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: var(--color-accent);
-    transition: all var(--transition);
-    width: 100%;
-}
-
-.dropdown-content a {
-    padding: 0.2rem;
-    display: block;
-    text-decoration: none;
-    color: black;
-    transition: all var(--transition);
-}
-
-.dropdown-content a:hover {
-    background-color: var(--color-main);
-    color: #152e1c;
-    text-emphasis: bold;
-    transition: all var(--transition);
-}
 
 @keyframes slide-in {
     0% {
@@ -389,17 +307,12 @@ li {
 
 .logo {
     width: 18em;
-    transform: scaleX(70%);
+    transform: scaleX(100%);
+
 }
 
-.website-title-anchor {
-    text-decoration: none;
-    margin: auto;
+.logo:hover{
+    cursor: pointer;
 }
 
-.nav-container {
-    width: 100%;
-    max-width: auto; /* Adjust the width to your desired value */
-    margin: 0 auto; /* Centers the navigation bar horizontally */
-    /* Add additional styles here*/
-  }
+

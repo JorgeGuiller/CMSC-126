@@ -47,31 +47,11 @@ html {
 }
 
 /* Dropdowns & icons */
-.icons {
-    display: flex;
-    list-style: none;
-    grid-column: 4;
-    justify-content: space-evenly;
-    align-items: center;
-    margin: auto;
-    /* position: relative;
-    z-index: 9999; */
-    /* height:100%; */
-}
-
-li {
-    text-align: center;
-    /* color:#56856b; */
-}
 
 .icons .material-icons {
     color: #011b0d !important;
     /* use this color */
 }
-
-/* .icons .material-icons.search-icon {
-    margin: 50px 0px 0px 0px;
-} */
 
 .dropdown-content {
     display: none;
