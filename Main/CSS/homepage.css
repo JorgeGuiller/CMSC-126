@@ -1,68 +1,16 @@
+/* Import the nav.css file */
 @import url(nav.css);
 
-/* table of contents
-1. global styles
-2. header
-3. card container
-
-*/
-
-/* 1. global styles */
-/* :root {
-    --fs-body: 1.125rem;
-    --color-main: rgb(30, 57, 50);
-    --color-accent: rgb(255, 198, 26);
-}
-
-
-html {
-
-    font-family: Candara, sans-serif;
-}
-
-body,
-html {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-} */
-
-/* Dropdowns & icons */
-.icons {
-    display: flex;
-    list-style: none;
-    grid-column: 4;
-    justify-content: space-evenly;
-    align-items: center;
-    margin: 30px 0px 0px 0px;
-    /* height:100%; */
-}
-
-li {
-    text-align: center;
-    /* color:#56856b; */
-}
-.icons .material-icons {
-    color: #011b0d !important;
-    /* use this color */
-}
-/* .icons .material-icons.search-icon {
-    margin: 50px 0px 0px 0px;
-} */
-
-.dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #ffffff;
-    min-width: 120px;
-    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-    z-index: 1;
-  }
 /* 2. header */
 #daily-feed {
     color: var(--color-main);
     width: 100%;
     text-align: center;
+    position: sticky;
+    top: 60px;
+    background-color: none;
+    padding: 0.5rem;
+    z-index: 1;
 }
 
 #daily-feed::after {
@@ -77,19 +25,19 @@ li {
 /* 3. card container */
 
 .cards-container {
-    margin: 0 auto;
+    margin-top: 60px; 
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 0.8rem;
     width: 90%;
-
+    z-index: 0; /* Move the cards behind the navbar */
 }
 
 /* refer to pageRenderer.js for the classes and elements in the card*/
 
 .card {
     height: 20em;
-    position: relative;
+    position: absolute;
     margin: 0;
     padding: 0;
     border: none;
@@ -97,22 +45,21 @@ li {
     text-align: left;
     transition: 200ms ease-in-out;
     /* border-radius: 0.5rem 0.5rem 0 0; */
-
 }
 
-.card:hover{
-    box-shadow: 0px 0px 10px rgb(0, 0, 0, 0.5);
+.card:hover {
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
 }
 
-.card-product-image{
+.card-product-image {
     width: 100%;
-}
-
-.card-product-image{
-    width: 100%;
-    height: 15vw;   
+    height: 15vw;
     object-fit: cover;
     border-radius: 0.5rem 0.5rem 0 0;
+}
 
-
+/* 8. products */
+.products {
+    position: relative;
+    z-index: 0;
 }

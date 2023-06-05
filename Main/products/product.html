@@ -8,6 +8,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Product</title>
     <link rel="stylesheet" href="../../CSS/product_search.css">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+
     <script defer src="../../JS/nav.js"></script>
 	<script type="module">
 		import {PageRenderer} from '../../JS/pageRenderer.js';
@@ -18,13 +20,14 @@
 		const urlParams = new URLSearchParams(window.location.search);
 		const id = urlParams.get('id');
         const productJson = sessionStorage.getItem(`${id}`);
+		let product;
 
 		if(productJson){
-			const product = JSON.parse(productJson);
+			product = JSON.parse(productJson);
 			
 		}else{
 			const model = new Model();
-			const product = await model.getProductById(id);
+			product = await model.getProductById(id);
 		}
 		renderer.renderPage(product);
 	</script>

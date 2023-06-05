@@ -17,6 +17,7 @@ class Product {
 }
 
 export class Model {
+
     async search(searchQuery) {
         const products = [];
         const coll = collection(db, "Products");
@@ -26,7 +27,6 @@ export class Model {
 
         snap.forEach((doc) => {
             products.push(new Product(doc.id, doc.data()["name"], doc.data()["tag"], doc.data()["description"], doc.data()["image"]));
-            console.log(doc.id);
             
         });
         return products;
@@ -55,7 +55,6 @@ export class Model {
 
         snapshot.forEach((doc) => {
             products.push(new Product(doc.id, doc.data()["name"], doc.data()["tag"], doc.data()["description"], doc.data()["image"]));
-            console.log(doc.id);
             
         });
         return products;
