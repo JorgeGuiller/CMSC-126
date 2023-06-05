@@ -1,5 +1,12 @@
 @import url("nav.css");
 
+.navbar {
+  align-items: center;
+  position: sticky;
+  left: 0;
+  width: 100%;
+  top: 0;
+}
 
 body {
   Font-family: candara, sans-serif;

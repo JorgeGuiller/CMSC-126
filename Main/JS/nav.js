@@ -30,19 +30,20 @@ const createNav = () => {
                 <p class="button-label">Account</p>
             </button>
 
+
         </div>
         <div class="topright">
             <button onclick="window.location.href='/homepage.html'" class="toprightbtn">
                 <i class="material-symbols-outlined">home</i>
                 <p class="button-label">Home</p>
             </button>
-
         </div>
     </div>
 </div>
 
 
 <div class="dropdown-container">
+
     <div class="dropdown">
         <button class="dropbtn">School Supplies</button>
     </div>

@@ -152,6 +152,7 @@ span {
     display: flex;
     flex-grow: 1;
     opacity: 1;
+
     cursor: pointer;
     align-items: center;
     justify-content: center;  
@@ -205,6 +206,8 @@ span {
 #search-input:has(button) {
     display: inline-block;
 }
+
+
 
 .toprightbtn {
     background: none;
@@ -311,4 +314,5 @@ span {
 .logo:hover{
     cursor: pointer;
 }
+
 
