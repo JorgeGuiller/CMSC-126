@@ -73,7 +73,7 @@ document.getElementById("searchbtn").addEventListener("click", e =>{
 
     let searchInput = document.getElementById("search-input").value;
     console.log(searchInput);
-    window.location.href = "search.html?search=" + searchInput;
+    window.location.href = "/search.html?search=" + searchInput;
 });
 
 const categories = document.getElementsByClassName("dropbtn");
@@ -81,7 +81,7 @@ const categories = document.getElementsByClassName("dropbtn");
 for(let category of categories){
     category.addEventListener("click", e => {
         const query = e.target.textContent;
-        window.location.href = "search.html?search=" + query;
+        window.location.href = "/search.html?search=" + query;
     });
 }
 

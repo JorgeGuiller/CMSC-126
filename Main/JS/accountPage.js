@@ -8,6 +8,7 @@ async function getAccountDetails(auth) {
             const account = doc(db, "Accounts", user.uid);
             const snap = await getDoc(account);
             const data= snap.data();
+            return data;
             addAccountDetails(data);
         } else {
             return null;

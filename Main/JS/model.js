@@ -2,21 +2,34 @@
  * This file is the class responsible for communicating with the database
  */
 
-import { addDoc, collection, deleteDoc, doc, getDoc, getDocs, limit, or, orderBy, query, where } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";
+import { addDoc, collection, deleteDoc, doc, getDoc, getDocs, limit, or, orderBy, query, setDoc, where } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";
 
 import { db } from "./connect.js";
 
 class Product {
-    constructor(id, name, tag, description, image) {
+    constructor(id, name, tag, description, image, userId) {
         this.id  = id;
         this.name = name;
         this.tag = tag;
         this.description = description;
         this.image = image;
+        this.userId = userId;
     }
 }
 
 export class Model {
+
+    async createAccount(user){
+        const userData = {
+            name: user.displayName,
+            email: user.email,
+            products: [],
+            transactions: [],
+            wishlist: []
+        };
+        await setDoc(doc(db, "Accounts", user.uid), userData);
+    }
+
 
     async search(searchQuery) {
         const products = [];
@@ -86,5 +99,12 @@ export class Model {
     async deleteProduct(id){
 
         await deleteDoc(doc(db, "Products", id));
+    }
+
+    async getAccountById(id){
+        const account = doc(db, "Accounts", id);
+        const snap = await getDoc(account);
+        const data= snap.data();
+        return data;
     }
 }

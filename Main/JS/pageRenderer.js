@@ -53,4 +53,9 @@ export class PageRenderer {
         document.getElementById('product-name').innerText = product.name;
         document.getElementById('product-info').innerText = product.description;
     }
+
+    addAccountDetails(detailsArray) {
+        document.getElementById("name").innerHTML = detailsArray["name"];
+        document.getElementById("email").innerHTML = detailsArray["email"];
+    }
 }
