@@ -2,9 +2,10 @@
  * This file is the class responsible for communicating with the database
  */
 
-import { addDoc, collection, doc, getDoc, getDocs, limit, or, orderBy, query, where } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";
+import { addDoc, collection, getDocs, or, query, where,doc,updateDoc } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";
+import { ref, uploadBytes,getDownloadURL} from "https://www.gstatic.com/firebasejs/9.22.0/firebase-storage.js";
+import { db, storage } from "./connect.js";
 
-import { db } from "./connect.js";
 
 class Product {
     constructor(id, name, tag, description, image) {
@@ -17,7 +18,6 @@ class Product {
 }
 
 export class Model {
-
     async search(searchQuery) {
         const products = [];
         const coll = collection(db, "Products");
@@ -27,11 +27,13 @@ export class Model {
 
         snap.forEach((doc) => {
             products.push(new Product(doc.id, doc.data()["name"], doc.data()["tag"], doc.data()["description"], doc.data()["image"]));
+            console.log(doc.id);
             
         });
         return products;
     }
 
+    
     async addProduct(name, tag, description, image) {
         const data = {
             name: name,
@@ -43,27 +45,31 @@ export class Model {
         console.log("Document written with ID: ", docRef.id);
     }
 
-    async getProducts(){
-        const products = [];
+    async addPhoto(fileItem, fileName){
 
-        const coll = collection(db, "Products");
 
-        let q = query(coll, where("__name__", ">=", " "),orderBy("__name__"),limit(20));
+        const uniqueFileName = crypto.randomUUID();
+
         
-        const snapshot = await getDocs(q);
+        let storageRef = ref(storage);
+        let imageRef = await ref(storageRef, 'images/'+uniqueFileName);
 
-
-        snapshot.forEach((doc) => {
-            products.push(new Product(doc.id, doc.data()["name"], doc.data()["tag"], doc.data()["description"], doc.data()["image"]));
-            
-        });
-        return products;
         
+
+        await uploadBytes(imageRef, fileItem);
+
+        let url = await getDownloadURL(imageRef)
+        console.log(url);
+        return (url);
+    }
+    
+    async addWishlist(){
+        const user_db=doc(db,"Accounts","7Wl4ixQrFWPiuNlxuUCEkCTwnRI2" );
+            await updateDoc(user_db, {
+                wishlist: window.location.href
+            });
     }
 
-    async getProductById(id){
-        const coll = doc(db, "Products", id);
-        const snapshot = await getDoc(coll);
-        return new Product(snapshot.id, snapshot.data()["name"], snapshot.data()["tag"], snapshot.data()["description"], snapshot.data()["image"]);
-    }
+    
 }
+
