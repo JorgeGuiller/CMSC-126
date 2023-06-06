@@ -30,6 +30,7 @@ if (isset($_POST["submit"])) {
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <title>Product Upload</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script defer src="JS/nav.js"></script>
     <script>
         // $(document).ready(function () {
         //     $("#upload-button").click(function () {
@@ -41,8 +42,6 @@ if (isset($_POST["submit"])) {
         //     })
         // })
     </script>
-
-    <script defer src="JS/nav.js"></script>
 </head>
 
 
