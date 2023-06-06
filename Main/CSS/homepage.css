@@ -30,6 +30,10 @@ html {
 /* CSS code */
 /* ... Rest of the CSS code ... */
 
+body{
+    text-align: center;
+}
+
 .navbar {
     align-items: center;
     position: sticky;
@@ -62,9 +66,6 @@ html {
     position: relative; /* Change the position to relative */
     top:60px;
 }
-
-
-
 
 .card {
     height: 20em;
