@@ -33,7 +33,7 @@ const createNav = () => {
 
         </div>
         <div class="topright">
-            <button onclick="window.location.href='/homepage.html'" class="toprightbtn">
+            <button onclick="window.location.href='homepage.html'" class="toprightbtn">
                 <i class="material-symbols-outlined">home</i>
                 <p class="button-label">Home</p>
             </button>
@@ -86,5 +86,5 @@ for(let category of categories){
 }
 
 document.getElementsByClassName("logo")[0].addEventListener("click", e => {
-    window.location.href = "/homepage.html";
+    window.location.href = "homepage.html";
 });
