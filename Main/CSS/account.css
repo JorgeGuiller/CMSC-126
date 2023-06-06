@@ -43,13 +43,13 @@ img[src="search.png"] {
 
 }
 
-.account_labels{  /*for the labels in the account page */
+#account_labels{  /*for the labels in the account page */
   text-align: center;
   font-weight: bolder;
   color:#1e3932;
 }
 
-.account_txt{ /*for the non label ttexts in account page*/
+#account_txt{ /*for the non label ttexts in account page*/
   color: darkolivegreen;
 }
 
