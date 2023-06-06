@@ -23,12 +23,12 @@ if (isset($_POST["submit"])) {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Upload</title>
     <link rel="stylesheet" href="CSS/design2.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <script src="https://code.jquery.com/jquery-3.7.0.min.js"
         integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-    <title>Product Upload</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <script defer src="JS/nav.js"></script>
     <script>
@@ -55,28 +55,28 @@ if (isset($_POST["submit"])) {
 
             <form class="upload-form" id="uploads-form" name="uploads-form" method="post" enctype="multipart/form-data">
 
-                <label id="product-name-label">Enter Product Name</label>
+                <label id="product-upload-label">Enter Product Name</label>
                 <input type="text" name="product-name" id="product-name" placeholder="Insert product name here">
-                <label id="product-description-label">Enter Product Description</label>
+                <label id="product-upload-label">Enter Product Description</label>
                 <input type="text" name="product-description" id="product-description"
                     placeholder="Insert product description here">
                 <fieldset>
 
-                    <legend>Choose Product Tag</legend>
+                    <legend id="product-upload-label">Choose Product Tag</legend>
                     <input type="radio" id="merchandise" name="tag" value="Merchandise">
-                    <label for="merchandise">Merchandise</label>
+                    <label for="merchandise" id="fieldset-label">Merchandise</label><br>
 
                     <input type="radio" id="school-supplies" name="tag" value="School Supplies">
-                    <label for="school-supplies">School Supplies</label>
+                    <label for="school-supplies" id="fieldset-label">School Supplies</label><br>
 
                     <input type="radio" id="food" name="tag" value="Food/Beverages">
-                    <label for="food">Food/Beverages</label>
+                    <label for="food" id="fieldset-label">Food/Beverages</label><br>
 
                     <input type="radio" id="clothes" name="tag" value="Clothes">
-                    <label for="clothes">Clothes</label>
+                    <label for="clothes" id="fieldset-label">Clothes</label><br>
 
                     <input type="radio" id="gadgets" name="tag" value="Gadgets">
-                    <label for="gadgets">Gadgets</label>
+                    <label for="gadgets" id="fieldset-label">Gadgets</label><br>
                 </fieldset>
                 
                 <input type="file" id="myFile" name="filename"accept="image/png, image/jpeg"/>
