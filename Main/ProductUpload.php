@@ -59,7 +59,7 @@ if (isset($_POST["submit"])) {
                 <input type="text" name="product-name" id="product-name" placeholder="Insert product name here">
                 <label id="product-upload-label">Enter Product Description</label>
                 <input type="text" name="product-description" id="product-description"
-                    placeholder="Insert product description here">
+                    placeholder="Insert product description here"><br>
                 <fieldset>
 
                     <legend id="product-upload-label">Choose Product Tag</legend>
