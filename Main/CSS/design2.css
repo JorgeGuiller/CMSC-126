@@ -79,6 +79,9 @@ fieldset{
   margin-top: 1rem;
   margin-bottom: 1rem;
 }
+fieldset label:hover{
+  color:#4c7e70;
+}
 
 /* 8. button */
 button{
@@ -137,7 +140,7 @@ input[type=radio]:checked ~ .check::before{
 }
 
 input[type=radio]:checked ~ label{
-  color: black;
+  color: #a8e7cb;
 }
 
 
