@@ -54,12 +54,14 @@ img[src="search.png"] {
 
 /* Upload button */
 #upload {
-  background-color: #d8f3d8;
-  border: 1px solid darkolivegreen;
+  background-color: #e4ebe4;
+  /* fill:#3e8e41; */
+  border: 2px solid #3e8e41;
   border-radius: 4px;
   box-shadow: rgba(0, 0, 0, .1) 0 2px 4px 0;
   box-sizing: border-box;
   color: darkolivegreen;
+  border-radius: 20px;
   cursor: pointer;
   font-family: "Akzidenz Grotesk BQ Medium", -apple-system, BlinkMacSystemFont, sans-serif;
   font-size: 12px;
@@ -138,12 +140,13 @@ img[src="place.jpg"] {
 }*/
 /* Sign out button */
 .signout-button {
-  background-color:#d8f3d8;
-  border: 1px solid darkolivegreen;
+  background-color:#e4ebe4;
+  border: 2px solid #3e8e41;
   border-radius: 4px;
   box-shadow: rgba(0, 0, 0, .1) 0 2px 4px 0;
   box-sizing: border-box;
   color: red;
+  border-radius: 20px;
   cursor: pointer;
   font-family: "Akzidenz Grotesk BQ Medium", -apple-system, BlinkMacSystemFont, sans-serif;
   font-size: 12px;
