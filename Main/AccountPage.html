@@ -55,12 +55,19 @@
      }else {
         console.log('Document does not exist.');
       }
+  
+    const signoutButton = document.querySelector(".signout-button");
+    signoutButton.addEventListener("click", () => {
+      authenticator.signOut();
+      window.location.href = "/login.html";  
+    });
 
   </script>
 </head>
 
 <body>
   <nav class="navbar"></nav>
+  <button class="signout-button">Sign Out</button>
 
   <img src="place.jpg" id="account_img">
 
