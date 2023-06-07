@@ -2,7 +2,7 @@
  * This file is the class responsible for communicating with the database
  */
 
-import { addDoc, collection, deleteDoc, doc, getDoc, getDocs, limit, or, orderBy, query, setDoc, updateDoc, where } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";
+import { addDoc, collection, deleteDoc, doc, getDoc, getDocs, limit, or, orderBy, query, setDoc, updateDoc, where, arrayUnion } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";
 import { getDownloadURL, ref, uploadBytes } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-storage.js";
 import { db, storage } from "./connect.js";
 
@@ -28,7 +28,14 @@ export class Model {
             transactions: [],
             wishlist: []
         };
-        await setDoc(doc(db, "Accounts", user.uid), userData);
+
+        const account = await this.getAccountById(user.uid);
+        
+        if (account){
+            return;
+        }else{
+            await setDoc(doc(db, "Accounts", user.uid), userData);
+        }
     }
 
 
@@ -48,15 +55,16 @@ export class Model {
     }
 
     
-    async addProduct(name, tag, description, image) {
+    async addProduct(name, tag, description, image, authId) {
         const data = {
             name: name,
             tag: tag,
             description: description,
-            image: image
+            image: image,
+            owner: authId
         };
         const docRef = await addDoc(collection(db, "Products"), data);
-        const accProd= doc(db, "Accounts", "PBJsvBVq1eNtGT22w8KYCoD8D3U2");
+        const accProd= doc(db, "Accounts", authId);
 
 
 
@@ -102,8 +110,8 @@ export class Model {
         return (url);
     }
     
-    async addWishlist(){
-        const user_db=doc(db,"Accounts","7Wl4ixQrFWPiuNlxuUCEkCTwnRI2" );
+    async addWishlist(id){
+        const user_db=doc(db,"Accounts", );
             await updateDoc(user_db, {
                 wishlist: window.location.href
             });

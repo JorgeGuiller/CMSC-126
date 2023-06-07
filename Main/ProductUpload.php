@@ -41,30 +41,33 @@
 
                     <legend>Choose Product Tag</legend>
                     <input type="radio" id="merchandise" name="tag" value="Merchandise">
-                    <label for="merchandise">Merchandise</label>
+                    <label for="merchandise">Merchandise</label><br>
 
                     <input type="radio" id="school-supplies" name="tag" value="School Supplies">
-                    <label for="school-supplies">School Supplies</label>
+                    <label for="school-supplies">School Supplies</label><br>
 
-                    <input type="radio" id="food" name="tag" value="Food/Beverages">
-                    <label for="food">Food/Beverages</label>
+                    <input type="radio" id="food" name="tag" value="Food">
+                    <label for="food">Food/Beverages</label><br>
 
                     <input type="radio" id="clothes" name="tag" value="Clothes">
-                    <label for="clothes">Clothes</label>
+                    <label for="clothes">Clothes</label><br>
 
                     <input type="radio" id="gadgets" name="tag" value="Gadgets">
-                    <label for="gadgets">Gadgets</label>
+                    <label for="gadgets">Gadgets</label><br>
                 </fieldset>
 
                 <input type="file" id="myFile" name="filename" accept="image/png, image/jpeg" />
                 <button id="upload-button" type="button" name="submit">Upload</button>
 
-                <button id="wishlist-button" type="button">Wishlist</button>
-                <button id="wishlist-items" type="button">Wishlisted Items<a href=url></a></button>
 
 
                 <script type="module">
+                    import {Authenticator} from "/JS/authenticator.js";
                     import { Model } from "./JS/model.js";
+
+                    const authenticator = new Authenticator();
+                    const authId = authenticator.getSignedInUserId();
+
                     var fileItem;
                     var fileName;
                     var img = "";
@@ -87,19 +90,13 @@
                         const description = document.getElementById("product-description").value;
                         
                         img =await model.addPhoto(fileItem);
-                        const data = await model.addProduct(name, tag, description, img);
+                        const data = await model.addProduct(name, tag, description, img, authId);
 
-                        form.reset();
+                        // form.reset();
                         alert("Product Uploaded");
 
                     });
 
-                    const wishlist_butt = document.getElementById("wishlist-button");
-                    wishlist_butt.addEventListener("click", async () => {
-                        console.log("click");
-                        const model = new Model();
-                        model.addWishlist();
-                    })
 
 
                 </script>
