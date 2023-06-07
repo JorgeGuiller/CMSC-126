@@ -6,6 +6,7 @@
     width: 80%;
     margin: 0 auto;
     grid-template-columns: repeat(5, 1fr);
+    gap: 0.8rem;
 }
 
 .card-product-image{
