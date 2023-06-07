@@ -46,7 +46,7 @@
                     <input type="radio" id="school-supplies" name="tag" value="School Supplies">
                     <label for="school-supplies">School Supplies</label><br>
 
-                    <input type="radio" id="food" name="tag" value="Food/Beverages">
+                    <input type="radio" id="food" name="tag" value="Food">
                     <label for="food">Food/Beverages</label><br>
 
                     <input type="radio" id="clothes" name="tag" value="Clothes">
