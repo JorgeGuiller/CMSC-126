@@ -2,7 +2,7 @@
  * This file is the class responsible for communicating with the database
  */
 
-import { addDoc, collection, deleteDoc, doc, getDoc, getDocs, or, query, setDoc, updateDoc, where } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";
+import { addDoc, collection, deleteDoc, doc, getDoc, getDocs, limit, or, orderBy, query, setDoc, updateDoc, where } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";
 import { getDownloadURL, ref, uploadBytes } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-storage.js";
 import { db, storage } from "./connect.js";
 
@@ -59,7 +59,24 @@ export class Model {
         console.log("Document written with ID: ", docRef.id);
     }
 
-    async addPhoto(fileItem, fileName){
+    async getProducts(){
+        const products = [];
+
+        const coll = collection(db, "Products");
+
+        let q = query(coll, where("__name__", ">=", " "),orderBy("__name__"),limit(20));
+
+        const snapshot = await getDocs(q);
+
+
+        snapshot.forEach((doc) => {
+            products.push(new Product(doc.id, doc.data()["name"], doc.data()["tag"], doc.data()["description"], doc.data()["image"]));
+
+        });
+        return products;
+    }
+
+    async addPhoto(fileItem){
 
 
         const uniqueFileName = crypto.randomUUID();
