@@ -8,14 +8,16 @@ table of contents
 6. categories
 7. logo
 
+yellow color: #ba8b53
+green color: #365544
 */
 
 /* 1. global styles */
 
 :root {
     --fs-body: 1.125rem;
-    --color-main: #365544;
-    --color-action:#293241;
+    --color-main: #ba8b53;
+    --color-action:ghostwhite;
     --color-accent: rgb(255, 255, 255);
     --navbar-text-color: black;
     /* --color-accent: rgb(255, 198, 26); */
@@ -33,6 +35,7 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    background-color: #d8d7dd;
 }
 
 button:hover {
@@ -76,7 +79,7 @@ span {
 
 .items-container-bg{
 
-    background-color: white; /* Set the background color */
+    background-color:#365544; /* Set the background color */
     box-shadow: 10px 10px 10px rgba(0, 0, 0, .15);
     width: 100%;
 }
