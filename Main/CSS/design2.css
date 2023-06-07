@@ -76,7 +76,7 @@ body {
 
 /* 7. fieldset */
 fieldset{
-  /*margin: 1rem;*/
+  margin-bottom: 1rem;
 }
 
 /* 8. button */
