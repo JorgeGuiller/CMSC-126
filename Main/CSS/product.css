@@ -34,7 +34,7 @@ body {
       text-align: center;
       float: left;
       
-      img{ 
+      #product-img{ 
         max-height: 240px;
       }
       
@@ -47,7 +47,7 @@ body {
        width: 55%;
        border-left: 2px solid #efefef;
        
-       h2 {
+       #product-name {
          color: #515151;
          font-weight: 300;
          padding-top: 15px;
@@ -56,7 +56,7 @@ body {
          font-weight: 300;
        }
      
-       p { 
+       #product-info { 
          font-size: 12px; 
          line-height: 20px;
          color: #727272;
@@ -64,8 +64,7 @@ body {
          margin: 0;
       }
       
-       button {
-
+       .button {
          outline: 0;
          border: 0;
          background: none;
