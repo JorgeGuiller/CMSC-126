@@ -90,6 +90,9 @@ img[src="search.png"] {
   font-weight: 900;
   margin-right: 5px;
 }
+a {
+  text-decoration: none;
+}
 
 
 img[src="place.jpg"] {
