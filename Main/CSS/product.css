@@ -31,53 +31,9 @@
 	object-fit: cover;
 }
 
-.user-avatar{
-	width: 77px;
-	height: 66px;
-	border-radius: 50%;
-	object-fit: cover;
-}
-
-.user-name{							/* name sa user */
-	font-weight: bold;
-}
-.user-contact{						/* buttons nga muredirect sa contact details sa user*/
-	background-color: #1E3932;
-	color: whitesmoke;
-	padding:10px 25px;
-	margin: 10px;
-	text-align: center;
-  	text-decoration: none;
-  	display: inline-block;
-}
-
-#sub-title{						/* titles sa mga sections divided by hr*/
-	font-size: 25px;
-	font-weight: bold;
-	text-align: left;
-	color: rgb(102, 0, 0, 0.85);
-	border-bottom: 1px solid rgb(102, 0, 0);
-}
-
-#product-to-buylo{				/* table sa product nga ibuylo sa current product sa product page*/
-	width: 100%;
-	text-align: center;
-	padding: 20px;
-}
-.to-buylo-pic{					/*column nga naay pic sa ibaylo*/
-	text-align:center;
-	font-weight: bold;
-	font-size: 20px;
-}
-#to-buylo{				/*column nga naay buttons na buylo and wishlist8*/
+#to-buylo{				/* div nga naay buttons na buylo and wishlist8*/
 	text-align: center;
 	margin: 0px;
-}
-
-.product-change{				/* ang pic sa product nga ibaylo */
-	width: 350px;
-	height: 300px;
-	object-fit: cover;
 }
 
 .go-buylo{						/*buttons if imoha bang bayloan or ibutang sa wishlist ang product*/
@@ -91,7 +47,8 @@
   	border-radius: 20%;
   	font-weight: bold;
 }
-.go-wishlist{					/*buttons if imoha bang bayloan or ibutang sa wishlist ang product*/
+
+#addwishlist{					/*buttons if imoha bang bayloan or ibutang sa wishlist ang product*/
 	background-color: rgb(30,57,50, 0.89);
 	color: whitesmoke;
 	padding:15px 30px;
@@ -102,13 +59,6 @@
   	border-radius: 20%;
 }
 
-#similar-products{
-	width: 100%;
-	text-align: center;
-	padding: 20px;
-}
-
 #coming-update{
 	font-size: 30px;
-	
 }
