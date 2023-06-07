@@ -9,9 +9,8 @@ body {
   font-family: "Raleway";
   
   .card {
-    
-    width: 650px;
-    height: 375px;
+    width: 600px;
+    height: 370px;
     position: absolute;
     background: white;
     margin: 0 auto;
@@ -30,7 +29,7 @@ body {
     .photo {
       
       padding: 30px;
-      width: 45%;
+      /* width: ; */
       text-align: center;
       float: left;
       
