@@ -41,7 +41,7 @@
 
 /* 7. fieldset */
 fieldset{
-  margin: 1rem;
+  /*margin: 1rem;*/
 }
 
 /* 8. button */
@@ -58,14 +58,13 @@ font-size: 16px;
 font-weight: 400;
 outline: none;
 outline: 0;
-padding: 10px 25px;
+padding: 8px 25px;
 text-align: center;
 transform: translateY(0);
 transition: transform 150ms, box-shadow 150ms;
 user-select: none;
 -webkit-user-select: none;
 touch-action: manipulation;
-margin-top: 10px;
 margin-bottom: 10px ;
 }
 
@@ -80,13 +79,8 @@ button {
 }
 }
 
-/* 9. product-name */
-#product-name{
-  font-size: 25%;
-}
 
-
-/* 10. product-description */
+/* 9. product-description */
 #product-description{
   font-size: 25%;
 }
