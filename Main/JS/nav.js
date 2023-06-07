@@ -12,7 +12,7 @@ const createNav = () => {
                     </button>
                 </div>
         <div class="topright">
-            <button class="toprightbtn">
+            <button class="toprightbtn" onclick="location.href='/wishlist.html'" class="toprightbtn">
                 <span class="material-symbols-outlined">favorite</span>
                 <p class="button-label">Wishlist</p>
             </button>

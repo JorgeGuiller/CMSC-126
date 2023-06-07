@@ -48,7 +48,6 @@ export class PageRenderer {
      * Renders the cards on the page
      */
     renderCards(div, productArray){
-        console.log(productArray);
         productArray.forEach(product => {
             console.log(product);
             let card = this.createCard(product);
