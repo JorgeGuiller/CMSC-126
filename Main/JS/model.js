@@ -65,15 +65,16 @@ export class Model {
         const coll = collection(db, "Products");
 
         let q = query(coll, where("__name__", ">=", " "),orderBy("__name__"),limit(20));
-
+        
         const snapshot = await getDocs(q);
 
 
         snapshot.forEach((doc) => {
             products.push(new Product(doc.id, doc.data()["name"], doc.data()["tag"], doc.data()["description"], doc.data()["image"]));
-
+            
         });
         return products;
+        
     }
 
     async addPhoto(fileItem){

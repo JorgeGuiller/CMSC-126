@@ -1,4 +1,4 @@
-<script src="JS/check.js"></script>
+<script src="JS/check.js" type="module"></script>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,7 +9,7 @@
     <title>Homepage</title>
     <link rel="stylesheet" href="CSS/homepage.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
     <script defer src="JS/nav.js"></script>
 
 </head>
@@ -20,24 +20,25 @@
     <header>
         <h1 id="daily-feed"> Daily Feed </h1>
     </header>
-    <section class="homepage-cards">
-        <div class="cards-container" id="container">
+    <div class="cards-container" id="container">
 
-            <script  type="module">
-                import { Model } from "./JS/model.js";
-                import { PageRenderer } from "./JS/pageRenderer.js";
- 
-                const model =  new Model();
-                const pageRenderer = new PageRenderer();
-                const div = document.getElementById("container");
+        <script type="module">
+            import { Model } from "./JS/model.js";
+            import { PageRenderer } from "./JS/pageRenderer.js";
 
-                const products = await model.getProducts();
+            const model =  new Model();
+            const pageRenderer = new PageRenderer();
+            const div = document.getElementById("container");
 
-                pageRenderer.renderCards(div, products);
-            </script>
-        </div>
+            const products = await model.getProducts();
 
-    </section>
+            pageRenderer.renderCards(div, products);
+
+            
+        </script>
+
+    </div>
+
 
 </body>
 

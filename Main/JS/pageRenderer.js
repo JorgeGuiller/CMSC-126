@@ -27,12 +27,17 @@ export class PageRenderer {
         cardBody.appendChild(productTag);
 
         card.appendChild(cardBody);
+
         card.addEventListener('click', () => {
+            console.log("hello");
             const object = JSON.stringify(product);
             sessionStorage.setItem(`${product.id}`, object);
             window.document.location.assign(`/products/product.html/${product.name}+${product.tag}?id=${product.id}`);
-
+            
         });
+        
+
+        
 
         return card;
 
