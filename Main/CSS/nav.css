@@ -63,7 +63,7 @@ span {
     text-align: center;
     color: ghostwhite;
     margin: auto;
-    font-size: 2.5rem;
+    font-size: 3rem;
     transition: all var(--transition);
 }
 

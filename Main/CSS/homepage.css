@@ -29,16 +29,18 @@ iframe {
     width: 100%;
     text-align: center;
     position: sticky;
-    top: 60px;
+    top: 20px;
+    /* bottom:-10px; */
     background-color: none;
     padding: 0.5rem;
     z-index: 1;
+    font-size:45px;
 }
 
 .cards-container {
  /* Optional: Add margin-top to create space between navbar and cards */
     margin:0 auto;
-    margin-top: 20px; /* Optional: Add margin-top to create space between navbar and cards */
+    margin-top: 10px; /* Optional: Add margin-top to create space between navbar and cards */
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     gap: 0.8rem;
