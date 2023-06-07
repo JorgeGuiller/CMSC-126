@@ -9,7 +9,7 @@ export class PageRenderer {
         const card = document.createElement('div');
         const cardBody = document.createElement('div');
         const productImageContainer = document.createElement('div');
-        const productName = document.createElement('p');
+        const productName = document.createElement('h4');
         const productTag = document.createElement('p');
         const productImage = document.createElement('img');
 
