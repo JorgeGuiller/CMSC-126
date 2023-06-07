@@ -11,7 +11,7 @@
 
 #product-name{								/* for product name */
 	padding-bottom: 10px;
-	margin-top: 30px;
+	margin-top: 40px;
 	margin-bottom: 5px;
 	border-bottom: 1px solid #ED6444;
 	font-size: 30px;
@@ -27,8 +27,9 @@
 
 
 .product-big-img{
-	width: 460px;
-	height: 380px;
+	margin-top: 30px;
+	width: 400px;
+	height: 300px;
 	object-fit: cover;
 }
 
