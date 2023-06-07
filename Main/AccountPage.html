@@ -90,29 +90,33 @@
   <nav class="navbar"></nav>
 
   <container>
-  <img src="place.jpg" id="account_img">
-
-  <table id="AccountDetails">
-    <td>
-      <center><p id="account_labels">Personal Information</p></center>
-      <P id="account_txt">Name:</P>
-      <p id="name"></p>
-      <p id="account_txt">Email:</p>
-      <p id="email"></p>
-
-    </td>
-
-  </table>
+    <!-- <img src="place.jpg" id="account_img"> -->
+  
+    <table id="AccountDetails">
+      <td>
+        <center><p id="account_labels">Personal Information</p></center>
+        <img src="place.jpg" id="account_img">
+        <p id="account_txt">Name:</p>
+        <input type="text" id="name" readonly>
+        <p id="account_txt">Email:</p>
+        <input type="text" id="email" readonly>
+        <div class="button-container">
+          <a href="ProductUpload.php" class="no-underline">
+            <button id="upload">Product Upload</button>
+          </a>
+          <button class="signout-button">Sign Out</button>
+        </div>
+      </td>
+    </table>
   </container>
-
+  
+<!-- 
   <br><br>
   <a href="ProductUpload.php" class="no-underline">
     <button id="upload">Product Upload</button>
   </a>
-  <button class="signout-button">Sign Out</button>
+  <button class="signout-button">Sign Out</button> -->
 
-
-  
   <div id="products"></div>
   <div id="transactions"></div>
   <div id="footer"></div>

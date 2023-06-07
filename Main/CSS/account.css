@@ -74,19 +74,18 @@ img[src="search.png"] {
   cursor: pointer;
   font-family: "Akzidenz Grotesk BQ Medium", -apple-system, BlinkMacSystemFont, sans-serif;
   font-size: 12px;
-  font-weight: 400;
+  font-weight: 100;
   outline: none;
-  padding: 8px 25px;
+  padding: 8px 15px;
   text-align: center;
   transform: translateY(0);
   transition: transform 150ms, box-shadow 150ms;
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
-  margin-bottom: 5px;
-  margin-top: 5px;
-  margin-right: 30px;
-  margin-left: 680px;
+  margin-top: 2px;
+  margin: 10px auto; /* Center horizontally with auto margins */
+  margin-right: 30px; /* Adjust margin-right as needed */
   position: relative;
   align-items: center;
   justify-content: center;
@@ -142,35 +141,35 @@ a {
 } */
 #AccountDetails td {
   text-align: center;
-  padding: 0;
+  padding: 10;
   margin: 0;
 }
-container {
+.container{
   text-align: right;
-  max-height: 300px;
-  max-width: 80px;
+  max-height: 100px;
+  max-width: 400px;
 }
 
 #account_img {
   border-radius: 50px;
   height: 150px;
   width: 150px;
-  margin-right: 25%;
-  margin-top: 85px;
+  margin-right: 5px;
+  margin-top: 0px;
 }
 
 #AccountDetails {
   margin: auto;
-  margin-top: 20px;
-  padding:30px;
-  margin-bottom: 50px;
-  width: 45%;
+  margin-top: 10px;
+  padding:10px;
+  margin-bottom: 10px;
+  width: 100px 700px;
   text-align: center;
   border: 3px solid rgb(247, 243, 243);
 }
 
 #AccountDetails td {
-  padding: 20px;
+  padding: 10px;
 }
 
 #account_labels {
@@ -185,21 +184,18 @@ container {
 
 #name,
 #email {
-  display: inline-block;
-   vertical-align: top;
-  margin-bottom: 10px;
-  padding: 14px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  width: 40%;
+  display: block;
+  margin:  auto;
+  padding: 5px;
+  border: 2px solid #ccc;
+  border-radius: 2px;
+  width: 45%;
   box-sizing: border-box;
   font-family: Candara, sans-serif;
-  font-size: 14px;
+  font-size: 12px;
   color: darkolivegreen;
   background-color: #f9f9f9;
-
 }
-
 
 
 #Transaction {
@@ -226,21 +222,21 @@ container {
   box-sizing: border-box;
   color: red;
   border-radius: 20px;
-  cursor: pointer;
+  cursor: none;
   font-family: "Akzidenz Grotesk BQ Medium", -apple-system, BlinkMacSystemFont, sans-serif;
   font-size: 12px;
-  font-weight: 400;
+  font-weight: 100;
   outline: none;
-  padding: 8px 43.9px;
+  padding: 8px 33px;
   text-align: center;
   transform: translateY(0);
   transition: transform 150ms, box-shadow 150ms;
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
-  margin-bottom: 5px;
-  margin-top: 5px;
-  margin-right: 40px;
+  margin-top: 2px;
+  margin: 10px auto;
+  margin-right:30px;
   position: relative;
   align-items: center;
   justify-content: center;
@@ -260,15 +256,4 @@ container {
   font-family: "Font Awesome 5 Free";
   font-weight: 900;
   margin-right: 5px;
-}
-
-
-/* container */
-container{
-
-}
-
-/* #name, #email info of user*/
-#name,#email{
-
 }
