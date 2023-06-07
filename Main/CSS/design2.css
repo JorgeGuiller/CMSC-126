@@ -33,6 +33,7 @@ body {
 /* 3. section title */
 
 .section-title{
+  font-family: Candara, sans-serif;
   text-align: center;
   font-size: 2rem;
   margin: 1rem;
@@ -40,13 +41,28 @@ body {
 
 /* 4. labels in product upload form */
 #product-upload-label{      
-  padding: 1rem;
+  padding: 1.5rem;
 }
 
  /* 5 radio */
-#merchandise, #school-supplies,#food, #clothes, #gadgets{      
-
-}
+ #merchandise,
+ #school-supplies,
+ #food,
+ #clothes,
+ #gadgets {
+   /* Add your styles here */
+   margin-bottom: 10px;
+ }
+ 
+ #merchandise:checked,
+ #school-supplies:checked,
+ #food:checked,
+ #clothes:checked,
+ #gadgets:checked {
+   /* Add styles for the checked state */
+   color: rgb(6, 66, 16);
+ }
+ 
 
 /* 6. fieldset or radio labels */
 #fieldset-label{    
@@ -96,29 +112,7 @@ button {
   border: none;
 } */
 /* Remove borders in wishlist, notifications, account, and home */
-.toprightbtn,
-.notificationbtn,
-.accountbtn,
-.homebtn {
-  border: none;
-}
 
-
-/* 9. TopRight Button */
-.toprightbtn {
-  background: none;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: all var(--transition);
-  height: 100%;
-  width: 100%;
-  border: none;
-  padding: 0;
-  cursor: pointer;
-  margin: 0;
-  color: #011b0d;
-}
 
 
 
