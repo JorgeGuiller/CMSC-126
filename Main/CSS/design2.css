@@ -1,5 +1,19 @@
 @import url(nav.css);
 
+/* 0. Body */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Candara, sans-serif;
+
+  background: linear-gradient(to bottom, #4c7e70, #232423);
+  background-image: url('https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8cGVyc29uJTIwdXNpbmclMjBjb21wdXRlcnxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=600&q=60');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  z-index: -1;
+}
+
 
 /*1. upload form container*/
 .upload-form-container{
