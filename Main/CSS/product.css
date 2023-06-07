@@ -1,12 +1,8 @@
 @import url(nav.css);
 
-@import url(https://fonts.googleapis.com/css?family=Raleway:400,300,500,700);
 * { box-sizing: border-box; }
 
 body {
-  
-  background: #aedaa6;
-  font-family: "Raleway";
   
   #card {
     width: 600px;
@@ -21,24 +17,19 @@ body {
     transition: all 0.3s;
     
     &:hover {
-      
       box-shadow: 0 8px 17px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
-    
     }
     
-    .photo {
-      
-      padding: 30px;
-      /* width: ; */
-      text-align: center;
-      float: left;
+    
       
       .product-big-img{ 
-        height: 240px;
-		width: 200px;
+        max-height: 240px; 
+		padding: 30px;
+		width: 45%; 
+		text-align: center;
+		float: left;
       }
       
-    }
     
     .description {
       
@@ -79,7 +70,7 @@ body {
          transition: all 0.3s ease;
          font-weight: 500;
          
-         &:hover {
+        &:hover {
            background: darken(white, 2%);
            border: 1px solid #aedaa6;
            color: #aedaa6;
