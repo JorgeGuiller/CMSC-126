@@ -9,8 +9,8 @@ export class PageRenderer {
         const card = document.createElement('div');
         const cardBody = document.createElement('div');
         const productImageContainer = document.createElement('div');
-        const productName = document.createElement('h1');
-        const productTag = document.createElement('h2');
+        const productName = document.createElement('p');
+        const productTag = document.createElement('p');
         const productImage = document.createElement('img');
 
         productName.innerText = product.name;
