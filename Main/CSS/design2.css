@@ -41,13 +41,13 @@
 
 /* 7. fieldset */
 fieldset{
-  padding: 2rem;
+  margin: 1rem;
 }
 
 /* 8. button */
 button{
-background-color: #13aa52;
-border: 1px solid #13aa52;
+background-color: #365544;
+border: 1px solid darkolivegreen;
 border-radius: 4px;
 box-shadow: rgba(0, 0, 0, .1) 0 2px 4px 0;
 box-sizing: border-box;
@@ -65,6 +65,8 @@ transition: transform 150ms, box-shadow 150ms;
 user-select: none;
 -webkit-user-select: none;
 touch-action: manipulation;
+margin-top: 10px;
+margin-bottom: 10px ;
 }
 
 button:hover {
@@ -80,7 +82,7 @@ button {
 
 /* 9. product-name */
 #product-name{
-  font-size: 20%;
+  font-size: 25%;
 }
 
 
