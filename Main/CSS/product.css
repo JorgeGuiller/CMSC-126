@@ -4,7 +4,6 @@
 	text-align: center;
 	display: grid;
 	grid-template-columns:repeat(2, 1fr) ;
-	gap: 0.8rem;
 	z-index: 1 ;
     position: relative; 
 }
@@ -14,17 +13,16 @@
 	margin-top: 40px;
 	margin-bottom: 5px;
 	border-bottom: 1px solid #ED6444;
-	font-size: 30px;
+	font-size: 20px;
 	font-weight: bold;
 }
 #product-info{								/*prodcut info*/
 	line-height: 30px;
 	padding: 20px;
-	font-size: 20px;
+	font-size: 15px;
 	border: 2px solid #1E3932;
 	color: black;
 }
-
 
 .product-big-img{
 	margin-top: 30px;
@@ -32,7 +30,6 @@
 	height: 300px;
 	object-fit: cover;
 }
-
 
 .user-avatar{
 	width: 77px;
