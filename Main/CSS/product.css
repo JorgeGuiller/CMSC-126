@@ -2,6 +2,7 @@
 
 #product{
 	text-align: center;
+	grid-template-columns:repeat(2, 1fr) ;
 }
 
 #product-name{								/* for product name */
@@ -26,13 +27,6 @@
 	object-fit: cover;
 }
 
-.product-smol-img{
-	width: 130px;
-	height: 90px;
-	object-fit: cover;
-	padding: 10px;
-	text-align: center;
-}
 
 .user-avatar{
 	width: 77px;
