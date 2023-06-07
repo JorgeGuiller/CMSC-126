@@ -11,10 +11,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="CSS/design2.css">
+    <link rel="stylesheet" href="CSS/nav.css">
     <script src="https://code.jquery.com/jquery-3.7.0.min.js"
         integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <title>Product Upload</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
@@ -27,7 +29,7 @@
 <nav class="navbar"></nav>
 
     <section>
-        <h1 class="section-title">PRODUCT UPLOAD</h1>
+        <h1 class="section-title">WELCOME! Upload Your Product Here</h1>
         <div class="upload-form-container">
 
             <form class="upload-form" id="uploads-form" name="uploads-form" method="post" enctype="multipart/form-data">
@@ -57,6 +59,7 @@
                 </fieldset>
 
                 <input type="file" id="myFile" name="filename" accept="image/png, image/jpeg" />
+                <p>Remember to put nice photos to impress buy-lo traders</p>
                 <button id="upload-button" type="button" name="submit">Upload</button>
 
 

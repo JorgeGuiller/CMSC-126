@@ -50,25 +50,76 @@ img[src="search.png"] {
 #account_txt{ /*for the non label ttexts in account page*/
   color: darkolivegreen;
 }
-
-
-
-#upload {
-  margin-left: 35%;
-  width: 150px;
-  height: 50px;
-  border-radius: 100px;
-  background-color: #3e8e41;
-  margin-top: 50px;
+.container{
+  text-align:center;
 }
+
+.button-container{
+  display: flex;  
+  justify-content: center;
+  margin: top 10px;
+}
+
+
+/* Upload button */
+#upload {
+  background-color: #e4ebe4;
+  /* fill:#3e8e41; */
+  border: 2px solid #3e8e41;
+  border-radius: 4px;
+  box-shadow: rgba(0, 0, 0, .1) 0 2px 4px 0;
+  box-sizing: border-box;
+  color: darkolivegreen;
+  border-radius: 20px;
+  cursor: pointer;
+  font-family: "Akzidenz Grotesk BQ Medium", -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  outline: none;
+  padding: 8px 25px;
+  text-align: center;
+  transform: translateY(0);
+  transition: transform 150ms, box-shadow 150ms;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  margin-bottom: 5px;
+  margin-top: 5px;
+  margin-right: 30px;
+  margin-left: 680px;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  /* position: fixed; move position */
+  /* bottom: 10 px;
+  right: 200px; */
+  
+  
+}
+
+#upload:hover {
+  box-shadow: rgba(0, 0, 0, .15) 0 3px 9px 0;
+  transform: translateY(-2px);
+}
+
+#upload::before {
+  content: "\f093"; /* Upload icon */
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  margin-right: 5px;
+}
+a {
+  text-decoration: none;
+}
+
 
 img[src="place.jpg"] {
 
   border-radius: 157px;
   height: 150px;
   WIDTH: 150px;
-  margin-left: 35%;
-  margin-top: 130px;
+  margin-left: 25%;
+  margin-top: 85px;
 }
 
 #AccountDetails {
@@ -103,3 +154,58 @@ img[src="place.jpg"] {
   padding: 3%;
   background-color: #ED6444;
 }*/
+/* Sign out button */
+.signout-button {
+  background-color:#e4ebe4;
+  border: 2px solid #3e8e41;
+  border-radius: 4px;
+  box-shadow: rgba(0, 0, 0, .1) 0 2px 4px 0;
+  box-sizing: border-box;
+  color: red;
+  border-radius: 20px;
+  cursor: pointer;
+  font-family: "Akzidenz Grotesk BQ Medium", -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  outline: none;
+  padding: 8px 43.9px;
+  text-align: center;
+  transform: translateY(0);
+  transition: transform 150ms, box-shadow 150ms;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  margin-bottom: 5px;
+  margin-top: 5px;
+  margin-right: 40px;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  /* position: fixed;
+  bottom: -20px;
+  right: 270px;
+   */
+}
+
+.signout-button:hover {
+  box-shadow: rgba(0, 0, 0, .15) 0 3px 9px 0;
+  transform: translateY(-2px);
+}
+
+.signout-button::before {
+  content: "\f2f5"; /* Sign Out icon */
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  margin-right: 5px;
+}
+
+
+/* container */
+container{
+
+}
+
+/* #name, #email info of user*/
+#name,#email{
+
+}
