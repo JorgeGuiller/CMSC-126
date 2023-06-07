@@ -25,7 +25,7 @@ const createNav = () => {
             </button>
         </div>
         <div class="topright">
-            <button onclick="location.href='AccountPage.html'" class="toprightbtn">
+            <button onclick="location.href='/AccountPage.html'" class="toprightbtn">
                 <i class="material-symbols-outlined">person</i>
                 <p class="button-label">Account</p>
             </button>
@@ -33,7 +33,7 @@ const createNav = () => {
 
         </div>
         <div class="topright">
-            <button onclick="window.location.href='/homepage.html'" class="toprightbtn">
+            <button onclick="window.location.href='homepage.html'" class="toprightbtn">
                 <i class="material-symbols-outlined">home</i>
                 <p class="button-label">Home</p>
             </button>
@@ -73,7 +73,7 @@ document.getElementById("searchbtn").addEventListener("click", e =>{
 
     let searchInput = document.getElementById("search-input").value;
     console.log(searchInput);
-    window.location.href = "search.html?search=" + searchInput;
+    window.location.href = "/search.html?search=" + searchInput;
 });
 
 const categories = document.getElementsByClassName("dropbtn");
@@ -81,10 +81,10 @@ const categories = document.getElementsByClassName("dropbtn");
 for(let category of categories){
     category.addEventListener("click", e => {
         const query = e.target.textContent;
-        window.location.href = "search.html?search=" + query;
+        window.location.href = "/search.html?search=" + query;
     });
 }
 
 document.getElementsByClassName("logo")[0].addEventListener("click", e => {
-    window.location.href = "/homepage.html";
+    window.location.href = "homepage.html";
 });

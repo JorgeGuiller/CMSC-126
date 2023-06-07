@@ -26,14 +26,14 @@ body {
   align-items: center;
   background-color: #1E3932;
   color: #fff;
-  padding: 30px;
+  padding: 20px;
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
-  height: 90px;
+  height: 70px;
 
-  /* background-image: url('assets/banner.png'); */
+  /* background-image: url('Images/baner.png'); */
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
@@ -186,6 +186,7 @@ footer {
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.75);
   border: none;
   border-radius: 100vh;
+  cursor: pointer;
   width: 10rem;
   height: 5rem;
   background-color: white;
@@ -194,4 +195,20 @@ footer {
 
 #google-login:hover {
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.75);
+}
+
+#google-login:active{
+  box-shadow: none;
+  transform: translateY(2px);
+
+/* 7. logo */
+
+.logo {
+  width: 18em;
+  transform: scaleX(100%);
+
+}
+
+.logo:hover{
+  cursor: pointer;
 }

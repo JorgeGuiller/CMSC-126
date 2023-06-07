@@ -9,11 +9,13 @@ async function getAccountDetails(auth) {
             const snap = await getDoc(account);
             const data= snap.data();
             addAccountDetails(data);
+            return data;
         } else {
             return null;
         }
     });
 }
+
 function addAccountDetails(detailsArray) {
     document.getElementById("name").innerHTML = detailsArray["name"];
     document.getElementById("email").innerHTML = detailsArray["email"];

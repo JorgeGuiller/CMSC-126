@@ -1,31 +1,14 @@
 /* Import the nav.css file */
 @import url(nav.css);
 
-/* Rest of the code */
 
-/* table of contents
-1. global styles
-2. header
-3. card container
-*/
 
-/* 1. global styles */
-/* :root {
-    --fs-body: 1.125rem;
-    --color-main: rgb(30, 57, 50);
-    --color-accent: rgb(255, 198, 26);
+/* CSS code */
+/* ... Rest of the CSS code ... */
+
+body{
+    text-align: center;
 }
-
-html {
-    font-family: Candara, sans-serif;
-}
-
-body,
-html {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-} */
 
 .navbar {
     align-items: center;
@@ -33,36 +16,11 @@ html {
     left: 0;
     width: 100%;
     top: 0;
-}
-
-#items-container {
-    padding: 0.5rem;
+    z-index: 100; /* Update the z-index value */
     background-color: #365544;
-    box-shadow: 10px 10px 10px rgba(0, 0, 0, .15);
-    display: grid;
-    margin: 0 auto;
-    width: 100%;
-    grid-template-columns: 1fr 1fr auto 1fr;
-    z-index: 2;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.15);
 }
 
-/* Dropdowns & icons */
-
-.icons .material-icons {
-    color: #011b0d !important;
-    /* use this color */
-}
-
-.dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #ffffff;
-    min-width: 120px;
-    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-    z-index: 1;
-}
-
-/* 2. header */
 #daily-feed {
     color: var(--color-main);
     width: 100%;
@@ -74,31 +32,19 @@ html {
     z-index: 1;
 }
 
-#daily-feed::after {
-    content: "";
-    display: block;
-    margin: 0 auto;
-    width: 90%;
-    background-color: var(--color-main);
-    height: 0.3rem;
-}
-
-/* 3. card container */
-
 .cards-container {
-    margin-top: 60px; 
+    margin-top: 60px; /* Optional: Add margin-top to create space between navbar and cards */
     display: grid;
     grid-template-columns: repeat(6, 1fr);
     gap: 0.8rem;
     width: 90%;
-    z-index: 0; /* Move the cards behind the navbar */
+    z-index: -1; /* Update the z-index value */
+    position: relative; /* Change the position to relative */
+    top:60px;
 }
-
-/* refer to pageRenderer.js for the classes and elements in the card*/
 
 .card {
     height: 20em;
-    position: absolute;
     margin: 0;
     padding: 0;
     border: none;
@@ -117,6 +63,7 @@ html {
     height: 15vw;
     object-fit: cover;
     border-radius: 0.5rem 0.5rem 0 0;
+    z-index:-1;
 }
 
 /* 8. products */
@@ -124,3 +71,4 @@ html {
     position: relative;
     z-index: 0;
 }
+

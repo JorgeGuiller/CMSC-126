@@ -216,6 +216,7 @@ span {
     justify-content: center;
     transition: all var(--transition);
     height: 100%;
+    width: 100%;
     border: none;
     padding: 0;
     cursor: pointer;
@@ -223,10 +224,6 @@ span {
     color: #011b0d;
 }
 /* 5. icons dropdowns */
-.topright {
-    /* margin-right: -10px; */
-    /* display: inline-block;  */
-  }
 
 
 
@@ -308,7 +305,6 @@ span {
 .logo {
     width: 18em;
     transform: scaleX(100%);
-
 }
 
 .logo:hover{

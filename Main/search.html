@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Search</title>
 	<link rel="stylesheet" href="CSS/search.css">
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
 
@@ -26,7 +26,6 @@
 			document.title = 'Search Results for ' + query;	
 	
 			const div = document.querySelector(".cards-container");
-			console.log(query, div);
 			const product = await model.search(query);
 			renderer.renderCards(div, product);
 		}
@@ -39,7 +38,7 @@
 	<nav class="navbar"></nav>
 	<a href="homepage.html"><img class="homeIcon" src="images/home.svg" alt=""></a>
 
-	<p id="search_label">Result(s) found for <b>"air jordan"</b></p>
+	<p id="search_label"><b>Results found</b></p>
 	<br>
 	<form>
 		<label for="filter" id="filterLabel">Filter:</label>
@@ -65,5 +64,4 @@
 	</div>
 
 </body>
-
 </html>

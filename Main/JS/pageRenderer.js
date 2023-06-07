@@ -32,7 +32,6 @@ export class PageRenderer {
             sessionStorage.setItem(`${product.id}`, object);
             window.document.location.assign(`/products/product.html/${product.name}+${product.tag}?id=${product.id}`);
 
-            // this.renderPage(product);
         });
 
         return card;
@@ -64,5 +63,8 @@ export class PageRenderer {
         productTag.innerText = product.tag;
         productImage.src = product.image;
     
+    addAccountDetails(detailsArray) {
+        document.getElementById("name").innerHTML = detailsArray["name"];
+        document.getElementById("email").innerHTML = detailsArray["email"];
     }
 }

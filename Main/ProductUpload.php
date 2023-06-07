@@ -1,19 +1,6 @@
 <?php
 // this runs when user clicks submit button
 //this creates a new php file with the name of the product
-
-
-
-if (isset($_POST["submit"])) {
-    $name = $_POST["submit"];
-    $slug = str_replace(' ', '-', strtolower($name));
-    $file = fopen("products/$slug.php", "w");
-    $command = "<?php
-    include 'product.php';
-    ?>";
-    fwrite($file, $command);
-    exit;
-}
 ?>
 
 <!DOCTYPE html>
@@ -30,17 +17,6 @@ if (isset($_POST["submit"])) {
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <title>Product Upload</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-    <script>
-        // $(document).ready(function () {
-        //     $("#upload-button").click(function () {
-        //         var name = $("#product-name").val();
-        //         $.post("ProductUpload.php", {
-        //             submit: name
-        //         }, function (data, status) {
-        //         })
-        //     })
-        // })
-    </script>
 
     <script defer src="JS/nav.js"></script>
 </head>
@@ -79,24 +55,24 @@ if (isset($_POST["submit"])) {
                     <input type="radio" id="gadgets" name="tag" value="Gadgets">
                     <label for="gadgets">Gadgets</label>
                 </fieldset>
-                
-                <input type="file" id="myFile" name="filename"accept="image/png, image/jpeg"/>
+
+                <input type="file" id="myFile" name="filename" accept="image/png, image/jpeg" />
                 <button id="upload-button" type="button" name="submit">Upload</button>
 
                 <button id="wishlist-button" type="button">Wishlist</button>
                 <button id="wishlist-items" type="button">Wishlisted Items<a href=url></a></button>
 
-                
+
                 <script type="module">
                     import { Model } from "./JS/model.js";
                     var fileItem;
                     var fileName;
-                    var img="";
+                    var img = "";
                     const file = document.getElementById("myFile");
                     file.addEventListener("change", e => {
-                        
-                        fileItem=e.target.files[0];
-                        fileName=fileItem.name;
+
+                        fileItem = e.target.files[0];
+                        fileName = fileItem.name;
                         console.log(fileItem);
                         console.log(fileName);
                     })
@@ -104,7 +80,7 @@ if (isset($_POST["submit"])) {
                     const button = document.getElementById("upload-button");
                     button.addEventListener("click", async () => {
                         console.log("click");
-                       
+
                         const model = new Model();
                         const name = document.getElementById("product-name").value;
                         const tag = document.querySelector('input[name="tag"]:checked').value;
@@ -112,7 +88,7 @@ if (isset($_POST["submit"])) {
                         
                         img =await model.addPhoto(fileItem);
                         const data = await model.addProduct(name, tag, description, img);
-                        
+
                     });
 
                     const wishlist_butt = document.getElementById("wishlist-button");
@@ -120,22 +96,9 @@ if (isset($_POST["submit"])) {
                         console.log("click");
                         const model = new Model();
                         model.addWishlist();
-
-                            
-                        
-                        
                     })
 
 
-                    $(document).ready(function () {
-                        $("#upload-button").click(function () {
-                            var name = $("#product-name").val();
-                            $.post("ProductUpload.php", {
-                                submit: name
-                            }, function (data, status) {
-                            })
-                        })
-                    })
                 </script>
             </form>
         </div>

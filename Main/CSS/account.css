@@ -43,8 +43,19 @@ img[src="search.png"] {
 
 }
 
-#upload {
+#account_labels{  /*for the labels in the account page */
+  text-align: center;
+  font-weight: bolder;
+  color:#1e3932;
+}
 
+#account_txt{ /*for the non label ttexts in account page*/
+  color: darkolivegreen;
+}
+
+
+
+#upload {
   margin-left: 35%;
   width: 150px;
   height: 50px;
@@ -88,9 +99,9 @@ img[src="place.jpg"] {
   border: 3px solid black;
 }
 
+/*
 #footer {
-
   width: 94%;
   padding: 3%;
   background-color: #ED6444;
-}
+}*/

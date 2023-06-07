@@ -27,6 +27,8 @@ const db = getFirestore(app);
 const auth = getAuth();
 const storage = getStorage(app);
 
+
+
 //exports the database and the app for other js files to import and use
 export { db, app, auth, browserSessionPersistence, GoogleAuthProvider, signInWithPopup, storage };
 
