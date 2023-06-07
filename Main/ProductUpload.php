@@ -96,7 +96,9 @@
                         const data = await model.addProduct(name, tag, description, img, authId);
 
                         // form.reset();
-                       // alert("Product Uploaded");
+                        alert("Product Uploaded");
+                        window.location.href="/AccountPage.html"
+
 
                     });
 

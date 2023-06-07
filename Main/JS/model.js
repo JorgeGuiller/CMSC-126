@@ -2,7 +2,7 @@
  * This file is the class responsible for communicating with the database
  */
 
-import { addDoc, collection, deleteDoc, doc, getDoc, getDocs, limit, or, orderBy, query, setDoc, updateDoc, where, arrayUnion } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";
+import { addDoc, collection, deleteDoc, doc, getDoc, getDocs, limit, or, orderBy, query, setDoc, updateDoc, where, arrayUnion, arrayRemove } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";
 import { getDownloadURL, ref, uploadBytes } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-storage.js";
 import { db, storage } from "./connect.js";
 
@@ -110,18 +110,15 @@ export class Model {
         return (url);
     }
     
-    async addWishlist(id){
-        const user_db=doc(db,"Accounts", );
-            await updateDoc(user_db, {
-                wishlist: window.location.href
-            });
-    }
+    
 
     async getProductById(id){
         const coll = doc(db, "Products", id);
         const snapshot = await getDoc(coll);
         return new Product(snapshot.id, snapshot.data()["name"], snapshot.data()["tag"], snapshot.data()["description"], snapshot.data()["image"]);
     }
+
+    
 
     async getProductsByTag(tag){
 
@@ -144,11 +141,63 @@ export class Model {
         await deleteDoc(doc(db, "Products", id));
     }
 
+    async getTransactionById(id){
+        const coll = doc(db, "Transactions", id);
+        const snapshot = await getDoc(coll);
+        return new Product(snapshot.id, snapshot.data()["name"], snapshot.data()["tag"], snapshot.data()["description"], snapshot.data()["image"]);
+    }
+
     async getAccountById(id){
         const account = doc(db, "Accounts", id);
         const snap = await getDoc(account);
         const data= snap.data();
         return data;
     }
-}
+
+    async deleteProduct(id,authId){
+        const fieldDelete= doc(db, "Accounts", authId);
+
+
+        
+        await updateDoc(fieldDelete, {
+        products: arrayRemove(id),
+        });
+
+  
+        const docRef = doc(db, "Products", id);
+        await deleteDoc(docRef);
+
+        window.location.href="/AccountPage.html"
+    }
+
+    async buyloProduct(name, tag, description, image,id, authId){
+        const fieldDelete= doc(db, "Accounts", authId);
+
+
+        
+        
+
+        const data = {
+            name: name,
+            tag: tag,
+            description: description,
+            image: image,
+            owner: authId
+        };
+        const transRef = await addDoc(collection(db, "Transactions"), data);
+
+        await updateDoc(fieldDelete, {
+            products: arrayRemove(id),
+            transactions: arrayUnion(transRef.id)
+            }); 
+
+        console.log("Document written with ID: ", transRef.id);
+        const delRef = doc(db, "Products", id);
+        await deleteDoc(delRef);
+
+        window.location.href="/AccountPage.html"
+    }
+
+    }
+
 
