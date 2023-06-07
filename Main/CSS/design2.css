@@ -140,5 +140,10 @@ input[type=radio]:checked ~ label{
   color: #a8e7cb;
 }
 
+input[type=radio]{
+  position: absolute;
+  visibility: hidden;
+}
+
 
 
