@@ -112,7 +112,7 @@ transform: translateY(-2px);
 
 @media (min-width: 768px) {
 button {
-  padding: 10px 30px;
+  padding: 5px 30px;
 }
 }
 /* .toprightbtn {
@@ -120,10 +120,25 @@ button {
 } */
 /* Remove borders in wishlist, notifications, account, and home */
 
-/* 9. fonts */
+/* 9. label for input fonts */
 #product-label{
   color:azure;
   margin-top: 5px;
+  margin-bottom: 5px;
 } 
+
+/* 10. radio */
+input[type=radio]:checked ~ .check {
+  border: 5px solid #a8e7cb;
+}
+
+input[type=radio]:checked ~ .check::before{
+  background: #a8e7cb;
+}
+
+input[type=radio]:checked ~ label{
+  color: #a8e7cb;
+}
+
 
 

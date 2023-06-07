@@ -41,19 +41,19 @@
 
                     <legend>Choose Product Tag</legend>
                     <input type="radio" id="merchandise" name="tag" value="Merchandise">
-                    <label for="merchandise">Merchandise</label>
+                    <label for="merchandise">Merchandise</label><br>
 
                     <input type="radio" id="school-supplies" name="tag" value="School Supplies">
-                    <label for="school-supplies">School Supplies</label>
+                    <label for="school-supplies">School Supplies</label><br>
 
                     <input type="radio" id="food" name="tag" value="Food/Beverages">
-                    <label for="food">Food/Beverages</label>
+                    <label for="food">Food/Beverages</label><br>
 
                     <input type="radio" id="clothes" name="tag" value="Clothes">
-                    <label for="clothes">Clothes</label>
+                    <label for="clothes">Clothes</label><br>
 
                     <input type="radio" id="gadgets" name="tag" value="Gadgets">
-                    <label for="gadgets">Gadgets</label>
+                    <label for="gadgets">Gadgets</label><br>
                 </fieldset>
 
                 <input type="file" id="myFile" name="filename" accept="image/png, image/jpeg" />
