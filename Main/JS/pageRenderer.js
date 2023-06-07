@@ -32,7 +32,6 @@ export class PageRenderer {
             sessionStorage.setItem(`${product.id}`, object);
             window.document.location.assign(`/products/product.html/${product.name}+${product.tag}?id=${product.id}`);
 
-            // this.renderPage(product);
         });
 
         return card;

@@ -22,7 +22,7 @@
     const renderer = new PageRenderer();
 
     const id = authenticator.getSignedInUserId();
-    const account = model.getAccountById(id);
+    const account = await model.getAccountById(id);
     renderer.addAccountDetails(account);
   </script>
 </head>

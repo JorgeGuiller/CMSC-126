@@ -25,7 +25,7 @@ const createNav = () => {
             </button>
         </div>
         <div class="topright">
-            <button onclick="location.href='AccountPage.html'" class="toprightbtn">
+            <button onclick="location.href='/AccountPage.html'" class="toprightbtn">
                 <i class="material-symbols-outlined">person</i>
                 <p class="button-label">Account</p>
             </button>

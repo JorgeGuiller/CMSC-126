@@ -26,7 +26,6 @@
 			document.title = 'Search Results for ' + query;	
 	
 			const div = document.querySelector(".cards-container");
-			console.log(query, div);
 			const product = await model.search(query);
 			renderer.renderCards(div, product);
 		}
