@@ -14,9 +14,21 @@
 	<script type="module">
 		import {PageRenderer} from '/JS/pageRenderer.js';
 		import {Model} from '/JS/model.js';
-		import {Authenticator} from '/JS/authenticator.js';
+		import {Authenticator} from "/JS/authenticator.js";
+		import {db} from "/JS/connect.js";
+		import {updateDoc, arrayUnion, arrayRemove, doc} from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";
+
+		const authenticator = new Authenticator();
+		const model = new Model();
+ 
+		const authId = authenticator.getSignedInUserId();
+    	const account = await model.getAccountById(authId);
+	    
+
 
 		const renderer = new PageRenderer();
+
+		
 
 		const urlParams = new URLSearchParams(window.location.search);
 		const id = urlParams.get('id');
@@ -31,6 +43,22 @@
 			product = await model.getProductById(id);
 		}
 		renderer.renderPage(product);
+
+
+		
+		const wishButton=document.getElementById("addWishlist");
+		wishButton.addEventListener("click", async ()=>{
+			console.log("click");
+			const toBeUpdated = doc(db, "Accounts", authId);
+
+
+        
+			await updateDoc(toBeUpdated, {
+			wishlist: arrayUnion(id),
+			});
+
+		})
+
 	</script>
 
 
@@ -86,8 +114,8 @@
 			<img class="product-change" src="images/mouse.avif"><br> 
 		</td>
 		<td class="to-buylo-button">
-			<a class="go-buylo" href="upcoming.html">Buy-lo</a><br>
-			<a class="go-wishlist" href="upcoming.html">Wishlist</a>
+			<a class="go-buylo" href="upcoming.html">Buy-lo</a><br>				<!-- Please apply css here -->
+			<button type="button"	id="addWishlist">Add to wishlist</button> 	<!-- Please apply css here -->
 		</td>
 	</tr>
 	</div>
@@ -111,24 +139,9 @@
 		</tr>
 	</table>
 	</div>
-	<button type="button"	id="addWishlist">Add to wishlist</button>
+	
 	<script type="module">
-		import {db} from "../../JS/connect.js";
-		import {updateDoc, arrayUnion, arrayRemove, doc} from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";
-
-		const wishButton=document.getElementById("addWishlist");
-		wishButton.addEventListner("click", async ()=>{
-			console.log("click");
-			const toBeUpdated = doc(db, "Accounts", "PBJsvBVq1eNtGT22w8KYCoD8D3U2");
-
-			const urlParams = new URLSearchParams(window.location.search);
-			const id = urlParams.get('id');
-        
-			await updateDoc(toBeUpdated, {
-			wishlist: arrayUnion(id),
-			});
-
-		})
+		
 	</script>
 
 	<footer></footer>
