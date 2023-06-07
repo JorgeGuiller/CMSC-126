@@ -23,12 +23,8 @@
  
 		const authId = authenticator.getSignedInUserId();
     	const account = await model.getAccountById(authId);
-	    
-
 
 		const renderer = new PageRenderer();
-
-		
 
 		const urlParams = new URLSearchParams(window.location.search);
 		const id = urlParams.get('id');
@@ -43,22 +39,17 @@
 			product = await model.getProductById(id);
 		}
 		renderer.renderPage(product);
-
-
 		
 		const wishButton=document.getElementById("addWishlist");
 		wishButton.addEventListener("click", async ()=>{
 			console.log("click");
 			const toBeUpdated = doc(db, "Accounts", authId);
-
-
         
 			await updateDoc(toBeUpdated, {
 			wishlist: arrayUnion(id),
 			});
 
 		})
-
 	</script>
 
 
@@ -72,62 +63,19 @@
 		</div>
 		<div id="product-details">
 			<p id="product-name"></p>
-			<p id="product-info">
-			</p>
+			<p id="product-info"></p>
 		</div>
-	</container>
+	</container><br><br>
 
-
-	<container id="owner">
-		<div id="product-owner">
-	    	<img class="user-avatar">
-	    	<p class="user-name"></p>	
-	    	<a class="user-contact" href="upcoming.html">Message</a>
-	    	<a class="user-contact" href="upcoming.html">Follow</a>
-	    </div>
-	</container>
-
-	<table id="product-to-buylo">
-	<div>
-	<p id="sub-title">Buy-lo Details</p>
-			
-	<tr id="to-buylo">
-		<td class="to-buylo-pic">
-			<p >To be bartered for:</p>
-			<img class="product-change" src="images/mouse.avif"><br> 
-		</td>
-		<td class="to-buylo-button">
-			<a class="go-buylo" href="upcoming.html">Buy-lo</a><br>				<!-- Please apply css here -->
-			<button type="button"	id="addWishlist">Add to wishlist</button> 	<!-- Please apply css here -->
-		</td>
-	</tr>
-	</div>
-	</table>
-
-
-	<br><br>
-	<div >
-		<p id="sub-title">Similar Items</p><br>
-	<table id="similar-products">
-		<tr>
-			<td><img class="searchImg" src="images/kboard1.avif" alt="item" ></td>
-			<td><img class="searchImg" src="images/ear.avif" alt="item" ></td>
-			<td><img class="searchImg" src="images/kboard3.avif" alt="item" ></td>
-
-		</tr>
-		<tr>
-			<td class="label">led mechanical keyboard</td>
-			<td class="label">head phones</td>
-			<td class="label">mouse and keyboard</td>
-		</tr>
-	</table>
+	<div id="to-buylo">
+		<button id="goBuylo" class="button">Buy-lo</button>
+		  <button id="addWishlist" class="button">Wishlist</button>
+		</div>
 	</div>
 	
 	<script type="module">
-		
 	</script>
 
 	<footer></footer>
 </body>
-
-</html> 
+</html>
