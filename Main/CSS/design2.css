@@ -51,7 +51,7 @@ border: 1px solid darkolivegreen;
 border-radius: 4px;
 box-shadow: rgba(0, 0, 0, .1) 0 2px 4px 0;
 box-sizing: border-box;
-color: #fff;
+/* color: #fff; */
 cursor: pointer;
 font-family: "Akzidenz Grotesk BQ Medium", -apple-system, BlinkMacSystemFont, sans-serif;
 font-size: 16px;
@@ -78,6 +78,17 @@ button {
   padding: 10px 30px;
 }
 }
+/* .toprightbtn {
+  border: none;
+} */
+/* Remove borders in wishlist, notifications, account, and home */
+.toprightbtn,
+.notificationbtn,
+.accountbtn,
+.homebtn {
+  border: none;
+}
+
 
 
 
