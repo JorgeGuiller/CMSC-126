@@ -14,7 +14,7 @@ export class PageRenderer {
         const productImage = document.createElement('img');
 
         productName.innerText = product.name;
-        productTag.innerText = product.tag;
+        productTag.innerText = product.description;
         productImage.src = product.image;
 
         productName.classList.add('card-product-name');
