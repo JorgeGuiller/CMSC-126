@@ -74,6 +74,20 @@ export class Model {
 			});
     }
 
+
+    async updateProduct(name, tag, description, image, id) {
+        const data = {
+            name: name,
+            tag: tag,
+            description: description,
+            image: image,
+            owner: id
+        };
+        await updateDoc(doc(db, "Products", id), data);
+
+
+    }
+
     async getProducts(){
         const products = [];
 
@@ -136,10 +150,6 @@ export class Model {
         return products;
     }
 
-    async deleteProduct(id){
-
-        await deleteDoc(doc(db, "Products", id));
-    }
 
     async getTransactionById(id){
         const coll = doc(db, "Transactions", id);
@@ -155,6 +165,14 @@ export class Model {
     }
 
     async deleteProduct(id,authId){
+        const docRef = doc(db, "Products", id);
+        const deleted= await deleteDoc(docRef);
+
+        if (deleted){
+            alert("success");
+        }
+
+
         const fieldDelete= doc(db, "Accounts", authId);
 
 
@@ -164,8 +182,7 @@ export class Model {
         });
 
   
-        const docRef = doc(db, "Products", id);
-        await deleteDoc(docRef);
+        
 
         window.location.href="/AccountPage.html"
     }
