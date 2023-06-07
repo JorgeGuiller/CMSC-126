@@ -113,7 +113,7 @@ a {
 }
 
 
-img[src="place.jpg"] {
+/* img[src="place.jpg"] {
 
   border-radius: 157px;
   height: 150px;
@@ -139,7 +139,68 @@ img[src="place.jpg"] {
 #AccountDetails td {
   padding: 0;
   margin: 0;
+} */
+#AccountDetails td {
+  text-align: center;
+  padding: 0;
+  margin: 0;
 }
+container {
+  text-align: right;
+  max-height: 300px;
+  max-width: 80px;
+}
+
+#account_img {
+  border-radius: 50px;
+  height: 150px;
+  width: 150px;
+  margin-right: 25%;
+  margin-top: 85px;
+}
+
+#AccountDetails {
+  margin: auto;
+  margin-top: 20px;
+  padding:30px;
+  margin-bottom: 50px;
+  width: 45%;
+  text-align: center;
+  border: 3px solid rgb(247, 243, 243);
+}
+
+#AccountDetails td {
+  padding: 20px;
+}
+
+#account_labels {
+  font-weight: bold;
+  color: #1e3932;
+}
+
+#account_txt {
+  color: darkolivegreen;
+  font-weight: bold;
+}
+
+#name,
+#email {
+  display: inline-block;
+   vertical-align: top;
+  margin-bottom: 10px;
+  padding: 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 40%;
+  box-sizing: border-box;
+  font-family: Candara, sans-serif;
+  font-size: 14px;
+  color: darkolivegreen;
+  background-color: #f9f9f9;
+
+}
+
+
 
 #Transaction {
   margin: auto;
