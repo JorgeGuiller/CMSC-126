@@ -109,6 +109,12 @@ button:hover {
 box-shadow: rgba(0, 0, 0, .15) 0 3px 9px 0;
 transform: translateY(-2px);
 }
+button.product-upload-button::before {
+  content: "\f07c"; /* Product Upload icon */
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  margin-right: 5px;
+}
 
 @media (min-width: 768px) {
 button {
@@ -125,5 +131,8 @@ button {
   color:azure;
   margin-top: 5px;
 } 
+/* 10. sign out button */
+
+
 
 
