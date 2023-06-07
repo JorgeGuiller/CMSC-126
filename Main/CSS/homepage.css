@@ -58,7 +58,7 @@ body{
     /* background-color: #dde6da; */
     border:0.5px solid; /*changes*/
     border-color:#b3b8b5;     /*changes*/
-    border-radius: 0.5rem 0.5rem 0 0; /*changes*/
+    border-radius: none; /*changes*/
     /* font-size: 15px; */
     
 
