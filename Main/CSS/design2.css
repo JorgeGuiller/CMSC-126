@@ -8,7 +8,7 @@ body {
 
   background: linear-gradient(to bottom, #4c7e70, #232423);
   background-image: url('https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8cGVyc29uJTIwdXNpbmclMjBjb21wdXRlcnxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=600&q=60');
-  background-color: rgba(255,255,255,0.3);
+  background-color: rgba(255,255,255,0.2);
   background-blend-mode: lighten;
   background-repeat: no-repeat;
   background-position: center center;
@@ -82,7 +82,7 @@ fieldset{
 
 /* 8. button */
 button{
-background-color: #365544;
+background-color:#d8f3d8;
 border: 1px solid darkolivegreen;
 border-radius: 4px;
 box-shadow: rgba(0, 0, 0, .1) 0 2px 4px 0;
@@ -120,6 +120,10 @@ button {
 } */
 /* Remove borders in wishlist, notifications, account, and home */
 
-
+/* 9. fonts */
+#product-label{
+  color:azure;
+  margin-top: 5px;
+} 
 
 
