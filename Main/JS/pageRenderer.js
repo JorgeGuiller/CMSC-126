@@ -71,6 +71,8 @@ export class PageRenderer {
         productName.innerText = product.name;
         productTag.innerText = product.tag;
         productImage.src = product.image;
+
+        
     }
 
     addAccountDetails(detailsArray) {
