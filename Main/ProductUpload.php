@@ -59,7 +59,7 @@
                 </fieldset>
 
                 <input type="file" id="myFile" name="filename" accept="image/png, image/jpeg" />
-                <p>Remember to put nice photos to impress buy-lo traders</p><br>
+                <p>Remember to put nice photos to impress buy-lo traders</p>
                 <button id="upload-button" type="button" name="submit">Upload</button>
 
 
