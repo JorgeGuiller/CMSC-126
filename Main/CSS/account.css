@@ -50,6 +50,15 @@ img[src="search.png"] {
 #account_txt{ /*for the non label ttexts in account page*/
   color: darkolivegreen;
 }
+.container{
+  text-align:center;
+}
+
+.button-container{
+  display: flex;  
+  justify-content: center;
+  margin: top 10px;
+}
 
 
 /* Upload button */
@@ -76,9 +85,16 @@ img[src="search.png"] {
   touch-action: manipulation;
   margin-bottom: 5px;
   margin-top: 5px;
-  display: flex;
+  margin-right: 30px;
+  margin-left: 680px;
+  position: relative;
   align-items: center;
   justify-content: center;
+  /* position: fixed; move position */
+  /* bottom: 10 px;
+  right: 200px; */
+  
+  
 }
 
 #upload:hover {
@@ -161,6 +177,14 @@ img[src="place.jpg"] {
   touch-action: manipulation;
   margin-bottom: 5px;
   margin-top: 5px;
+  margin-right: 40px;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  /* position: fixed;
+  bottom: -20px;
+  right: 270px;
+   */
 }
 
 .signout-button:hover {
