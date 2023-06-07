@@ -28,8 +28,11 @@
     const account = await model.getAccountById(id);
     renderer.addAccountDetails(account);
 
+<<<<<<< Updated upstream
 
     console.log(id);
+=======
+>>>>>>> Stashed changes
     const docRef = doc(db, 'Accounts', id);
     const docSnapshot = await getDoc(docRef);
     
