@@ -44,15 +44,10 @@ export class Authenticator {
 
     }
 
-    // signOut(){
-    //     auth.signOut().then(() => {
-    //         // Sign-out successful.
-    //         window.location.assign("../homepage.html");
-    //     }).catch((error) => {
-    //         // An error happened.
-    //         console.log(error);
-    //     });
-    // }
+    async signOut(){
+        await auth.signOut();
+        sessionStorage.removeItem(this.#key);
+    }
 
     isSignedIn(){
         const user = sessionStorage.getItem(this.#key);
