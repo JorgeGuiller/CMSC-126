@@ -21,7 +21,7 @@
         const model = new Model();
  
         document.getElementById("google-login").addEventListener("click", async () => {
-            authenticator.signIn(model);
+            await authenticator.signIn(model);
             window.location.assign("homepage.html");
         });
 
