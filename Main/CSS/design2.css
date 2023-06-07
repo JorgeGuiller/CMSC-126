@@ -85,7 +85,7 @@ fieldset label:hover{
 
 /* 8. button */
 button{
-background-color:#d8f3d8;
+background-color:#365544;
 border: 1px solid darkolivegreen;
 border-radius: 4px;
 box-shadow: rgba(0, 0, 0, .1) 0 2px 4px 0;
@@ -139,5 +139,9 @@ input[type=radio]:checked ~ label{
 }
 */
 
+/* 11. paragraph tag */
+p{
+  font-size: 10px;
+}
 
 
