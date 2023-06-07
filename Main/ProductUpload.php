@@ -90,6 +90,9 @@
                         console.log(img);
                         const data = await model.addProduct(name, tag, description, img);
 
+                        form.reset();
+                        alert("Product Uploaded");
+
                     });
 
                     const wishlist_butt = document.getElementById("wishlist-button");

@@ -20,19 +20,22 @@
     <header>
         <h1 id="daily-feed"> Daily Feed </h1>
     </header>
-    <div class="cards-container" id="container">
+    <section class="homepage-cards">
+        
+        <div class="cards-container" id="container">
 
-        <script type="module">
-            import { Model } from "./JS/model.js";
-            import { PageRenderer } from "./JS/pageRenderer.js";
 
-            const model =  new Model();
-            const pageRenderer = new PageRenderer();
-            const div = document.getElementById("container");
+            <script  type="module">
+                import { Model } from "./JS/model.js";
+                import { PageRenderer } from "./JS/pageRenderer.js";
+ 
+                const model =  new Model();
+                const pageRenderer = new PageRenderer();
+                const div = document.getElementById("container");
 
-            const products = await model.getProducts();
+                const products = await model.getProducts();
 
-            pageRenderer.renderCards(div, products);
+                pageRenderer.renderCards(div, products);
 
             
         </script>

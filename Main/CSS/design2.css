@@ -78,6 +78,15 @@ button {
 }
 }
 
+/* 9. product-name */
+#product-name{
+  font-size: 20%;
+}
 
+
+/* 10. product-description */
+#product-description{
+  font-size: 25%;
+}
 
 

@@ -81,7 +81,7 @@ const categories = document.getElementsByClassName("dropbtn");
 for(let category of categories){
     category.addEventListener("click", e => {
         const query = e.target.textContent;
-        window.location.href = "/search.html?search=" + query;
+        window.location.href = "/product-type.html?search=" + query;
     });
 }
 
