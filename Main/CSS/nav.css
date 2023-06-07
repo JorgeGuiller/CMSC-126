@@ -16,8 +16,8 @@ green color: #365544
 
 :root {
     --fs-body: 1.125rem;
-    --color-main: #ba8b53;
-    --color-action:ghostwhite;
+    --color-main: #365544;
+    --color-action:rgb(132, 132, 132);
     --color-accent: rgb(255, 255, 255);
     --navbar-text-color: black;
     /* --color-accent: rgb(255, 198, 26); */
@@ -35,7 +35,6 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    background-color: #f0f5f5;
 }
 
 button:hover {
@@ -79,7 +78,7 @@ span {
 
 .items-container-bg{
 
-    background-color:#365544; /* Set the background color */
+    background-color:white; /* Set the background color */
     box-shadow: 10px 10px 10px rgba(0, 0, 0, .15);
     width: 100%;
 }
