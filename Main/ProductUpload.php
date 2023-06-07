@@ -29,7 +29,7 @@
 <nav class="navbar"></nav>
 
     <section>
-        <h1 class="section-title">PRODUCT UPLOAD</h1>
+        <h1 class="section-title">WELCOME! Upload Your Product Here</h1>
         <div class="upload-form-container">
 
             <form class="upload-form" id="uploads-form" name="uploads-form" method="post" enctype="multipart/form-data">
@@ -59,6 +59,7 @@
                 </fieldset>
 
                 <input type="file" id="myFile" name="filename" accept="image/png, image/jpeg" />
+                <p>Remember to put nice photos to impress buy-lo traders</p>
                 <button id="upload-button" type="button" name="submit">Upload</button>
 
 
