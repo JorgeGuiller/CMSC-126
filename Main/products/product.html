@@ -23,12 +23,8 @@
  
 		const authId = authenticator.getSignedInUserId();
     	const account = await model.getAccountById(authId);
-	    
-
 
 		const renderer = new PageRenderer();
-
-		
 
 		const urlParams = new URLSearchParams(window.location.search);
 		const id = urlParams.get('id');
@@ -43,22 +39,17 @@
 			product = await model.getProductById(id);
 		}
 		renderer.renderPage(product);
-
-
 		
 		const wishButton=document.getElementById("addWishlist");
 		wishButton.addEventListener("click", async ()=>{
 			console.log("click");
 			const toBeUpdated = doc(db, "Accounts", authId);
-
-
         
 			await updateDoc(toBeUpdated, {
 			wishlist: arrayUnion(id),
 			});
 
 		})
-
 	</script>
 
 
@@ -66,31 +57,17 @@
 <body>
     <nav class="navbar"></nav>
 
-    <container id="product">
+    <div class="card">
 		<div id="product-img">
-		    <img class="product-big-img">
+		  <img class="product-big-img">
 		</div>
-		<div id="product-details">
-			<p id="product-name"></p>
-			<p id="product-info">
-			</p>
+		<div class="description">
+		  <h2 id="product-name"></h2>
+		  <p id="product-info"></p>
+		  <button id="goBuylo">Buy-lo</button>
+		  <button id="addWishlist">Wishlist</button>
 		</div>
-	</container><br><br>
-
-	<!--
-	<container id="owner">
-		<div id="product-owner">
-	    	<img class="user-avatar">
-	    	<p class="user-name"></p>	
-	    	<a class="user-contact" href="upcoming.html">Message</a>
-	    	<a class="user-contact" href="upcoming.html">Follow</a>
-	    </div>
-	 </container>	 -->
-
-	<div id="to-buylo">
-		<a class="go-buylo" href="upcoming.html">Buy-lo</a>				<!-- Please apply css here -->
-		<button type="button" id="addWishlist" class="go-buylo">Add to wishlist</button> 	<!-- Please apply css here -->
-	</div>
+	  </div>
 	
 	<script type="module">
 	</script>
