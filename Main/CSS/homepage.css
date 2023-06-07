@@ -56,7 +56,7 @@ iframe {
     padding: 0;
     border: none;
     box-shadow: none;
-    text-align: left;
+    text-align: center;
     border: 1px solid black;
     transition: 200ms ease-in-out;
     /* border-radius: 0.5rem 0.5rem 0 0; */
