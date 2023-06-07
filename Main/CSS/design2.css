@@ -20,9 +20,9 @@ body {
 /*1. upload form container*/
 .upload-form-container{
   margin: 0 auto;
-  border: 1px solid black;
+  border: 1px solid none;
   width: 40%;
-  background-color:ghostwhite;
+  background-color:#365544;
   border-radius: 10px;
 
 }
