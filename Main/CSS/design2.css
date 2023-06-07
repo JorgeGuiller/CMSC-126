@@ -134,7 +134,7 @@ button {
 input[type=radio]:checked ~ .check {
   border: 5px solid #a8e7cb;
 }
-
+/*
 input[type=radio]:checked ~ .check::before{
   background: black;
 }
@@ -142,9 +142,7 @@ input[type=radio]:checked ~ .check::before{
 input[type=radio]:checked ~ label{
   color: #a8e7cb;
 }
-input[type=radio]::before{
-  color:black;
-}
+*/
 
 
 
