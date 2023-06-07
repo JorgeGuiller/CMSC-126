@@ -24,6 +24,7 @@
     const id = authenticator.getSignedInUserId();
     const account = await model.getAccountById(id);
     renderer.addAccountDetails(account);
+    
   </script>
 </head>
 
@@ -80,6 +81,8 @@
       <td>555 Asahi</td>
     </tr>
   </table>
+
+  <div id="container"></div>
   <div id="footer"></div>
   <script type="module" src="./js/accProducts.js"></script>
 </body>

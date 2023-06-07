@@ -1,4 +1,4 @@
-<script src="JS/check.js"></script>
+<script src="JS/check.js" type="module"></script>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,7 +9,7 @@
     <title>Homepage</title>
     <link rel="stylesheet" href="CSS/homepage.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
     <script defer src="JS/nav.js"></script>
 
 </head>
@@ -21,7 +21,9 @@
         <h1 id="daily-feed"> Daily Feed </h1>
     </header>
     <section class="homepage-cards">
+        
         <div class="cards-container" id="container">
+
 
             <script  type="module">
                 import { Model } from "./JS/model.js";
@@ -34,10 +36,12 @@
                 const products = await model.getProducts();
 
                 pageRenderer.renderCards(div, products);
-            </script>
-        </div>
 
-    </section>
+            
+        </script>
+
+    </div>
+
 
 </body>
 
