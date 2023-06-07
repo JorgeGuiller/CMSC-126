@@ -124,14 +124,11 @@ button {
   padding: 5px 30px;
 }
 }
-/* .toprightbtn {
-  border: none;
-} */
-/* Remove borders in wishlist, notifications, account, and home */
+
 
 /* 9. label for input fonts */
 #product-label{
-  color:azure;
+  color:black;
   margin-top: 5px;
   margin-bottom: 5px;
 } 
