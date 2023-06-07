@@ -11,7 +11,7 @@ body {
   .card {
     
     width: 650px;
-    /*height: 375px;*/
+    height: 375px;
     position: absolute;
     background: white;
     margin: 0 auto;
@@ -80,7 +80,7 @@ body {
          font-weight: 500;
          
          &:hover {
-           /*background: darken(white, 2%);*/
+           background: darken(white, 2%);
            border: 1px solid #aedaa6;
            color: #aedaa6;
            cursor: pointer;
