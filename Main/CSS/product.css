@@ -12,7 +12,7 @@
 	padding-bottom: 10px;
 	margin-top: 80px;
 	margin-bottom: 5px;
-	margin-right: 20px;
+	margin-right: 30px;
 	border-bottom: 1px solid #ED6444;
 	font-size: 20px;
 	font-weight: bold;
@@ -21,7 +21,7 @@
 	line-height: 30px;
 	padding: 20px;
 	font-size: 15px;
-	margin-right: 20px;
+	margin-right: 30px;
 	border: 2px solid #1E3932;
 	color: black;
 }
@@ -48,17 +48,6 @@
   	display: inline-block;
   	border-radius: 20%;
   	font-weight: bold;
-}
-
-#addWishlist{					/*buttons if imoha bang bayloan or ibutang sa wishlist ang product*/
-	background-color: rgb(30,57,50, 0.89);
-	color: whitesmoke;
-	padding:15px 30px;
-	margin: 10px;
-	text-align: center;
-  	text-decoration: none;
-  	display: inline-block;
-  	border-radius: 20%;
 }
 
 #coming-update{
