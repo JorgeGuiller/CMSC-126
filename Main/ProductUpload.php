@@ -33,10 +33,10 @@
             <form class="upload-form" id="uploads-form" name="uploads-form" method="post" enctype="multipart/form-data">
 
                 <label id="product-name-label">Enter Product Name</label>
-                <input type="text" name="product-name" id="product-name" placeholder="Insert product name here">
+                <input type="text" name="product-name" id="product-name" placeholder="Product name">
                 <label id="product-description-label">Enter Product Description</label>
                 <input type="text" name="product-description" id="product-description"
-                    placeholder="Insert product description here">
+                    placeholder="Product Description">
                 <fieldset>
 
                     <legend>Choose Product Tag</legend>
