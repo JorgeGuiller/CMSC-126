@@ -22,7 +22,7 @@ body {
   margin: 0 auto;
   border: 1px solid none;
   width: 40%;
-  background-color:#365544;
+  background-color:none;
   border-radius: 10px;
 
 }
@@ -113,14 +113,11 @@ button {
   padding: 5px 30px;
 }
 }
-/* .toprightbtn {
-  border: none;
-} */
-/* Remove borders in wishlist, notifications, account, and home */
+
 
 /* 9. label for input fonts */
 #product-label{
-  color:azure;
+  color:black;
   margin-top: 5px;
   margin-bottom: 5px;
 } 
