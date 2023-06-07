@@ -120,9 +120,11 @@
 			console.log("click");
 			const toBeUpdated = doc(db, "Accounts", "PBJsvBVq1eNtGT22w8KYCoD8D3U2");
 
-			
+			const urlParams = new URLSearchParams(window.location.search);
+			const id = urlParams.get('id');
+        
 			await updateDoc(toBeUpdated, {
-			wishlist: arrayUnion("greater_virginia"),
+			wishlist: arrayUnion(id),
 			});
 
 		})

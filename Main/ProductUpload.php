@@ -110,8 +110,7 @@ if (isset($_POST["submit"])) {
                         const tag = document.querySelector('input[name="tag"]:checked').value;
                         const description = document.getElementById("product-description").value;
                         
-                        img =await model.addPhoto(fileItem,fileName,img);
-                        console.log(img);
+                        img =await model.addPhoto(fileItem);
                         const data = await model.addProduct(name, tag, description, img);
                         
                     });

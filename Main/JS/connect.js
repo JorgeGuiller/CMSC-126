@@ -2,6 +2,7 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.0/firebas
 // import { getDatabase } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-database.js";
 import { GoogleAuthProvider, browserSessionPersistence, getAuth, signInWithPopup } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-auth.js";
 import { getFirestore } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";
+import { getStorage} from "https://www.gstatic.com/firebasejs/9.22.0/firebase-storage.js";
 
 
 
@@ -24,9 +25,10 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 const auth = getAuth();
+const storage = getStorage(app);
 
 //exports the database and the app for other js files to import and use
-export { db, app, auth, browserSessionPersistence, GoogleAuthProvider, signInWithPopup };
+export { db, app, auth, browserSessionPersistence, GoogleAuthProvider, signInWithPopup, storage };
 
 
 
