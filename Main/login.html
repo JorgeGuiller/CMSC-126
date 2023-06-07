@@ -19,9 +19,9 @@
 
         const authenticator = new Authenticator();
         const model = new Model();
-
+ 
         document.getElementById("google-login").addEventListener("click", async () => {
-            await authenticator.signIn(model);
+            authenticator.signIn(model);
             window.location.assign("homepage.html");
         });
 
