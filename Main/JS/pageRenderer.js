@@ -1,6 +1,8 @@
 /**
  * Class that renders elements on the page
  */
+
+
 export class PageRenderer {
 
     createCard(product){
@@ -46,7 +48,9 @@ export class PageRenderer {
      * Renders the cards on the page
      */
     renderCards(div, productArray){
+        console.log(productArray);
         productArray.forEach(product => {
+            console.log(product);
             let card = this.createCard(product);
             div.appendChild(card);
         });
@@ -67,7 +71,8 @@ export class PageRenderer {
         productName.innerText = product.name;
         productTag.innerText = product.tag;
         productImage.src = product.image;
-    
+    }
+
     addAccountDetails(detailsArray) {
         document.getElementById("name").innerHTML = detailsArray["name"];
         document.getElementById("email").innerHTML = detailsArray["email"];

@@ -1,5 +1,6 @@
 import { getFirestore, collection, doc, getDoc } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";
 import { db, storage } from "./connect.js";
+import { PageRenderer } from "./pageRenderer.js";
 
 
 const docRef = doc(db, 'Accounts', '7Wl4ixQrFWPiuNlxuUCEkCTwnRI2');
