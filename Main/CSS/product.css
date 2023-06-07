@@ -2,7 +2,11 @@
 
 #product{
 	text-align: center;
+	display: grid;
 	grid-template-columns:repeat(2, 1fr) ;
+	gap: 0.8rem;
+	z-index: 1 ;
+    position: relative; 
 }
 
 #product-name{								/* for product name */
