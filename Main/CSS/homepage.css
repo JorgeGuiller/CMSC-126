@@ -33,6 +33,7 @@ body{
 }
 
 .cards-container {
+    margin: 0 auto;
     margin-top: 60px; /* Optional: Add margin-top to create space between navbar and cards */
     display: grid;
     grid-template-columns: repeat(6, 1fr);
