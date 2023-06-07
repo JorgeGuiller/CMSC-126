@@ -94,6 +94,8 @@
 
                         // form.reset();
                         alert("Product Uploaded");
+                        window.location.href="/AccountPage.html"
+
 
                     });
 

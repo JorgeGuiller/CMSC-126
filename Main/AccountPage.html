@@ -37,9 +37,8 @@
       if (docSnapshot.exists()) {
         // Access the array field within the document
         const dataArray = await docSnapshot.data().products;
-        console.log(dataArray);
         const products =[];
-        const div = document.getElementById("container");
+        const div = document.getElementById("products");
 
         // Iterate over the elements of the array using a loop
         for (const id of dataArray) {
@@ -47,10 +46,31 @@
         
         const product = await model.getProductById(id);
         products.push(product); 
+        console.log(id);
+
+         
+      }
+      renderer.renderInfo(div, products, model,id, "Products:");
+     }else {
+        console.log('Document does not exist.');
+      }
+
+      if (docSnapshot.exists()) {
+        // Access the array field within the document
+        const dataArray = await docSnapshot.data().transactions;
+        const products =[];
+        const div = document.getElementById("transactions");
+
+        // Iterate over the elements of the array using a loop
+        for (const id of dataArray) {
+
+        console.log(id);
+        const product = await model.getTransactionById(id);
+        products.push(product); 
         
          
       }
-      renderer.renderCards(div, products);
+      renderer.renderInfo(div, products, model,id, "Transactions:");
      }else {
         console.log('Document does not exist.');
       }
@@ -86,7 +106,8 @@
 
 
   
-  <div id="container"></div>
+  <div id="products"></div>
+  <div id="transactions"></div>
   <div id="footer"></div>
   
 
