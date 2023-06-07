@@ -28,7 +28,14 @@ export class Model {
             transactions: [],
             wishlist: []
         };
-        await setDoc(doc(db, "Accounts", user.uid), userData);
+
+        const account = await this.getAccountById(user.uid);
+        
+        if (account){
+            return;
+        }else{
+            await setDoc(doc(db, "Accounts", user.uid), userData);
+        }
     }
 
 
