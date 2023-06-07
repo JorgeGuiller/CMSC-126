@@ -110,7 +110,23 @@
 		</tr>
 	</table>
 	</div>
+	<button type="button"	id="addWishlist">Add to wishlist</button>
+	<script type="module">
+		import {db} from "../../JS/connect.js";
+		import {updateDoc, arrayUnion, arrayRemove, doc} from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";
 
+		const wishButton=document.getElementById("addWishlist");
+		wishButton.addEventListner("click", async ()=>{
+			console.log("click");
+			const toBeUpdated = doc(db, "Accounts", "PBJsvBVq1eNtGT22w8KYCoD8D3U2");
+
+			
+			await updateDoc(toBeUpdated, {
+			wishlist: arrayUnion("greater_virginia"),
+			});
+
+		})
+	</script>
 
 	<footer></footer>
 </body>
