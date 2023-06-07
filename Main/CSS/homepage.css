@@ -1,7 +1,26 @@
 /* Import the nav.css file */
 @import url(nav.css);
 
-/* 2. header */
+
+
+/* CSS code */
+/* ... Rest of the CSS code ... */
+
+body{
+    text-align: center;
+}
+
+.navbar {
+    align-items: center;
+    position: sticky;
+    left: 0;
+    width: 100%;
+    top: 0;
+    z-index: 100; /* Update the z-index value */
+    background-color: #365544;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.15);
+}
+
 #daily-feed {
     color: var(--color-main);
     width: 100%;
@@ -13,27 +32,16 @@
     z-index: 1;
 }
 
-#daily-feed::after {
-    content: "";
-    display: block;
-    margin: 0 auto;
-    width: 90%;
-    background-color: var(--color-main);
-    height: 0.3rem;
-}
-
-/* 3. card container */
-
 .cards-container {
-    margin-top: 60px; 
+    margin-top: 60px; /* Optional: Add margin-top to create space between navbar and cards */
     display: grid;
     grid-template-columns: repeat(6, 1fr);
     gap: 0.8rem;
     width: 90%;
-    z-index: 0; /* Move the cards behind the navbar */
+    z-index: -1; /* Update the z-index value */
+    position: relative; /* Change the position to relative */
+    top:60px;
 }
-
-/* refer to pageRenderer.js for the classes and elements in the card*/
 
 .card {
     height: 20em;
@@ -55,6 +63,7 @@
     height: 15vw;
     object-fit: cover;
     border-radius: 0.5rem 0.5rem 0 0;
+    z-index:-1;
 }
 
 /* 8. products */
@@ -62,3 +71,4 @@
     position: relative;
     z-index: 0;
 }
+
