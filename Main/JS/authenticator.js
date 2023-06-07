@@ -11,7 +11,7 @@ export class Authenticator {
     async signIn(model){
 
         await signInWithPopup(auth, new GoogleAuthProvider())
-        .then((result) => {
+        .then(async (result) => {
             // This gives you a Google Access Token. You can use it to access the Google API.
             const credential = GoogleAuthProvider.credentialFromResult(result);
 
@@ -27,9 +27,7 @@ export class Authenticator {
                 } catch (e) {
                     console.log(e);
                 }
-                model.createAccount(user);
-                // this.setUser();
-                // window.location.assign("homepage.html");
+            await model.createAccount(user);
             }
         }).catch((error) => {
             // Handle Errors here.
@@ -58,10 +56,10 @@ export class Authenticator {
 
     isSignedIn(){
         const user = sessionStorage.getItem(this.#key);
-        if (!user) {
-            return false;
-        }else{
+        if (user) {
             return true;
+        }else{
+            return false;
         }
     }
 

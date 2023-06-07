@@ -15,6 +15,7 @@
         integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <title>Product Upload</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
@@ -33,10 +34,10 @@
             <form class="upload-form" id="uploads-form" name="uploads-form" method="post" enctype="multipart/form-data">
 
                 <label id="product-name-label">Enter Product Name</label>
-                <input type="text" name="product-name" id="product-name" placeholder="Insert product name here">
+                <input type="text" name="product-name" id="product-name" placeholder="Product name">
                 <label id="product-description-label">Enter Product Description</label>
                 <input type="text" name="product-description" id="product-description"
-                    placeholder="Insert product description here">
+                    placeholder="Product Description">
                 <fieldset>
 
                     <legend>Choose Product Tag</legend>
