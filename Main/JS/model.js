@@ -56,7 +56,14 @@ export class Model {
             image: image
         };
         const docRef = await addDoc(collection(db, "Products"), data);
+        const accProd= doc(db, "Accounts", "PBJsvBVq1eNtGT22w8KYCoD8D3U2");
+
+
+
         console.log("Document written with ID: ", docRef.id);
+        await updateDoc(accProd, {
+			products: arrayUnion(docRef.id),
+			});
     }
 
     async getProducts(){

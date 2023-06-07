@@ -16,6 +16,9 @@
     import {Authenticator} from "./JS/authenticator.js";
     import {Model} from "./JS/model.js";
     import {PageRenderer} from "./JS/pageRenderer.js";
+    import { getFirestore, collection, doc, getDoc } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";
+    import {db} from "./JS/connect.js";
+
 
     const authenticator = new Authenticator();
     const model = new Model();
@@ -24,7 +27,35 @@
     const id = authenticator.getSignedInUserId();
     const account = await model.getAccountById(id);
     renderer.addAccountDetails(account);
-    
+
+
+
+    const docRef = doc(db, 'Accounts', id);
+    const docSnapshot = await getDoc(docRef);
+    const  mdl= new Model();
+    const pr = new PageRenderer();
+
+
+      if (docSnapshot.exists()) {
+        // Access the array field within the document
+        const dataArray = await docSnapshot.data().products;
+        const products =[];
+        const div = document.getElementById("container");
+
+        // Iterate over the elements of the array using a loop
+        for (const id of dataArray) {
+
+
+        const product = await mdl.getProductById(id);
+        products.push(product); 
+        
+         
+      }
+      pr.renderCards(div, products);
+     }else {
+        console.log('Document does not exist.');
+      }
+
   </script>
 </head>
 
@@ -48,42 +79,14 @@
   <a href="ProductUpload.php"><button id="upload"> Product Upload</button></a><br>
 
 
-  <table id="Transaction">
-    <td id = "account_labels">Recent Transactions</td>
-    <tr>
-      <td id="account_txt"></td>>Transaction Number</td>
-      <td id="account_txt"></td>>Date</td>
-      <td id="account_txt">Item</td>
-      <td id="account_txt">Bartered For</td>
-    </tr>
-    <tr>
-      <td>4</td>
-      <td>03/10/2023</td>
-      <td>555 Sardines(2)</td>
-      <td>Purefoods Corned Beef(1)</td>
-    </tr>
-    <tr>
-      <td>3</td>
-      <td>03/05/2023</td>
-      <td>Shades(1)</td>
-      <td>Cap(1)</td>
-    </tr>
-    <tr>
-      <td>2</td>
-      <td>02/18/2023</td>
-      <td>T-shirt(1)</td>
-      <td>Shorts(1)</td>
-    </tr>
-    <tr>
-      <td>1</td>
-      <td>02/8/2023</td>
-      <td>Century Tuna(1)</td>
-      <td>555 Asahi</td>
-    </tr>
-  </table>
-
+  
   <div id="container"></div>
   <div id="footer"></div>
+  
+
+  
+
+  
 </body>
 
 </html>

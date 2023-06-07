@@ -1,6 +1,8 @@
 /**
  * Class that renders elements on the page
  */
+
+
 export class PageRenderer {
 
     createCard(product){
@@ -46,7 +48,9 @@ export class PageRenderer {
      * Renders the cards on the page
      */
     renderCards(div, productArray){
+        console.log(productArray);
         productArray.forEach(product => {
+            console.log(product);
             let card = this.createCard(product);
             div.appendChild(card);
         });
@@ -56,6 +60,17 @@ export class PageRenderer {
         document.querySelector('.product-big-img').src = product.image;
         document.getElementById('product-name').innerText = product.name;
         document.getElementById('product-info').innerText = product.description;
+    }
+
+    
+    createInfo(product){
+        const productName = document.createElement('h1');
+        const productTag = document.createElement('h2');
+        const productImage = document.createElement('img');
+    
+        productName.innerText = product.name;
+        productTag.innerText = product.tag;
+        productImage.src = product.image;
     }
 
     addAccountDetails(detailsArray) {
