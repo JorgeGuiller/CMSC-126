@@ -1,13 +1,15 @@
 <?php
-// this runs when user clicks submit button
-//this creates a new php file with the name of the product
+// $name = isset($_GET['name']) ? $_GET['name'] : '';
+// $id = isset($_GET['id']) ? $_GET['id'] : '';
+// $tag = isset($_GET['tag']) ? $_GET['tag'] : '';
+// $description = isset($_GET['description']) ? $_GET['description'] : '';
+// $authId = isset($_GET['authId']) ? $_GET['authId'] : '';
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
+<meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="CSS/design2.css">
@@ -21,55 +23,58 @@
     <title>Product Upload</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
 
-    <script defer src="JS/nav.js"></script>
-</head>
-
-
+    <script defer src="JS/nav.js"></script></head>
 <body>
-<nav class="navbar"></nav>
-
-        <section>
-            <h1 class="section-title">WELCOME! Upload Your Product Here</h1>
-            <div class="upload-form-container">
-
+    <nav class="navbar"></nav>
+    <section>
+        
+    <h1 class="section-title">WELCOME! Upload Your Product Here</h1>
+        <div class="upload-form-container">
             <form class="upload-form" id="uploads-form" name="uploads-form" method="post" enctype="multipart/form-data">
-
                 <label id="product-label">Enter Product Name</label>
                 <input type="text" name="product-name" id="product-name" placeholder="Product name">
                 <label id="product-label">Enter Product Description</label>
-                <input type="text" name="product-description" id="product-description"
-                    placeholder="Product Description">
+                <input type="text" name="product-description" id="product-description" placeholder="Product Description">
                 <fieldset>
-
                     <legend>Choose Product Tag</legend>
                     <input type="radio" id="merchandise" name="tag" value="Merchandise">
                     <label for="merchandise">Merchandise</label><br>
-
                     <input type="radio" id="school-supplies" name="tag" value="School Supplies">
                     <label for="school-supplies">School Supplies</label><br>
-
                     <input type="radio" id="food" name="tag" value="Food">
                     <label for="food">Food/Beverages</label><br>
-
                     <input type="radio" id="clothes" name="tag" value="Clothes">
                     <label for="clothes">Clothes</label><br>
-
                     <input type="radio" id="gadgets" name="tag" value="Gadgets">
                     <label for="gadgets">Gadgets</label><br>
                 </fieldset>
-
                 <input type="file" id="myFile" name="filename" accept="image/png, image/jpeg" />
                 <p>Remember to put nice photos to impress buy-lo traders</p>
                 <button id="upload-button" type="button" name="submit">Upload</button>
-
-
 
                 <script type="module">
                     import {Authenticator} from "/JS/authenticator.js";
                     import { Model } from "./JS/model.js";
 
-                    const authenticator = new Authenticator();
-                    const authId = authenticator.getSignedInUserId();   
+
+                    const urlParams = new URLSearchParams(window.location.search);
+                    const nameParam = urlParams.get('name');
+                    const tagParam = urlParams.get('tag');
+                    const descriptionParam = urlParams.get('description');
+                    const authIdParam = urlParams.get('authId');
+                    const idParam = urlParams.get('id');
+
+                    
+                        document.getElementById('product-name').value = nameParam;
+                    
+
+                    if (tagParam) {
+                        document.querySelector(`input[name="tag"][value="${tagParam}"]`).checked = true;
+                    }
+
+                    if (descriptionParam) {
+                        document.getElementById('product-description').value = descriptionParam;
+                    }
 
                     var fileItem;
                     var fileName;
@@ -93,9 +98,10 @@
                         const description = document.getElementById("product-description").value;
                         
                         img =await model.addPhoto(fileItem);
-                        const data = await model.addProduct(name, tag, description, img, authId);
+                        console.log(authIdParam);
+                        const data = await model.updateProduct(name, tag, description, img,idParam );
 
-                        // form.reset();
+                        
                         alert("Product Uploaded");
                         window.location.href="/AccountPage.html"
 
@@ -107,15 +113,8 @@
                 </script>
             </form>
         </div>
-
-
     </section>
 
-
     <div id="footer"></div>
-
 </body>
-
-
-
 </html>

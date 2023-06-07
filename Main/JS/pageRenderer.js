@@ -99,6 +99,8 @@ export class PageRenderer {
 
         card.appendChild(cardBody);
 
+
+
         deleteButton.addEventListener('click', ()=>{
             console.log(product.id);
             console.log(authId);
@@ -110,6 +112,21 @@ export class PageRenderer {
             console.log(authId);
             model.buyloProduct(product.name, product.tag, product.description, product.image, product.id, authId);
         });
+
+        editButton.addEventListener('click', () => {
+            const name = encodeURIComponent(product.name);
+            const tag = encodeURIComponent(product.tag);
+            const description = encodeURIComponent(product.description);
+            const image = encodeURIComponent(product.image);
+            const id = encodeURIComponent(product.id);
+            const encodedAuthId = encodeURIComponent(authId);
+          
+            const url = `/ProductEdit.php?name=${name}&tag=${tag}&description=${description}&image=${image}&id=${id}&authId=${encodedAuthId}`;
+            window.location.assign(url);
+          });
+          
+          
+
 
         if(headercontent=="Transactions:"){
             editButton.remove();
