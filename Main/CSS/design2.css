@@ -120,6 +120,10 @@ button {
 } */
 /* Remove borders in wishlist, notifications, account, and home */
 
-
+/* 9. fonts */
+#product-label{
+  color:azure;
+  margin-top: 5px;
+} 
 
 
