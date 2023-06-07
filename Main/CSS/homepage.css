@@ -1,31 +1,7 @@
 /* Import the nav.css file */
 @import url(nav.css);
 
-/* Rest of the code */
 
-/* table of contents
-1. global styles
-2. header
-3. card container
-*/
-
-/* 1. global styles */
-/* :root {
-    --fs-body: 1.125rem;
-    --color-main: rgb(30, 57, 50);
-    --color-accent: rgb(255, 198, 26);
-}
-
-html {
-    font-family: Candara, sans-serif;
-}
-
-body,
-html {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-} */
 
 /* CSS code */
 /* ... Rest of the CSS code ... */
@@ -69,6 +45,7 @@ body{
 
 .card {
     height: 20em;
+    margin: 0;
     padding: 0;
     border: none;
     box-shadow: none;

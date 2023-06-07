@@ -13,7 +13,21 @@
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="css/login.css">
-    <script defer src="JS/login.js" type="module"></script>
+    <script defer type="module">
+        import {Authenticator} from "./JS/authenticator.js";
+        import {Model} from "./JS/model.js";
+
+        const authenticator = new Authenticator();
+        const model = new Model();
+
+        document.getElementById("google-login").addEventListener("click", async () => {
+            await authenticator.signIn(model);
+            window.location.assign("homepage.html");
+
+        });
+
+
+    </script>
 
 </head>
 
