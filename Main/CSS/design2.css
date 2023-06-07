@@ -76,6 +76,7 @@ body {
 
 /* 7. fieldset */
 fieldset{
+  margin-top: 1rem;
   margin-bottom: 1rem;
 }
 
@@ -100,7 +101,8 @@ transition: transform 150ms, box-shadow 150ms;
 user-select: none;
 -webkit-user-select: none;
 touch-action: manipulation;
-margin-bottom: 10px ;
+margin-bottom: 5px;
+margin-top: 5px;
 }
 
 button:hover {
