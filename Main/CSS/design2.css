@@ -133,16 +133,11 @@ input[type=radio]:checked ~ .check {
 }
 
 input[type=radio]:checked ~ .check::before{
-  background: #a8e7cb;
+  background: black;
 }
 
 input[type=radio]:checked ~ label{
   color: #a8e7cb;
-}
-
-input[type=radio]{
-  position: absolute;
-  visibility: hidden;
 }
 
 
