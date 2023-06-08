@@ -22,7 +22,7 @@ body {
   margin: 0 auto;
   border: 1px solid none;
   width: 40%;
-  background-color:none;
+  background-color:#65948749;
   border-radius: 10px;
 
 }
@@ -141,7 +141,7 @@ input[type=radio]:checked ~ label{
 
 /* 11. paragraph tag */
 p{
-  font-size: 10px;
+  font-size: 15px;
 }
 
 

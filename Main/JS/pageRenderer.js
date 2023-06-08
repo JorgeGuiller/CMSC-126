@@ -82,6 +82,10 @@ export class PageRenderer {
         deleteButton.innerText="delete";
         buyloButton.innerText="buylo";
 
+        editButton.classList.add('modify-button');
+        deleteButton.classList.add('modify-button');
+        buyloButton.classList.add('modify-button');
+
         productName.classList.add('card-product-name');
         productImage.classList.add('card-product-image');
         productImageContainer.classList.add('card-product-image-container');

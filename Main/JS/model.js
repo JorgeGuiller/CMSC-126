@@ -2,7 +2,7 @@
  * This file is the class responsible for communicating with the database
  */
 
-import { addDoc, arrayRemove, arrayUnion, collection, deleteDoc, doc, getDoc, getDocs, limit, or, orderBy, query, setDoc, updateDoc, where } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";
+import { addDoc, collection, deleteDoc, doc, getDoc, getDocs, limit, or, orderBy, query, setDoc, updateDoc, where, arrayUnion, arrayRemove } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";
 import { getDownloadURL, ref, uploadBytes } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-storage.js";
 import { db, storage } from "./connect.js";
 
@@ -84,13 +84,13 @@ export class Model {
     }
 
 
-    async updateProduct(name, tag, description, image, id) {
+    async updateProduct(name, tag, description, image,id, authId) {
         const data = {
             name: name,
             tag: tag,
             description: description,
             image: image,
-            owner: id
+            owner: authId
         };
         await updateDoc(doc(db, "Products", id), data);
 
@@ -207,7 +207,6 @@ export class Model {
         }
         return notifications;
     }
-
     async deleteProduct(id,authId){
         const docRef = doc(db, "Products", id);
         const deleted= await deleteDoc(docRef);

@@ -41,7 +41,7 @@
                     <label for="merchandise">Merchandise</label><br>
                     <input type="radio" id="school-supplies" name="tag" value="School Supplies">
                     <label for="school-supplies">School Supplies</label><br>
-                    <input type="radio" id="food" name="tag" value="Food">
+                    <input type="radio" id="food" name="tag" value="Foods">
                     <label for="food">Food/Beverages</label><br>
                     <input type="radio" id="clothes" name="tag" value="Clothes">
                     <label for="clothes">Clothes</label><br>
@@ -99,7 +99,8 @@
                         
                         img =await model.addPhoto(fileItem);
                         console.log(authIdParam);
-                        const data = await model.updateProduct(name, tag, description, img,idParam );
+                        const data = await model.updateProduct(name, tag, description, img, idParam,authIdParam );
+
 
                         
                         alert("Product Uploaded");
