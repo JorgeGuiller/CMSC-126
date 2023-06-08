@@ -323,7 +323,8 @@ span {
 /* 7. logo */
 
 .logo {
-    width: 50%;
+      width: 18em;               
+      transform: scaleX(100%);
 
 }
 
