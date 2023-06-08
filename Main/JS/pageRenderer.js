@@ -141,7 +141,6 @@ export class PageRenderer {
         
         
 
-        
 
         return card;
 
@@ -156,9 +155,31 @@ export class PageRenderer {
     
 
 
-    addAccountDetails(detailsArray) {
-        document.getElementById("name").innerHTML = detailsArray["name"];
-        document.getElementById("email").innerHTML = detailsArray["email"];
+    addAccountDetails(detailsArray, photoURL) {
+        const div = document.querySelector('.details-container');
+        const image = document.createElement("img");
+        const name = document.createElement("p");
+        const email = document.createElement("p");
+
+        const nameLabel = document.createElement("p");
+        const emailLabel = document.createElement("p");
+        nameLabel.textContent = "Name: ";
+        emailLabel.textContent = "Email: ";
+
+        name.setAttribute("id", "name");
+        email.setAttribute("id", "email");
+
+        name.innerHTML = detailsArray["name"];
+        email.innerHTML = detailsArray["email"];
+        
+        image.setAttribute("referrerpolicy", "no-referrer");
+        image.src = photoURL;
+
+        div.appendChild(image);
+        div.appendChild(nameLabel);
+        div.appendChild(name);
+        div.appendChild(emailLabel);    
+        div.appendChild(email);
     }
 
     createNotification( product, customer){

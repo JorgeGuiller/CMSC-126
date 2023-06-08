@@ -99,10 +99,8 @@ const renderer =  new PageRenderer();
 window.addEventListener("load", async(e) => {
     const authId = auth.getSignedInUserId();
     const notifications = await model.getNotificationsByUserId(authId);
-    console.log(notifications);
     const container = document.querySelector(".topright-dropdown");
     renderer.renderNotifications(container, notifications, model);
-    console.log("run");
 
 })
 

@@ -65,9 +65,19 @@ export class Authenticator {
         }
     }
 
+    getSignedInUser(){
+        const user = sessionStorage.getItem(this.#key);
+        if (user) {
+            return JSON.parse(user);
+        }
+    }
+
     redirect(){
         window.location.assign("/login.html");
     }
 
-
+    getUserPhoto(){
+        const user  = this.getSignedInUser();
+        return user.photoURL;
+    }
 }
