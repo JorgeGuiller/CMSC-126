@@ -84,7 +84,7 @@ fieldset label:hover{
 }
 
 /* 8. button */
-button{
+form button{
 background-color:#365544;
 border: 1px solid darkolivegreen;
 border-radius: 4px;
