@@ -101,6 +101,7 @@
                         console.log(authIdParam);
                         const data = await model.updateProduct(name, tag, description, img, idParam,authIdParam );
 
+
                         
                         alert("Product Uploaded");
                         window.location.href="/AccountPage.html"
