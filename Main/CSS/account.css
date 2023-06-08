@@ -268,10 +268,10 @@ container{
          border: 0;
          background:#365544;
          border: 1px solid #d9d9d9;
-         padding: 0px 0px;
+         padding: 3px 0px;
          margin-bottom: 30px;
          color: whitesmoke;
-         width: 125px;
+         width: 90px;
          font-family: inherit;
          margin-right: 5px;
          transition: all 0.3s ease;
