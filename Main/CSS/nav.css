@@ -53,7 +53,7 @@ span {
     width: 100%;
     height: min-content;
     top: 0;
-    z-index: 1;
+    z-index: 2;
     /* overflow:hidden; */
 }
 
@@ -84,10 +84,10 @@ span {
 }
 #items-container {
     display: grid;
-    grid-template-columns: auto minmax(20px, auto) repeat(4, auto);
+    grid-template-columns: minmax(20px, auto) minmax(20px, auto) repeat(4, auto);
     margin: 0 auto;
     width: 90%;
-    z-index: 2;
+    z-index: 1;
 }
 
 
@@ -323,10 +323,8 @@ span {
 /* 7. logo */
 
 .logo {
-    width: 9em;
-    transform: scaleX(100%);
-    border-radius: 50%;
-    /* background: none; */
+    width: 20%;
+
 }
 
 .logo:hover{
