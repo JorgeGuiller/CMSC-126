@@ -214,7 +214,6 @@ container{
 
 /* for the products uploaded below ka user profile */
 #products {
-  /* Optional: Add margin-top to create space between navbar and cards */
      margin:0 auto;
      margin-top: 10px; /* Optional: Add margin-top to create space between navbar and cards */
      display: grid;
@@ -227,7 +226,7 @@ container{
  }
  
  .card {
-     height: 500px;;
+     height: fit-content;
      margin: 0;
      padding: 0;
      border: none;
