@@ -1,3 +1,6 @@
+import { Authenticator } from "./authenticator.js";
+import { Model } from "./model.js";
+import { PageRenderer } from "./pageRenderer.js";
 const createNav = () => {
     let header = document.querySelector('.navbar');
 
@@ -19,10 +22,11 @@ const createNav = () => {
            
         </div>
         <div class="topright">
-            <button class="toprightbtn" src="notif.png">
+            <button id='notifications'class="toprightbtn" src="notif.png">
                 <i class="material-symbols-outlined">notifications</i>
                 <p class="button-label">Notifications</p>
             </button>
+            <div class='topright-dropdown'></div>
         </div>
         <div class="topright">
             <button onclick="location.href='/AccountPage.html'" class="toprightbtn">
@@ -88,3 +92,17 @@ for(let category of categories){
 document.getElementsByClassName("logo")[0].addEventListener("click", e => {
     window.location.href = "/homepage.html";
 });
+
+const model = new Model(); 
+const auth = new Authenticator();
+const renderer =  new PageRenderer();
+window.addEventListener("load", async(e) => {
+    const authId = auth.getSignedInUserId();
+    const notifications = await model.getNotificationsByUserId(authId);
+    console.log(notifications);
+    const container = document.querySelector(".topright-dropdown");
+    renderer.renderNotifications(container, notifications, model);
+    console.log("run");
+
+})
+
