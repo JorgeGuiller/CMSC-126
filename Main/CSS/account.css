@@ -220,7 +220,7 @@ container{
      grid-template-columns: repeat(3, 1fr);
      gap: 0.8rem;
      width: 90%;
-     height:max-content;
+     height:500px;
      z-index: 1 ; /* Update the z-index value */
      position: relative; /* Change the position to relative */
      top:60px; 
