@@ -10,8 +10,8 @@
     <link rel="stylesheet" href="/CSS/product_search.css">
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
 
-    <script defer src="/JS/nav.js"></script>
-	<script type="module">
+    <script defer type='module' src="/JS/nav.js"></script>
+	<script defer type="module">
 		import {PageRenderer} from '/JS/pageRenderer.js';
 		import {Model} from '/JS/model.js';
 		import {Authenticator} from "/JS/authenticator.js";
@@ -20,16 +20,11 @@
 
 		const authenticator = new Authenticator();
 		const model = new Model();
+		const renderer = new PageRenderer();
  
 		const authId = authenticator.getSignedInUserId();
     	const account = await model.getAccountById(authId);
 	    
-
-
-		const renderer = new PageRenderer();
-
-		
-
 		const urlParams = new URLSearchParams(window.location.search);
 		const id = urlParams.get('id');
         const productJson = sessionStorage.getItem(`${id}`);
@@ -43,21 +38,24 @@
 			product = await model.getProductById(id);
 		}
 		renderer.renderPage(product);
-
-
 		
-		const wishButton=document.getElementById("addWishlist");
+		const wishButton = document.getElementById("addWishlist");
 		wishButton.addEventListener("click", async ()=>{
 			console.log("click");
 			const toBeUpdated = doc(db, "Accounts", authId);
-
-
         
 			await updateDoc(toBeUpdated, {
 			wishlist: arrayUnion(id),
 			});
 
 		})
+
+		const buyloButton = document.querySelector("#buylo-button");
+		buyloButton.onclick = async ()=>{
+			console.log(product);
+			await model.addNotification(product.id, authId, product.userId);
+			
+		}
 
 	</script>
 
@@ -114,7 +112,8 @@
 			<img class="product-change" src="images/mouse.avif"><br> 
 		</td>
 		<td class="to-buylo-button">
-			<a class="go-buylo" href="upcoming.html">Buy-lo</a><br>				<!-- Please apply css here -->
+			<button class="go-buylo" id="buylo-button" href="upcoming.html">Buy-lo</button>
+							<!-- Please apply css here -->
 			<button type="button"	id="addWishlist">Add to wishlist</button> 	<!-- Please apply css here -->
 		</td>
 	</tr>
@@ -138,6 +137,9 @@
 			<td class="label">mouse and keyboard</td>
 		</tr>
 	</table>
+	</div>
+	<div class="notification-container">
+
 	</div>
 	
 	<script type="module">

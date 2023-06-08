@@ -2,7 +2,7 @@
  * This file is the class responsible for communicating with the database
  */
 
-import { addDoc, collection, deleteDoc, doc, getDoc, getDocs, limit, or, orderBy, query, setDoc, updateDoc, where, arrayUnion } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";
+import { addDoc, arrayUnion, collection, deleteDoc, doc, getDoc, getDocs, limit, or, orderBy, query, setDoc, updateDoc, where } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";
 import { getDownloadURL, ref, uploadBytes } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-storage.js";
 import { db, storage } from "./connect.js";
 
@@ -13,8 +13,16 @@ class Product {
         this.name = name;
         this.tag = tag;
         this.description = description;
-        this.image = image;
+        this.image = image; 
         this.userId = userId;
+    }
+}
+
+class Notification {
+    constructor(id, productId, customerId) {
+        this.id  = id;
+        this.productId = productId;
+        this.customerId = customerId;
     }
 }
 
@@ -26,7 +34,8 @@ export class Model {
             email: user.email,
             products: [],
             transactions: [],
-            wishlist: []
+            wishlist: [],
+            notifications: []
         };
 
         const account = await this.getAccountById(user.uid);
@@ -47,7 +56,7 @@ export class Model {
 
 
         snap.forEach((doc) => {
-            products.push(new Product(doc.id, doc.data()["name"], doc.data()["tag"], doc.data()["description"], doc.data()["image"]));
+            products.push(new Product(doc.id, doc.data()["name"], doc.data()["tag"], doc.data()["description"], doc.data()["image"], doc.data()["owner"]));
             console.log(doc.id);
             
         });
@@ -85,7 +94,7 @@ export class Model {
 
 
         snapshot.forEach((doc) => {
-            products.push(new Product(doc.id, doc.data()["name"], doc.data()["tag"], doc.data()["description"], doc.data()["image"]));
+            products.push(new Product(doc.id, doc.data()["name"], doc.data()["tag"], doc.data()["description"], doc.data()["image"], doc.data()["owner"]));
             
         });
         return products;
@@ -120,7 +129,8 @@ export class Model {
     async getProductById(id){
         const coll = doc(db, "Products", id);
         const snapshot = await getDoc(coll);
-        return new Product(snapshot.id, snapshot.data()["name"], snapshot.data()["tag"], snapshot.data()["description"], snapshot.data()["image"]);
+        const data = snapshot.data();
+        return new Product(snapshot.id, data["name"], data["tag"], data["description"], data["image"], data["owner"]);
     }
 
     async getProductsByTag(tag){
@@ -132,7 +142,7 @@ export class Model {
 
 
         snap.forEach((doc) => {
-            products.push(new Product(doc.id, doc.data()["name"], doc.data()["tag"], doc.data()["description"], doc.data()["image"]));
+            products.push(new Product(doc.id, doc.data()["name"], doc.data()["tag"], doc.data()["description"], doc.data()["image"], doc.data()["owner"]));
             console.log(doc.id);
             
         });
@@ -149,6 +159,40 @@ export class Model {
         const snap = await getDoc(account);
         const data= snap.data();
         return data;
+    }
+
+
+    async addNotification(productId, customerId, uploaderId){
+        const data = {
+            productId: productId,
+            customerId: customerId,
+            read: false
+        }
+        const notificationDoc = await addDoc(collection(db, "Notifications"), data);;
+        const account = await doc(db, "Accounts", uploaderId);
+        await updateDoc(account, {
+			"notifications": arrayUnion(notificationDoc.id),
+        });
+
+        console.log("Document written with ID: ", notificationDoc.id);
+
+    }
+
+    async getNotificationsByUserId(userId){
+        const notifications = [];
+        const account = await this.getAccountById(userId);
+        const accountNotificationsArray = account.notifications;
+        for (const notificationId of accountNotificationsArray) {
+
+            const notification = await doc(db, "Notifications", notificationId);
+            const snap = await getDoc(notification);
+            const data = snap.data();
+            notifications.push(new Notification(
+                snap.id, 
+                data["productId"], 
+                data["customerId"]));
+        }
+        return notifications;
     }
 }
 

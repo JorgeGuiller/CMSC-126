@@ -13,18 +13,19 @@
     <link rel="stylesheet" href="CSS/design2.css">
     <script src="https://code.jquery.com/jquery-3.7.0.min.js"
         integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <title>Product Upload</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
 
-    <script defer src="JS/nav.js"></script>
+    <script defer type='module' src="JS/nav.js"></script>
 </head>
 
 
 <body>
-<nav class="navbar"></nav>
+    <nav class="navbar"></nav>
 
     <section>
         <h1 class="section-title">PRODUCT UPLOAD</h1>
@@ -62,7 +63,7 @@
 
 
                 <script type="module">
-                    import {Authenticator} from "/JS/authenticator.js";
+                    import { Authenticator } from "/JS/authenticator.js";
                     import { Model } from "./JS/model.js";
 
                     const authenticator = new Authenticator();
@@ -88,8 +89,8 @@
                         const name = document.getElementById("product-name").value;
                         const tag = document.querySelector('input[name="tag"]:checked').value;
                         const description = document.getElementById("product-description").value;
-                        
-                        img =await model.addPhoto(fileItem);
+
+                        img = await model.addPhoto(fileItem);
                         const data = await model.addProduct(name, tag, description, img, authId);
 
                         // form.reset();

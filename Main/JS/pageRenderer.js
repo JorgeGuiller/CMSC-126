@@ -49,7 +49,6 @@ export class PageRenderer {
      */
     renderCards(div, productArray){
         productArray.forEach(product => {
-            console.log(product);
             let card = this.createCard(product);
             div.appendChild(card);
         });
@@ -77,5 +76,31 @@ export class PageRenderer {
     addAccountDetails(detailsArray) {
         document.getElementById("name").innerHTML = detailsArray["name"];
         document.getElementById("email").innerHTML = detailsArray["email"];
+    }
+
+    createNotification( product, customer){
+
+        const div = document.createElement('div');
+        const p = document.createElement('p');
+
+        div.classList.add('notification');
+
+        p.textContent = `${customer} wants to trade your product ${product}!`;
+
+        div.appendChild(p);
+        return p;
+    }
+
+    async renderNotifications(div, notificationsArray, model){
+        notificationsArray.forEach(async(notification) => {
+                let product = await model.getProductById(notification.productId);
+                let customer = await model.getAccountById(notification.customerId);
+
+                let productName = product.name;
+                let customerName = customer.name;
+
+                let card = this.createNotification( productName, customerName);
+                div.appendChild(card);
+            });
     }
 }

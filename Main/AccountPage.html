@@ -9,7 +9,7 @@
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
   <link rel="stylesheet" href="CSS/account.css">
-  <script defer src="JS/nav.js"></script>
+  <script defer type="module" src="JS/nav.js"></script>
   <title>Account Page</title>
   <!-- <script defer src="JS/accountPage.js" type="module"></script> -->
   <script defer type="module">
@@ -28,11 +28,6 @@
     const account = await model.getAccountById(id);
     renderer.addAccountDetails(account);
 
-<<<<<<< Updated upstream
-
-    console.log(id);
-=======
->>>>>>> Stashed changes
     const docRef = doc(db, 'Accounts', id);
     const docSnapshot = await getDoc(docRef);
     
