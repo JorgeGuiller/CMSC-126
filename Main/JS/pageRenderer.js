@@ -152,14 +152,23 @@ export class PageRenderer {
 
 
     addAccountDetails(detailsArray, photoURL) {
-
         const div = document.querySelector('.details-container');
-        document.getElementById("name").innerHTML = detailsArray["name"];
-        document.getElementById("email").innerHTML = detailsArray["email"];
         const image = document.createElement("img");
+        const name = document.createElement("p");
+        const email = document.createElement("p");
+
+        name.setAttribute("id", "name");
+        email.setAttribute("id", "email");
+
+        name.innerHTML = detailsArray["name"];
+        email.innerHTML = detailsArray["email"];
+        
         image.setAttribute("referrerpolicy", "no-referrer");
         image.src = photoURL;
+
         div.appendChild(image);
+        div.appendChild(name);
+        div.appendChild(email);
     }
 
     createNotification( product, customer){
