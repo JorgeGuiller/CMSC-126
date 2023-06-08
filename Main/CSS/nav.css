@@ -87,6 +87,7 @@ span {
     grid-template-columns: minmax(20px, auto) minmax(20px, auto) repeat(4, auto);
     margin: 0 auto;
     width: 90%;
+    gap: 1rem;
     z-index: 1;
 }
 
@@ -112,7 +113,7 @@ span {
     height: 100%;
     text-align: center;
     margin: 0;
-    padding: 0;
+    padding-inline: 0.4rem;
 }
 
 

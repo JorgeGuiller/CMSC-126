@@ -122,16 +122,16 @@ img[src="place.jpg"] {
   margin-top: 105px;
 }
 
+#cont{
+  margin-top: 20px;
+}
 #AccountDetails {
-  float: right;
-  margin-right: 20%;
+  margin: 0 auto;
   border: 2px solid rgba(247, 244, 244, 0.637);
   background-color: #ffffff;
   width: 30%;
   height: 70px;
   border-collapse: separate;
-  margin-top: 100px;
-  padding: 40px;
 
 
 }
