@@ -212,7 +212,7 @@ container{
 
 }
 
-.cards-container {
+#products {
   /* Optional: Add margin-top to create space between navbar and cards */
      margin:0 auto;
      margin-top: 10px; /* Optional: Add margin-top to create space between navbar and cards */
@@ -222,9 +222,7 @@ container{
      width: 90%;
      z-index: 1 ; /* Update the z-index value */
      position: relative; /* Change the position to relative */
-     top:60px;
-    
-    
+     top:60px; 
  }
  
  .card {
