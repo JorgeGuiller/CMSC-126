@@ -226,7 +226,7 @@ container{
  }
  
  .card {
-     height: fit-content;
+     height: max-content;
      margin: 0;
      padding: 0;
      border: none;
