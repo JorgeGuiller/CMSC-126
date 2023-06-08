@@ -137,7 +137,6 @@ export class PageRenderer {
         
         
 
-        
 
         return card;
 
@@ -152,9 +151,15 @@ export class PageRenderer {
     
 
 
-    addAccountDetails(detailsArray) {
+    addAccountDetails(detailsArray, photoURL) {
+
+        const div = document.querySelector('.details-container');
         document.getElementById("name").innerHTML = detailsArray["name"];
         document.getElementById("email").innerHTML = detailsArray["email"];
+        const image = document.createElement("img");
+        image.setAttribute("referrerpolicy", "no-referrer");
+        image.src = photoURL;
+        div.appendChild(image);
     }
 
     createNotification( product, customer){

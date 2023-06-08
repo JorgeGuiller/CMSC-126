@@ -1,8 +1,8 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-app.js";
 // import { getDatabase } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-database.js";
-import { GoogleAuthProvider, browserSessionPersistence, getAuth, signInWithPopup } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-auth.js";
+import { GoogleAuthProvider, browserSessionPersistence, getAuth, onAuthStateChanged, signInWithPopup } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-auth.js";
 import { getFirestore } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";
-import { getStorage} from "https://www.gstatic.com/firebasejs/9.22.0/firebase-storage.js";
+import { getStorage } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-storage.js";
 
 
 
@@ -30,7 +30,7 @@ const storage = getStorage(app);
 
 
 //exports the database and the app for other js files to import and use
-export { db, app, auth, browserSessionPersistence, GoogleAuthProvider, signInWithPopup, storage };
+export { db, app, auth, browserSessionPersistence, GoogleAuthProvider, signInWithPopup, storage, onAuthStateChanged };
 
 
 
