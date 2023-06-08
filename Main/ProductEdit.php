@@ -99,7 +99,7 @@
                         
                         img =await model.addPhoto(fileItem);
                         console.log(authIdParam);
-                        const data = await model.updateProduct(name, tag, description, img,idParam );
+                        const data = await model.updateProduct(name, tag, description, img,authIdParam );
 
                         
                         alert("Product Uploaded");
