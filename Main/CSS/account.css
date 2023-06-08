@@ -213,7 +213,7 @@ container{
 }
 
 /* for the products uploaded below ka user profile */
-#products {
+#products , #transactions{
      margin:0 auto;
      margin-top: 10px; /* Optional: Add margin-top to create space between navbar and cards */
      display: grid;
