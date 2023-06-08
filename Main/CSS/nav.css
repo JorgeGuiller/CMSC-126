@@ -305,8 +305,10 @@ span {
 /* 7. logo */
 
 .logo {
-    width: 18em;
+    width: 9em;
     transform: scaleX(100%);
+    border-radius: 50%;
+    /* background: none; */
 }
 
 .logo:hover{
