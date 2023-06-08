@@ -161,6 +161,11 @@ export class PageRenderer {
         const name = document.createElement("p");
         const email = document.createElement("p");
 
+        const nameLabel = document.createElement("p");
+        const emailLabel = document.createElement("p");
+        nameLabel.textContent = "Name: ";
+        emailLabel.textContent = "Email: ";
+
         name.setAttribute("id", "name");
         email.setAttribute("id", "email");
 
@@ -171,7 +176,9 @@ export class PageRenderer {
         image.src = photoURL;
 
         div.appendChild(image);
+        div.appendChild(nameLabel);
         div.appendChild(name);
+        div.appendChild(emailLabel);    
         div.appendChild(email);
     }
 
