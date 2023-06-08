@@ -61,17 +61,96 @@ export class PageRenderer {
     }
 
     
-    createInfo(product){
-        const productName = document.createElement('h1');
-        const productTag = document.createElement('h2');
+    createInfo(product, model,authId,headercontent){
+        const card = document.createElement('div');
+        const header=  document.createElement('h4');
+        const cardBody = document.createElement('div');
+        const productImageContainer = document.createElement('div');
+        const productName = document.createElement('h4');
+        const productTag = document.createElement('p');
         const productImage = document.createElement('img');
-    
+        const editButton = document.createElement('button');
+        const buyloButton = document.createElement('button');
+        const deleteButton = document.createElement('button');
+
+        header.innerText=headercontent;
         productName.innerText = product.name;
-        productTag.innerText = product.tag;
+        productTag.innerText = product.description;
         productImage.src = product.image;
 
+        editButton.innerText="edit";
+        deleteButton.innerText="delete";
+        buyloButton.innerText="buylo";
+
+        productName.classList.add('card-product-name');
+        productImage.classList.add('card-product-image');
+        productImageContainer.classList.add('card-product-image-container');
+        productTag.classList.add('card-product-tags');
+        card.classList.add('card');
+
+        cardBody.appendChild(header);
+        cardBody.appendChild(productImageContainer);
+        productImageContainer.appendChild(productImage);
+        cardBody.appendChild(productName);
+        cardBody.appendChild(productTag);
+        cardBody.appendChild(editButton);
+        cardBody.appendChild(deleteButton);
+        cardBody.appendChild(buyloButton);
+
+        card.appendChild(cardBody);
+
+
+
+        deleteButton.addEventListener('click', ()=>{
+            console.log(product.id);
+            console.log(authId);
+            model.deleteProduct(product.id, authId);
+        });
+
+        buyloButton.addEventListener('click', ()=>{
+            console.log(product.id);
+            console.log(authId);
+            model.buyloProduct(product.name, product.tag, product.description, product.image, product.id, authId);
+        });
+
+        editButton.addEventListener('click', () => {
+            const name = encodeURIComponent(product.name);
+            const tag = encodeURIComponent(product.tag);
+            const description = encodeURIComponent(product.description);
+            const image = encodeURIComponent(product.image);
+            const id = encodeURIComponent(product.id);
+            const encodedAuthId = encodeURIComponent(authId);
+          
+            const url = `/ProductEdit.php?name=${name}&tag=${tag}&description=${description}&image=${image}&id=${id}&authId=${encodedAuthId}`;
+            window.location.assign(url);
+          });
+          
+          
+
+
+        if(headercontent=="Transactions:"){
+            editButton.remove();
+            deleteButton.remove();
+            buyloButton.remove();
+            }
+
         
+        
+
+        
+
+        return card;
+
     }
+        
+    renderInfo(div, productArray, model,authId,headercontent){
+        productArray.forEach(product => {
+            let card = this.createInfo(product, model,authId,headercontent);
+            div.appendChild(card);
+        });
+    }
+    
+
 
     addAccountDetails(detailsArray) {
         document.getElementById("name").innerHTML = detailsArray["name"];

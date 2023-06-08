@@ -2,7 +2,7 @@
  * This file is the class responsible for communicating with the database
  */
 
-import { addDoc, arrayUnion, collection, deleteDoc, doc, getDoc, getDocs, limit, or, orderBy, query, setDoc, updateDoc, where } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";
+import { addDoc, collection, deleteDoc, doc, getDoc, getDocs, limit, or, orderBy, query, setDoc, updateDoc, where, arrayUnion, arrayRemove } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";
 import { getDownloadURL, ref, uploadBytes } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-storage.js";
 import { db, storage } from "./connect.js";
 
@@ -83,6 +83,20 @@ export class Model {
 			});
     }
 
+
+    async updateProduct(name, tag, description, image, id) {
+        const data = {
+            name: name,
+            tag: tag,
+            description: description,
+            image: image,
+            owner: id
+        };
+        await updateDoc(doc(db, "Products", id), data);
+
+
+    }
+
     async getProducts(){
         const products = [];
 
@@ -119,12 +133,7 @@ export class Model {
         return (url);
     }
     
-    async addWishlist(id){
-        const user_db=doc(db,"Accounts", );
-            await updateDoc(user_db, {
-                wishlist: window.location.href
-            });
-    }
+    
 
     async getProductById(id){
         const coll = doc(db, "Products", id);
@@ -132,6 +141,8 @@ export class Model {
         const data = snapshot.data();
         return new Product(snapshot.id, data["name"], data["tag"], data["description"], data["image"], data["owner"]);
     }
+
+    
 
     async getProductsByTag(tag){
 
@@ -149,9 +160,11 @@ export class Model {
         return products;
     }
 
-    async deleteProduct(id){
 
-        await deleteDoc(doc(db, "Products", id));
+    async getTransactionById(id){
+        const coll = doc(db, "Transactions", id);
+        const snapshot = await getDoc(coll);
+        return new Product(snapshot.id, snapshot.data()["name"], snapshot.data()["tag"], snapshot.data()["description"], snapshot.data()["image"]);
     }
 
     async getAccountById(id){
@@ -195,4 +208,57 @@ export class Model {
         return notifications;
     }
 }
+    async deleteProduct(id,authId){
+        const docRef = doc(db, "Products", id);
+        const deleted= await deleteDoc(docRef);
+
+        if (deleted){
+            alert("success");
+        }
+
+
+        const fieldDelete= doc(db, "Accounts", authId);
+
+
+        
+        await updateDoc(fieldDelete, {
+        products: arrayRemove(id),
+        });
+
+  
+        
+
+        window.location.href="/AccountPage.html"
+    }
+
+    async buyloProduct(name, tag, description, image,id, authId){
+        const fieldDelete= doc(db, "Accounts", authId);
+
+
+        
+        
+
+        const data = {
+            name: name,
+            tag: tag,
+            description: description,
+            image: image,
+            owner: authId
+        };
+        const transRef = await addDoc(collection(db, "Transactions"), data);
+
+        await updateDoc(fieldDelete, {
+            products: arrayRemove(id),
+            transactions: arrayUnion(transRef.id)
+            }); 
+
+        console.log("Document written with ID: ", transRef.id);
+        const delRef = doc(db, "Products", id);
+        await deleteDoc(delRef);
+
+        window.location.href="/AccountPage.html"
+    }
+
+    }
+
 

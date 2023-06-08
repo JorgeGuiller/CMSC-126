@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Product</title>
-    <link rel="stylesheet" href="/CSS/product_search.css">
+    <link rel="stylesheet" href="/CSS/product.css">
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
 
     <script defer type='module' src="/JS/nav.js"></script>
@@ -25,6 +25,9 @@
 		const authId = authenticator.getSignedInUserId();
     	const account = await model.getAccountById(authId);
 	    
+
+		const renderer = new PageRenderer();
+
 		const urlParams = new URLSearchParams(window.location.search);
 		const id = urlParams.get('id');
         const productJson = sessionStorage.getItem(`${id}`);
@@ -50,7 +53,7 @@
 
 		})
 
-		const buyloButton = document.querySelector("#buylo-button");
+		const buyloButton = document.querySelector("#goBuylo");
 		buyloButton.onclick = async ()=>{
 			console.log(product);
 			await model.addNotification(product.id, authId, product.userId);
@@ -63,90 +66,30 @@
 </head>
 <body>
     <nav class="navbar"></nav>
-	<a href="product.html"><img class="homeIcon" src="images/home.svg" alt=""></a><br>
-	
-    <table id="product">
-    <tr>
-	    <td>
-		    <div id="product-img">
-		        <img class="product-big-img" src="images/kboard.avif">
-		    </div>
-		</td>
-
-		<td>
-			<div id="product-details">
-				<p id="product-name"></p>
-				<p id="product-info">
-				</p>
-			</div>
-		</td>	
-	</tr>
-
-	<tr>
-		<td>
-			<div >
-	            <img class="product-smol-img" src="images/kboard.avif">
-	            <img class="product-smol-img" src="images/kboard.avif">
-	            <img class="product-smol-img" src="images/kboard.avif">
-	        </div>
-	    </td>
-
-	    <td>
-	    	<div id="product-owner">
-		    	<img class="user-avatar" src="images/user1.avif">
-		    	<p class="user-name"></p>	
-		    	<a class="user-contact" href="upcoming.html">Message</a>
-		    	<a class="user-contact" href="upcoming.html">Follow</a>
-		    </div>
-		</td>
-	</tr>
-	</table>
-
-	<table id="product-to-buylo">
-	<div>
-	<p id="sub-title">Buy-lo Details</p>
-			
-	<tr id="to-buylo">
-		<td class="to-buylo-pic">
-			<p >To be bartered for:</p>
-			<img class="product-change" src="images/mouse.avif"><br> 
-		</td>
-		<td class="to-buylo-button">
-			<button class="go-buylo" id="buylo-button" href="upcoming.html">Buy-lo</button>
-							<!-- Please apply css here -->
-			<button type="button"	id="addWishlist">Add to wishlist</button> 	<!-- Please apply css here -->
-		</td>
-	</tr>
-	</div>
-	</table>
 
 
-	<br><br>
-	<div >
-		<p id="sub-title">Similar Items</p><br>
-	<table id="similar-products">
-		<tr>
-			<td><img class="searchImg" src="images/kboard1.avif" alt="item" ></td>
-			<td><img class="searchImg" src="images/ear.avif" alt="item" ></td>
-			<td><img class="searchImg" src="images/kboard3.avif" alt="item" ></td>
+    <container id="product">
+		<div id="product-img">
+		    <img class="product-big-img">
+		</div>
+		<div id="product-details">
+			<p id="product-name"></p>
+			<p id="product-info"></p>
+		</div>
+	</container><br><br>
 
-		</tr>
-		<tr>
-			<td class="label">led mechanical keyboard</td>
-			<td class="label">head phones</td>
-			<td class="label">mouse and keyboard</td>
-		</tr>
-	</table>
+	<div id="to-buylo">
+		<button id="goBuylo" class="button">Buy-lo</button>
+		  <button id="addWishlist" class="button">Wishlist</button>
+		</div>
 	</div>
 	<div class="notification-container">
 
 	</div>
 	
 	<script type="module">
-		
 	</script>
 
 	<footer></footer>
 </body>
-
-</html> 
+</html>
