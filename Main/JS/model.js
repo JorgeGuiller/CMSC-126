@@ -207,7 +207,6 @@ export class Model {
         }
         return notifications;
     }
-}
     async deleteProduct(id,authId){
         const docRef = doc(db, "Products", id);
         const deleted= await deleteDoc(docRef);
