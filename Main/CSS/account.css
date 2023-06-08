@@ -223,7 +223,6 @@ container{
      z-index: 1 ; /* Update the z-index value */
      position: relative; /* Change the position to relative */
      top:60px; 
-     background-color: #365544;
  }
  
  .card {
