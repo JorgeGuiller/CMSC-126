@@ -212,22 +212,21 @@ container{
 
 }
 
+/* for the products uploaded below ka user profile */
 #products {
-  /* Optional: Add margin-top to create space between navbar and cards */
      margin:0 auto;
      margin-top: 10px; /* Optional: Add margin-top to create space between navbar and cards */
      display: grid;
      grid-template-columns: repeat(3, 1fr);
      gap: 0.8rem;
      width: 90%;
-     height:500px;
      z-index: 1 ; /* Update the z-index value */
      position: relative; /* Change the position to relative */
      top:60px; 
  }
  
  .card {
-     height: 20em;
+     height: fit-content;
      margin: 0;
      padding: 0;
      border: none;
